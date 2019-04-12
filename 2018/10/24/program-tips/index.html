@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>program_tips | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="this file record some program errors and corresponding solution  error: python read the chinese file, open(filepath,encoding=’UTF-8’), however, there are still errors occuring: “UnicodeDecodeError: ‘g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="program_tips">
+<meta property="og:url" content="http://yoursite.com/2018/10/24/program-tips/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="this file record some program errors and corresponding solution  error: python read the chinese file, open(filepath,encoding=’UTF-8’), however, there are still errors occuring: “UnicodeDecodeError: ‘g">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-27T03:17:11.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="program_tips">
+<meta name="twitter:description" content="this file record some program errors and corresponding solution  error: python read the chinese file, open(filepath,encoding=’UTF-8’), however, there are still errors occuring: “UnicodeDecodeError: ‘g">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-program-tips" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/24/program-tips/" class="article-date">
+  <time datetime="2018-10-23T22:00:02.000Z" itemprop="datePublished">2018-10-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      program_tips
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="this-file-record-some-program-errors-and-corresponding-solution"><a href="#this-file-record-some-program-errors-and-corresponding-solution" class="headerlink" title="this file record some program errors and corresponding solution"></a>this file record some program errors and corresponding solution</h1><hr>
+<ul>
+<li><strong>error:</strong> python read the chinese file, open(filepath,encoding=’UTF-8’), however, there are still errors occuring: “UnicodeDecodeError: ‘gbk’ codec can’t decode byte 0x80 in position 205: illegal multibyte sequence”<br><strong>solution</strong>: don’t open the file with “UTF-8” mode, and open(filepath, ‘rb’), read the content line by line. for example: line=f.readline(), line=line.decode(‘UTF-8’, <strong>‘ignore’</strong>), since the default parameter in decode function is strict, change it as “ignore” is ok.</li>
+</ul>
+<hr>
+<ul>
+<li><p><strong> pytorch changes the network detail in squence while maintain the pretrained parameters</strong><br>for example, we want the change the output class number for vgg16, while retrain the pretrained parameters. Since the vgg16 classifier consist of a squence, it is troublesome to change it. we can do by .children() API:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vgg=models.vgg16(pretrained=True)</span><br><span class="line">children=vgg.classifie.children()</span><br><span class="line">*obtain the layer that want to be saved *</span><br><span class="line">removed=list(vgg.classifier.children())[:-1]</span><br><span class="line">model.classifier=torch.nn.Sequential(*removed)</span><br><span class="line">*<span class="keyword">then</span>, add the new <span class="built_in">fc</span> layer*</span><br><span class="line">vgg.add_module(<span class="string">'fc'</span>, torch.nn.Linear(4096, out_num))</span><br></pre></td></tr></table></figure>
+<p>by this way, we can change the class number, while retained the pretrained parameters</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><strong>pytorch error: forward() missing 1 required positional argument: ‘input’</strong><br>we want to declare a net using the vgg16’s feature part as a component of our network:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">vgg16=models.vgg16(pretrained=True)</span><br><span class="line">class MyNET(nn.Module):</span><br><span class="line">    def __init__(self):</span><br><span class="line">        super(NET, self).__init__()</span><br><span class="line">        self.features=vgg16.features()</span><br><span class="line">        self.fc=vgg16.classifier()</span><br><span class="line">    def forward(self, x):</span><br><span class="line">        x=self.features(x)</span><br><span class="line">        x=self.fc(x)</span><br><span class="line">        <span class="built_in">return</span> x</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>if we declare the network like above, the error will occur. Because self.feature = vgg16.features() means forward the data by vgg.features, however,we just want to declare the network.<br><strong> suolution: </strong> self.features = vgg16.features, self.fc = vgg16.classifier</p>
+<ul>
+<li><p><strong> About converting the Ascii code (like ‘\xe8\x87\xaa\xe5\xb7\xb1’) to Chinese </strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f = open(file, <span class="string">'r'</span>)</span><br><span class="line">line = f.readline()</span><br><span class="line">we can direcyly <span class="built_in">print</span> the string, <span class="keyword">if</span> line is encoded by Ascii, the output will be chinese</span><br><span class="line"><span class="built_in">print</span>(line)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong> convert the pytorch data type </strong>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">t1=torch.eye(3)</span><br><span class="line">convert t1 to ByteTensor</span><br><span class="line">t1_byte = t1.type(tf.ByteTensor)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong> pytorch Error: save_for_backward can only save input or output tensors, </strong><br>this error occurs since some medium tensor is not packed by Variable, pack it by Variable will be ok</p>
+</li>
+<li><p><strong>pytorch Error: when use the nn.embedding to embedding the word(in rnn like LSTM), the id tensor type is LongTensor </strong></p>
+</li>
+<li><p><strong>pytorch tips: when you utilize the rnn.pack_padded_sequence() to pack the input sentence, the sen_len parameter should be a LongTensor type, instead of a Variable </strong><br>for example: rnn.pack_padded_sequence(word_embedding, list(torch.squeeze(sentent_len_tensor)), batch_first=True), where the sentence_len_tensor is a LongTensor type rather a Variable, if its a Variable, some error will occur,</p>
+</li>
+<li><p><strong> about the output for LSTM </strong>:<br>assume the <em>packed</em> is a output by rnn.pack_padded_sequence(), forward the LSTM</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">output_packed = model.lstm(packed)</span><br><span class="line">```  </span><br><span class="line">the output_packed is a tuple, the first element is an packedSequence, the second element contains two components: they are *hn* output and *cn* respectively</span><br><span class="line"></span><br><span class="line"><span class="keyword">then</span> unpacked the output by rnn.pad_packed_squeeze()</span><br><span class="line">``` bash</span><br><span class="line">output_unpacked = rnn.pad_packed_squeeze(output_packed[0])</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>the output_unpacked is also a tuple, the first element <em>output_unpacked[0]</em> is the requried output Variable with size batch_size x sentence_len x lstm_hidden_size, the second element is a list containing the word number of each sentence.</p>
+<ul>
+<li><strong>pytorch报错</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cublas runtime error : library not initialized</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>一般是显存不够</p>
+<ul>
+<li><strong> pytorch错误</strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">device-side assert triggered</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>查询网络中用到的索引是否越界（word embedding的index，以及分类类别号的index）</p>
+<ul>
+<li><strong> windows 中错误 BrokenPipeError: [Errno 32] Broken pipe </strong><br>这是windows多线程的问题，在dataloader中将num_work参数设置为0即可解决</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/24/program-tips/" data-id="cjudyhqwo00035fr8z3lj210i" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/10/24/hexo-command/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          hexo-command
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/03/19/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/24/miscellanea/">miscellanea</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/24/hexo-command/">hexo-command</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/24/program-tips/">program_tips</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
