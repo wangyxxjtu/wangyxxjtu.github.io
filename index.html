@@ -85,10 +85,18 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ul>
-<li><strong> 在当前文件夹及其子文件夹下查找文件 </strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find -<span class="built_in">type</span> f -name *vocab*</span><br></pre></td></tr></table></figure>
+<li><strong> 1 在当前文件夹及其子文件夹下查找文件 </strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find -<span class="built_in">type</span> f -name *vocab*</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>上述的命令在当前文件夹及其子文件夹下查找包含vocab的文件<br>find 后面可以加目录，不写默认为当前目录<br>type换成d为查找目录</p>
+<ul>
+<li><strong> 2 关于SCP命令 </strong><br>使用方式为：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp local_file_dir usename@ip_address:remote_dir</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>第一个参数为本地的文件名，第二个参数为 先输入用户名，@止呕输入IP地址或者url，远端的文件名<br>例如从本地mac往UTS机器上船文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Scp vocabulary.json yaxiwang@cluster.eng.uts.edu.au:~/Data/</span><br></pre></td></tr></table></figure></p>
+<p>如果传输的是文件夹，scp 后面加上-r选项</p>
+<p>从远端传输文件到本地也可以使用scp命令<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp yaxiwang@cluster.eng.uts.edu.au:~/Data/Flickr30k/data/f30k_precomp_vocab.json ./</span><br></pre></td></tr></table></figure></p>
+<p>如果路径没错还是报 no such file错误，尝试将～换成绝对路径如 /home/yaxiwang</p>
 
       
     </div>
