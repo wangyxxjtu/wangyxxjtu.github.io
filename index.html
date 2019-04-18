@@ -62,6 +62,47 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-bash-command" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/18/bash-command/" class="article-date">
+  <time datetime="2019-04-18T00:37:33.000Z" itemprop="datePublished">2019-04-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/18/bash-command/">bash_command.md</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><strong> 在当前文件夹及其子文件夹下查找文件 </strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find -<span class="built_in">type</span> f -name *vocab*</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>上述的命令在当前文件夹及其子文件夹下查找包含vocab的文件<br>find 后面可以加目录，不写默认为当前目录<br>type换成d为查找目录</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/04/18/bash-command/" data-id="cjulx7b2i0000g4r8inb8zv7w" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/19/hello-world/" class="article-date">
@@ -97,7 +138,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/19/hello-world/" data-id="cjudyhqwf00005fr8y3bk18jr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/19/hello-world/" data-id="cjulx7b310002g4r8ytoaco9u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -166,11 +207,13 @@
 </ul>
 <p>输入上面的命令之后，会选择保存的位置，选择好之后就可以传送了</p>
 <ul>
-<li><p><strong>linux 查看文件夹中有多少个文件</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls | wc -w</span><br></pre></td></tr></table></figure>
+<li><strong>linux 查看文件夹中有多少个文件</strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls | wc -w</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><strong>linux查看磁盘使用情况</strong></p>
-</li>
+</ul>
+<p>列出文件夹下的所有文件并且按照内存的大小从大到小排序<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -Sl(r)</span><br></pre></td></tr></table></figure></p>
+<p>R参数表示反过来排序</p>
+<ul>
+<li><strong>linux查看磁盘使用情况</strong></li>
 <li><p>查看磁盘总体占用情况</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df -h</span><br><span class="line">Df -lh <span class="comment">#查看整个磁盘的占用情况</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -243,11 +286,16 @@
 </ul>
 <p><strong> Linux查看内存使用情况的命令 </strong><br>free -h</p>
 <p><strong> linux安装文件没有权限 </strong><br>输入–user 例如：<br>Pip install pytorch —user</p>
+<ul>
+<li><strong> vim打开的情况下在开另一个窗口显示另一个文件 </strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:vsplit fiile_name.py</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>在bash下打开之前使用vim -O file1 file2 会得到相同的结果<br>Split水平的效果</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/24/miscellanea/" data-id="cjudyhqwn00025fr8voew0iah" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/24/miscellanea/" data-id="cjulx7b2z0001g4r8shdbqnvf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -288,7 +336,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/24/hexo-command/" data-id="cjudyhqwk00015fr84xcndedr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/24/hexo-command/" data-id="cjulx7b320003g4r8arqpk62g" class="article-share-link">Share</a>
       
       
     </footer>
@@ -372,7 +420,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/24/program-tips/" data-id="cjudyhqwo00035fr8z3lj210i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/24/program-tips/" data-id="cjulx7b330004g4r8dc9eo7r2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -400,7 +448,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
     </div>
   </div>
 
@@ -411,6 +459,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/04/18/bash-command/">bash_command.md</a>
+          </li>
         
           <li>
             <a href="/2019/03/19/hello-world/">Hello World</a>
