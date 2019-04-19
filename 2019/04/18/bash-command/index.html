@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="1 在当前文件夹及其子文件夹下查找文件 1find -type f -name *vocab*   上述的命令在当前文件夹及其子文件夹下查找包含vocab的文件find 后面可以加目录，不写默认为当前目录type换成d为查找目录   2 关于SCP命令 使用方式为：1scp local_file_dir usename@ip_address:remote_dir   第一个参数为本地的文件名，">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-18T01:00:44.674Z">
+<meta property="og:updated_time" content="2019-04-19T09:50:36.537Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="bash_command.md">
 <meta name="twitter:description" content="1 在当前文件夹及其子文件夹下查找文件 1find -type f -name *vocab*   上述的命令在当前文件夹及其子文件夹下查找包含vocab的文件find 后面可以加目录，不写默认为当前目录type换成d为查找目录   2 关于SCP命令 使用方式为：1scp local_file_dir usename@ip_address:remote_dir   第一个参数为本地的文件名，">
@@ -99,11 +99,18 @@
 <p>如果传输的是文件夹，scp 后面加上-r选项</p>
 <p>从远端传输文件到本地也可以使用scp命令<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp yaxiwang@cluster.eng.uts.edu.au:~/Data/Flickr30k/data/f30k_precomp_vocab.json ./</span><br></pre></td></tr></table></figure></p>
 <p>如果路径没错还是报 no such file错误，尝试将～换成绝对路径如 /home/yaxiwang</p>
+<ul>
+<li><p><strong> 3。间隔指定时间将命令的执行结果写入到文件中 </strong><br>例如每隔2秒将内存的使用信息写入指定的文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">While <span class="literal">true</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	free -h &gt; memory.out</span><br><span class="line">	sleep 1</span><br><span class="line"><span class="keyword">done</span>:</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong> 查看当前用户的内存限制使用量 </strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">ulimit</span> -a</span><br></pre></td></tr></table></figure></li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/18/bash-command/" data-id="cjulx7b2i0000g4r8inb8zv7w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/18/bash-command/" data-id="cjuon850l0000kjr8qfl83ivy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -111,6 +118,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2019/04/20/shell-prog/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          sheel_prog.md
+        
+      </div>
+    </a>
   
   
     <a href="/2019/03/19/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
@@ -152,6 +168,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/20/shell-prog/">sheel_prog.md</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/18/bash-command/">bash_command.md</a>
           </li>
         
@@ -165,10 +185,6 @@
         
           <li>
             <a href="/2018/10/24/hexo-command/">hexo-command</a>
-          </li>
-        
-          <li>
-            <a href="/2018/10/24/program-tips/">program_tips</a>
           </li>
         
       </ul>

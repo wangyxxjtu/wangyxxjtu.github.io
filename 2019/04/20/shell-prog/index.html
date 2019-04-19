@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>sheel_prog.md | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="shell 编程基础   1 入门简单例子  1234567891011#！ /bin/shCd ~Mkdir shell_tutCd sheel_tutFor ((I=0;i&amp;lt;10;i++)): do	touch test_$I.txtdone   上述例子中，第一行制定脚本解释器，创建循环体， 循环10次，创建10个文件， 循环体结束，其中for do done都是sh关键字。#开头为">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sheel_prog.md">
+<meta property="og:url" content="http://yoursite.com/2019/04/20/shell-prog/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="shell 编程基础   1 入门简单例子  1234567891011#！ /bin/shCd ~Mkdir shell_tutCd sheel_tutFor ((I=0;i&amp;lt;10;i++)): do	touch test_$I.txtdone   上述例子中，第一行制定脚本解释器，创建循环体， 循环10次，创建10个文件， 循环体结束，其中for do done都是sh关键字。#开头为">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-19T22:26:19.832Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="sheel_prog.md">
+<meta name="twitter:description" content="shell 编程基础   1 入门简单例子  1234567891011#！ /bin/shCd ~Mkdir shell_tutCd sheel_tutFor ((I=0;i&amp;lt;10;i++)): do	touch test_$I.txtdone   上述例子中，第一行制定脚本解释器，创建循环体， 循环10次，创建10个文件， 循环体结束，其中for do done都是sh关键字。#开头为">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-shell-prog" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/20/shell-prog/" class="article-date">
+  <time datetime="2019-04-19T21:39:20.000Z" itemprop="datePublished">2019-04-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      sheel_prog.md
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>shell 编程基础</p>
+</li>
+<li><p><strong> 1 入门简单例子 </strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#！ /bin/sh</span></span><br><span class="line"></span><br><span class="line">Cd ~</span><br><span class="line"></span><br><span class="line">Mkdir shell_tut</span><br><span class="line"></span><br><span class="line">Cd sheel_tut</span><br><span class="line"></span><br><span class="line">For ((I=0;i&lt;10;i++)): <span class="keyword">do</span></span><br><span class="line">	touch test_<span class="variable">$I</span>.txt</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>上述例子中，第一行制定脚本解释器，创建循环体， 循环10次，创建10个文件， 循环体结束，其中for do done都是sh关键字。#开头为注释，无多行注释方法<br>要运行脚本两种方法，./test.sh 或者sh test.sh</p>
+<ul>
+<li><strong>2 变量定义 </strong><br>在shell中变量定义直接声明赋值即可，例如<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name=<span class="string">'yaxiwang'</span> <span class="comment">#注意等号不能有空格</span></span><br><span class="line">name=‘yaxiongwang‘ <span class="comment">#重定义变量</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>使用变量的时候：$+变量名<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Name=<span class="string">'yaxionwang'</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$Name</span></span><br></pre></td></tr></table></figure></p>
+<p>既可以输出name</p>
+<ul>
+<li><p><strong>3 字符串类型 </strong><br>在shell中，字符串类型可以使用单引号和双引号，其中单引号会按原样输出，其中不可以包含变量，单引号中不能出现单引号，使用转义字符也不行<br>而双引号中可以有变量，也可使用转义字符，如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name==<span class="string">'yaxiongwang'</span></span><br><span class="line">str=<span class="string">"Hello. I know you are \"#name\"! \n"</span></span><br></pre></td></tr></table></figure>
+<p>1)拼接字符串</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name==<span class="string">'yaxiongwang'</span></span><br><span class="line">greeting=<span class="string">"hello, "</span><span class="variable">$name</span><span class="string">" !"</span></span><br><span class="line">greeting=<span class="string">"hello, <span class="variable">$&#123;name&#125;</span> !"</span></span><br></pre></td></tr></table></figure>
+<p>2)获得字符串长度</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String = <span class="string">'abdc'</span></span><br><span class="line">Echo <span class="variable">$&#123;#string&#125;</span></span><br><span class="line"><span class="comment">#提取子串</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;string:1:4&#125;</span></span><br><span class="line"><span class="comment">#查找字符串</span></span><br><span class="line"><span class="built_in">echo</span> ‘expr index <span class="string">"<span class="variable">$string</span>"</span> bd’ <span class="comment">#输出2，找出单词bd在单词string中的位置</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>4流程控制 </strong><br>主要是if语句与循环，在sheel中if语句不能为空，if else块中必须有内容可以执行，否则报错，如果没有内容可以不写。<br>If语句基本语法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> condition</span><br><span class="line"><span class="keyword">then</span> </span><br><span class="line">	<span class="built_in">command</span> 1</span><br><span class="line">        Command 2</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	<span class="built_in">command</span> 1</span><br><span class="line">	<span class="built_in">command</span> 2</span><br><span class="line">	<span class="built_in">command</span> 3</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#另一种形式是</span></span><br><span class="line"><span class="keyword">for</span> var <span class="keyword">in</span> item1, item2, item3....itemn</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	cmd 1</span><br><span class="line">	cmd 2</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#也可以是c风格的for</span></span><br><span class="line"><span class="keyword">for</span> ((exp1; exp2; exp3))</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	cmds</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>while循环的使用方法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> condition</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	cmds</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#无限循环可以写作</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">true</span>或者<span class="keyword">while</span> ：</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><strong>5 基本逻辑运算符 </strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-ne 不等于</span><br><span class="line">-eq 等于</span><br><span class="line">-le 小于等于</span><br><span class="line">-l 小于</span><br><span class="line">-ge 大于等于</span><br><span class="line">-g 大于</span><br><span class="line">== 字符串比较</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>逻辑联结符：<br>&amp;&amp;, ||, &lt;和&gt;必须写在双中括号中[[a&gt;b &amp;&amp; c&lt;d]],如果写在一个单中括号中报错</p>
+<ul>
+<li><strong>6 $符与中括号[]使用 </strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">count =1</span><br><span class="line"><span class="keyword">while</span> [ <span class="variable">$count</span> -le 5]</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	cmd 1</span><br><span class="line">	count=$[ <span class="variable">$count</span>+1 ]</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>中括号中是可执行的程序（运算），count=$[ $count+1 ]第一个$调用变量，而第二个$获得可执行程序的结果，或者说的到命令输出</p>
+<ul>
+<li><p><strong>7 数组使用 </strong><br>初始化数组：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">array=(a b c d)</span><br><span class="line">array[0]<span class="comment">#索引数组</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>8 括号的使用技巧 </strong><br>字符串比较用双中括号[[ ]]；算数比较用单中括号[ ]——左右留空格<br>算数运算用双小括号(( )) ；shell命令及输出用小括号( )——左右不留空格<br>快速替换用花括号{ }——左右留空格<br>反单引号起着命令替换的作用<code></code></p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/04/20/shell-prog/" data-id="cjuon850s0002kjr8al3wxaa0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/04/18/bash-command/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">bash_command.md</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/20/shell-prog/">sheel_prog.md</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/18/bash-command/">bash_command.md</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/19/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/24/miscellanea/">miscellanea</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/24/hexo-command/">hexo-command</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
