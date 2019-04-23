@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="shell 编程基础   1 入门简单例子  1234567891011#！ /bin/shCd ~Mkdir shell_tutCd sheel_tutFor ((I=0;i&amp;lt;10;i++)): do	touch test_$I.txtdone   上述例子中，第一行制定脚本解释器，创建循环体， 循环10次，创建10个文件， 循环体结束，其中for do done都是sh关键字。#开头为">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-19T22:26:19.832Z">
+<meta property="og:updated_time" content="2019-04-21T11:50:20.057Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sheel_prog.md">
 <meta name="twitter:description" content="shell 编程基础   1 入门简单例子  1234567891011#！ /bin/shCd ~Mkdir shell_tutCd sheel_tutFor ((I=0;i&amp;lt;10;i++)): do	touch test_$I.txtdone   上述例子中，第一行制定脚本解释器，创建循环体， 循环10次，创建10个文件， 循环体结束，其中for do done都是sh关键字。#开头为">
@@ -129,12 +129,16 @@
 </li>
 <li><p><strong>8 括号的使用技巧 </strong><br>字符串比较用双中括号[[ ]]；算数比较用单中括号[ ]——左右留空格<br>算数运算用双小括号(( )) ；shell命令及输出用小括号( )——左右不留空格<br>快速替换用花括号{ }——左右留空格<br>反单引号起着命令替换的作用<code></code></p>
 </li>
+<li><p><strong>9 scp（其他命令）错误：argument list too long </strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find dir <span class="string">'*'</span> -<span class="built_in">exec</span> scp -r &#123;&#125; yaxiwang@cluster.eng.uts.edu.au:~/Data/ \;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
+<p>注意后面的分号一定要有</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/20/shell-prog/" data-id="cjuon850s0002kjr8al3wxaa0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/20/shell-prog/" data-id="cjut3yltl0006txr8p76h32di" class="article-share-link">Share</a>
       
       
     </footer>
@@ -142,6 +146,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2019/04/23/program-tips1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
   
   
     <a href="/2019/04/18/bash-command/" id="article-nav-older" class="article-nav-link-wrap">
@@ -183,6 +196,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/23/program-tips1/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/20/shell-prog/">sheel_prog.md</a>
           </li>
         
@@ -196,10 +213,6 @@
         
           <li>
             <a href="/2018/10/24/miscellanea/">miscellanea</a>
-          </li>
-        
-          <li>
-            <a href="/2018/10/24/hexo-command/">hexo-command</a>
           </li>
         
       </ul>

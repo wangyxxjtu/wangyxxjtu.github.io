@@ -62,6 +62,36 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-program-tips1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/23/program-tips1/" class="article-date">
+  <time datetime="2019-04-23T01:22:37.000Z" itemprop="datePublished">2019-04-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><strong>利用nltk记性词干提取 </strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import nltk</span><br><span class="line">from nltk.stem import WordNetLemmatizer</span><br><span class="line">lemmatizer = WordNetLemmatizer()</span><br><span class="line">lemmatize.lemmatize(<span class="string">'leaves'</span>)<span class="comment">#the outout will be leaf</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/04/23/program-tips1/" data-id="cjut3yltl0005txr8mq6xgp9r" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-shell-prog" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/04/20/shell-prog/" class="article-date">
@@ -127,12 +157,16 @@
 </li>
 <li><p><strong>8 括号的使用技巧 </strong><br>字符串比较用双中括号[[ ]]；算数比较用单中括号[ ]——左右留空格<br>算数运算用双小括号(( )) ；shell命令及输出用小括号( )——左右不留空格<br>快速替换用花括号{ }——左右留空格<br>反单引号起着命令替换的作用<code></code></p>
 </li>
+<li><p><strong>9 scp（其他命令）错误：argument list too long </strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find dir <span class="string">'*'</span> -<span class="built_in">exec</span> scp -r &#123;&#125; yaxiwang@cluster.eng.uts.edu.au:~/Data/ \;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
+<p>注意后面的分号一定要有</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/20/shell-prog/" data-id="cjuon850s0002kjr8al3wxaa0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/20/shell-prog/" data-id="cjut3yltl0006txr8p76h32di" class="article-share-link">Share</a>
       
       
     </footer>
@@ -165,7 +199,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ul>
-<li><strong> 1 在当前文件夹及其子文件夹下查找文件 </strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find -<span class="built_in">type</span> f -name *vocab*</span><br></pre></td></tr></table></figure>
+<li><strong> 1 在当前文件夹及其子文件夹下查找文件 </strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -<span class="built_in">type</span> f -name *vocab*</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>上述的命令在当前文件夹及其子文件夹下查找包含vocab的文件<br>find 后面可以加目录，不写默认为当前目录<br>type换成d为查找目录</p>
@@ -188,7 +222,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/18/bash-command/" data-id="cjuon850l0000kjr8qfl83ivy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/18/bash-command/" data-id="cjut3ylta0000txr862mbtazu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -233,7 +267,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/19/hello-world/" data-id="cjuon850q0001kjr8mz4qcb3e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/19/hello-world/" data-id="cjut3yltk0004txr8kvs6tko1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -395,7 +429,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/24/miscellanea/" data-id="cjuon850t0003kjr8kqau7zqn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/24/miscellanea/" data-id="cjut3ylth0002txr8lkerqzr5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -436,7 +470,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/24/hexo-command/" data-id="cjuon850u0004kjr8vfnz27lp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/24/hexo-command/" data-id="cjut3yltf0001txr83if0eh4c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -520,7 +554,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/24/program-tips/" data-id="cjuon850v0005kjr84xrnlctc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/24/program-tips/" data-id="cjut3yltj0003txr837156ogw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -561,6 +595,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/23/program-tips1/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/20/shell-prog/">sheel_prog.md</a>
           </li>
         
@@ -574,10 +612,6 @@
         
           <li>
             <a href="/2018/10/24/miscellanea/">miscellanea</a>
-          </li>
-        
-          <li>
-            <a href="/2018/10/24/hexo-command/">hexo-command</a>
           </li>
         
       </ul>
