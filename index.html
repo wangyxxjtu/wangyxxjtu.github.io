@@ -217,7 +217,23 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">While <span class="literal">true</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	free -h &gt; memory.out</span><br><span class="line">	sleep 1</span><br><span class="line"><span class="keyword">done</span>:</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong> 查看当前用户的内存限制使用量 </strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">ulimit</span> -a</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">ulimit</span> -a</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>4 列出文件夹下的所有文件并按照从大到小排序</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">du -sh * | sort -nr</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>其中n表示按照数值大小进行排序，r表示反序即由大到小排序</p>
+<ul>
+<li><p><strong> 5 xargs 命令相关 </strong><br>Xargs是给命令传递参数的过滤器，也是组合多个命令的一个工具<br>1）当你尝试删除太多文件，会得到一个错读：Argument list too long，可以使用xargs命令解决：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Find ./ -naem <span class="string">'*.log'</span> -print0 | xargs -0 rm -f</span><br></pre></td></tr></table></figure>
+<p>这里print0是有必要的，xargs以空白字符来分割记录（空格，tag，换行等），如果文件名为‘file 1.log’，那么。xargs会解析为两个文件file 和1.log，但是这两个文件不存在，就会报错。print0在find命令打印文件名之后输出一个NULL，然后-0 告诉xargs用NULL来分割就不会报错了.<br>2)查找所有的jpg文件并且压缩</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Find / -name *.jpg -<span class="built_in">type</span> f -<span class="built_in">print</span> | xargs tar -cvzf images.tar.gz</span><br></pre></td></tr></table></figure>
+<p>3)拷贝所有图片到一个外部驱动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls . *.jpg | xargs -n1 -i cp &#123;&#125; /external-hard_drive/dir</span><br></pre></td></tr></table></figure>
+<p>这里n1表示每次传入的argument数量是1，i 参数表示使用前面的输出替换 {}, </p>
+<p>4)查找文件中是否按右某个单词test-word</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Find . -<span class="built_in">type</span> f -<span class="built_in">print</span> | xargs grep <span class="string">'test-word'</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
