@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="this file record some program errors and corresponding solution  error: python read the chinese file, open(filepath,encoding=’UTF-8’), however, there are still errors occuring: “UnicodeDecodeError: ‘g">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-27T03:17:11.000Z">
+<meta property="og:updated_time" content="2019-04-24T07:06:37.765Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="program_tips">
 <meta name="twitter:description" content="this file record some program errors and corresponding solution  error: python read the chinese file, open(filepath,encoding=’UTF-8’), however, there are still errors occuring: “UnicodeDecodeError: ‘g">
@@ -132,7 +132,10 @@
 </ul>
 <p>查询网络中用到的索引是否越界（word embedding的index，以及分类类别号的index）</p>
 <ul>
-<li><strong> windows 中错误 BrokenPipeError: [Errno 32] Broken pipe </strong><br>这是windows多线程的问题，在dataloader中将num_work参数设置为0即可解决</li>
+<li><p><strong> windows 中错误 BrokenPipeError: [Errno 32] Broken pipe </strong><br>这是windows多线程的问题，在dataloader中将num_work参数设置为0即可解决</p>
+</li>
+<li><p><strong> pytorch中多标记分类的损失函数可以使用 </strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Loss = torch.nn.BCEWithLogitsLoss()</span><br><span class="line"><span class="comment">#或者</span></span><br><span class="line">loss = torch.nn.BCELoss()</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
