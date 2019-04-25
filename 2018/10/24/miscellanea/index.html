@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="this file record some miscellanea informationmyblog localtion: https://wangyxxjtu.github.io/ tencent log in the workstationfirst connect the serverthen input ssh order: ssh webdev@10.165.28.73passward">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-19T05:41:58.889Z">
+<meta property="og:updated_time" content="2019-04-25T06:29:39.945Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="miscellanea">
 <meta name="twitter:description" content="this file record some miscellanea informationmyblog localtion: https://wangyxxjtu.github.io/ tencent log in the workstationfirst connect the serverthen input ssh order: ssh webdev@10.165.28.73passward">
@@ -162,7 +162,12 @@
 </ul>
 <p>解决方案：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls | grep 关键字| xargs -n 10 zip zipfile.zip</span><br></pre></td></tr></table></figure></p>
 <p>含义为：列出匹配关键字的文件，以10个分组，然后分批及逆行zip操作</p>
-<p>python中刷新输出语法(python2 不支持)：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">'\r finished percent: %f'</span>%(counter/length * 100), end = <span class="string">''</span>, flush = True)</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><strong> python中刷新输出语法 </strong>：<br>如果是python 3<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">'\r finished percent: %f'</span>%(counter/length * 100), end = <span class="string">''</span>, flush = True)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>如果是pyrhon2<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line">sys.stdout.write(<span class="string">'finished percent %f \r'</span>%(counter / length *100))</span><br><span class="line">Sys.flush()</span><br></pre></td></tr></table></figure></p>
+<p>注意write后面的\r和下一句的flush</p>
 <ul>
 <li><strong>pickle.load报错：</strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unsupported pickle protocol: 3</span><br></pre></td></tr></table></figure>
 </li>
