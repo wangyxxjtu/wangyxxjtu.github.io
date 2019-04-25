@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="利用nltk记性词干提取 可利用WOrdNetLemmatizer实现，该实现的时候需要手动设置处理词的词性，否则会出现错误的提取，例如working，如果不指定词性，输出将会为working。所以具体做法为，现对词进行词性标注，将词性转换为wordnet的词性，传入WordNetLemmatizer中词性函数定义：123456789101112from nltk.corpus import w">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-23T01:46:44.696Z">
+<meta property="og:updated_time" content="2019-04-25T07:26:51.452Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
 <meta name="twitter:description" content="利用nltk记性词干提取 可利用WOrdNetLemmatizer实现，该实现的时候需要手动设置处理词的词性，否则会出现错误的提取，例如working，如果不指定词性，输出将会为working。所以具体做法为，现对词进行词性标注，将词性转换为wordnet的词性，传入WordNetLemmatizer中词性函数定义：123456789101112from nltk.corpus import w">
@@ -81,6 +81,10 @@
 </li>
 </ul>
 <p>传入词性进行单词还原：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import nltk</span><br><span class="line">from nltk.stem import WordNetLemmatizer</span><br><span class="line">test_word = <span class="string">'working'</span></span><br><span class="line">word, word_pos = nltk.pos_tag([test_word])</span><br><span class="line">wordnet_pos = get_wordnet_pos(word_pos) or word net.NOUN</span><br><span class="line">lemmatizer = WordNetLemmatizer()</span><br><span class="line">lemmatize.lemmatize(test_word, pos = wordnet_pos)<span class="comment">#the output will be working</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><strong> numpy中拼接两个数组</strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Np.vstack([a_vec, b_vec])<span class="comment">#纵向</span></span><br><span class="line">Np。hstack([a_vec, b_vec]<span class="comment">#横向</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
     </div>
