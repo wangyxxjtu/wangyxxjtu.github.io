@@ -249,7 +249,11 @@
 <p>   bash界面中上下翻页：ctrl + a pageUp pageDown</p>
 <p> 具体在使用时，创建一个session，记住名称，在退出退出执行时，ctrl +b -》d提交到后台，重新连接时，tmux a -t session名称/tmux a进入最近的会话</p>
 <ul>
-<li><strong> vim中统计字符串出现的次数</strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">:m，ns/\&lt;string\&gt;<span class="comment">#统计m-n行中字符串string出现的次数</span></span><br><span class="line">:%s/string/ <span class="comment">#统计当前编辑的文件中string出现的次数</span></span><br></pre></td></tr></table></figure></li>
+<li><p><strong> vim中统计字符串出现的次数</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">:m，ns/\&lt;string\&gt;//gn<span class="comment">#统计m-n行中字符串string出现的次数</span></span><br><span class="line">:%s/string//gn<span class="comment">#统计当前编辑的文件中string出现的次数</span></span><br></pre></td></tr></table></figure>
+<p>或者cat命令也可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Cat file | grep -I 字符串 | wc -l</span><br><span class="line">Grep 字符串（可以是正则表达式） filename <span class="comment">#查找包含字符串的行</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 
       
