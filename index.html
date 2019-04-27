@@ -255,6 +255,10 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Cat file | grep -I 字符串 | wc -l</span><br><span class="line">Grep 字符串（可以是正则表达式） filename <span class="comment">#查找包含字符串的行</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+<ul>
+<li><strong>vim使用indent代码折叠 </strong><br>一下快捷键在缩进处使用<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">zc <span class="comment">#折叠</span></span><br><span class="line">zC <span class="comment">#对所在范围内的嵌套的折叠点进行折叠</span></span><br><span class="line">zo <span class="comment">#展开折叠</span></span><br><span class="line">zO <span class="comment">#对所在范围内的嵌套的折叠点进行展开</span></span><br><span class="line">[z <span class="comment">#到当前折叠点的开始出</span></span><br><span class="line"> z] <span class="comment">#到当前折叠点的开始出</span></span><br><span class="line">zj <span class="comment">#向下移动到下一个折叠处的开始</span></span><br><span class="line">zk <span class="comment">#向上移动前一折叠的结束</span></span><br><span class="line">za <span class="comment">#折叠打开和关闭之间切换</span></span><br><span class="line">zM <span class="comment">#全文折叠</span></span><br><span class="line">zR <span class="comment">#全部打开折叠</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
     </div>
@@ -597,6 +601,14 @@
 </li>
 </ul>
 <p>注意网络输出的最后一层不要使用softmax，因为这不是单标签分类，使用sigmoid结合BCELoss或者直接输出结合BCEWithLogitsLoss进行训练</p>
+<ul>
+<li><strong> pytorc将gpu变量移动到cpu中并且存起来，超出显存</strong><br>场景如下：一系列书序需要通过网络，网络和输入数据在GPU上计算，在循环中想要将模型的输出移动道内存中，并且存储起来，直接运行gpu会累加并最后超出： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#错误做法：</span></span><br><span class="line">out = model(input)</span><br><span class="line">out = out.cpu()</span><br><span class="line">save_list.append(out)</span><br><span class="line"><span class="comment">#正确做法</span></span><br><span class="line">out = model(input)</span><br><span class="line">out = out.cpu().detach().numpy()</span><br><span class="line">save_list.append(out)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>需要使用detach函数先将变量从图中剪下来，之后移动到cpu上进行存储。</p>
+<ul>
+<li><strong>pytorch网络两次输出不一样 </strong><br>在pytorch中，如果没有申明model.eval(), 即使是相同模型参数，相同输出，两次的输出结果也不一样，请注意。</li>
+</ul>
 
       
     </div>
