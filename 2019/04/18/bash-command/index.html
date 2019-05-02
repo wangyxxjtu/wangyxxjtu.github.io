@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="1 在当前文件夹及其子文件夹下查找文件 1find . -type f -name *vocab*   上述的命令在当前文件夹及其子文件夹下查找包含vocab的文件find 后面可以加目录，不写默认为当前目录type换成d为查找目录   2 关于SCP命令 使用方式为：1scp local_file_dir usename@ip_address:remote_dir   第一个参数为本地的文件">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-27T04:37:28.584Z">
+<meta property="og:updated_time" content="2019-05-02T11:33:41.882Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="bash_command.md">
 <meta name="twitter:description" content="1 在当前文件夹及其子文件夹下查找文件 1find . -type f -name *vocab*   上述的命令在当前文件夹及其子文件夹下查找包含vocab的文件find 后面可以加目录，不写默认为当前目录type换成d为查找目录   2 关于SCP命令 使用方式为：1scp local_file_dir usename@ip_address:remote_dir   第一个参数为本地的文件">
@@ -141,6 +141,12 @@
 <ul>
 <li><strong>vim使用indent代码折叠 </strong><br>一下快捷键在缩进处使用<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">zc <span class="comment">#折叠</span></span><br><span class="line">zC <span class="comment">#对所在范围内的嵌套的折叠点进行折叠</span></span><br><span class="line">zo <span class="comment">#展开折叠</span></span><br><span class="line">zO <span class="comment">#对所在范围内的嵌套的折叠点进行展开</span></span><br><span class="line">[z <span class="comment">#到当前折叠点的开始出</span></span><br><span class="line"> z] <span class="comment">#到当前折叠点的开始出</span></span><br><span class="line">zj <span class="comment">#向下移动到下一个折叠处的开始</span></span><br><span class="line">zk <span class="comment">#向上移动前一折叠的结束</span></span><br><span class="line">za <span class="comment">#折叠打开和关闭之间切换</span></span><br><span class="line">zM <span class="comment">#全文折叠</span></span><br><span class="line">zR <span class="comment">#全部打开折叠</span></span><br><span class="line">zd <span class="comment">#删除光标下的折叠</span></span><br><span class="line">zD <span class="comment">#删除光标下的折叠以及嵌套的折叠</span></span><br></pre></td></tr></table></figure>
 </li>
+</ul>
+<ul>
+<li><p><strong>文件查看命令 </strong><br>查看有多少行数据：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wc -lw filename <span class="comment">#查看文件有多少行（l）和字数（w）</span></span><br></pre></td></tr></table></figure>
+<p>查看文件前几行/后几行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">head -n line_num file_name <span class="comment">#查看文件的前几行</span></span><br><span class="line">tail -n line_num file_name <span class="comment">#查看文件的后几行</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
