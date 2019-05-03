@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="this file record some miscellanea informationmyblog localtion: https://wangyxxjtu.github.io/ tencent log in the workstationfirst connect the serverthen input ssh order: ssh webdev@10.165.28.73passward">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-02T11:04:49.672Z">
+<meta property="og:updated_time" content="2019-05-03T01:52:45.058Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="miscellanea">
 <meta name="twitter:description" content="this file record some miscellanea informationmyblog localtion: https://wangyxxjtu.github.io/ tencent log in the workstationfirst connect the serverthen input ssh order: ssh webdev@10.165.28.73passward">
@@ -218,8 +218,13 @@
 </ul>
 <p>在bash下打开之前使用vim -O file1 file2 会得到相同的结果<br>Split水平的效果</p>
 <ul>
-<li><strong>倒入tensorflow错误：ibcublas.so.10.0: cannot open shared object file: No such file or directory </strong><br>解决方法：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda install cudatoolkit</span><br><span class="line">conda install cudnn</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>倒入tensorflow错误：ibcublas.so.10.0: cannot open shared object file: No such file or directory </strong><br>解决方法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda install cudatoolkit</span><br><span class="line">conda install cudnn</span><br></pre></td></tr></table></figure>
+<p>如果上面的命令不奏效，运行时出错的话，终极解决办法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install tensorflow-gpu</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
+<p>Conda会自动安装版本相关的依赖</p>
 
       
     </div>
