@@ -382,6 +382,12 @@
 <li><strong>scp 命令远程拷贝文件 </strong></li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp ./yalexwang_workstation/  webdev@100.115.156.103:haoyang/title_image_matching/yalexwang_workstation/ (如果拷贝是文件夹，scp之后加 -r即可)</span><br></pre></td></tr></table></figure>
+<p>过滤当前目录下的文件进行拷贝：<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Scp !(*.new) yaxiwang@cluster.eng.uts.edu.au:~/Data/</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><strong>远程拷贝，递归地遍历目录，过滤文件进行拷贝</strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rsync -av -e ssh --include=<span class="string">'*.new'</span> ./vgg16/ yaxiwang@cluster.eng.uts.edu.au:~/Data/TBIRDataSet/NUS-Wide/vgg16/</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>其中a：递归忙碌<br> v：详细输出<br> e ssh：指定ssh作为远程shell，文件会被加密<br> exclue/include： 排除文件/包含文件</p>
 <ul>
 <li><p><strong> nltk安装和使用停用词 </strong><br>在已经安装nltk的基础上，进入python，导入nltk，输入命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">nltk.download(<span class="string">'stopwords'</span>)</span><br><span class="line">之后就可以导入停用词（列表）</span><br><span class="line">from nltk.corpus import stopwords</span><br><span class="line"></span><br><span class="line">stop_word = stopswords.words(<span class="string">'english'</span>)<span class="comment">#列表，里面是一些引文单词如‘me’, 'againse'等</span></span><br></pre></td></tr></table></figure>
