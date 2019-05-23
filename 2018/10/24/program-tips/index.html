@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="this file record some program errors and corresponding solution  error: python read the chinese file, open(filepath,encoding=’UTF-8’), however, there are still errors occuring: “UnicodeDecodeError: ‘g">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-27T02:11:03.013Z">
+<meta property="og:updated_time" content="2019-05-23T00:53:05.222Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="program_tips">
 <meta name="twitter:description" content="this file record some program errors and corresponding solution  error: python read the chinese file, open(filepath,encoding=’UTF-8’), however, there are still errors occuring: “UnicodeDecodeError: ‘g">
@@ -145,7 +145,12 @@
 </ul>
 <p>需要使用detach函数先将变量从图中剪下来，之后移动到cpu上进行存储。</p>
 <ul>
-<li><strong>pytorch网络两次输出不一样 </strong><br>在pytorch中，如果没有申明model.eval(), 即使是相同模型参数，相同输出，两次的输出结果也不一样，请注意。</li>
+<li><p><strong>pytorch网络两次输出不一样 </strong><br>在pytorch中，如果没有申明model.eval(), 即使是相同模型参数，相同输出，两次的输出结果也不一样，请注意。</p>
+</li>
+<li><p><strong>python 多线程</strong><br>一个简单例子</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import multiprocess</span><br><span class="line"></span><br><span class="line">P1 = multiprocess.Process(target=Function1, arg s=(input,))</span><br><span class="line">P2 = multiprocess.Process(target = Function2, args=(input2,))</span><br><span class="line"></span><br><span class="line">p1.start()</span><br><span class="line">p2.start()</span><br><span class="line"></span><br><span class="line">p1.join()</span><br><span class="line">p2.join()</span><br></pre></td></tr></table></figure>
+<p>关于更多python多线程的使用参照：<a href="https://blog.csdn.net/u012969412/article/details/82768882" target="_blank" rel="noopener">https://blog.csdn.net/u012969412/article/details/82768882</a><br>mutliprocess multiprecess.dummy和Thread的区别参照：<a href="https://www.zhihu.com/question/44738028" target="_blank" rel="noopener">https://www.zhihu.com/question/44738028</a></p>
+</li>
 </ul>
 
       
