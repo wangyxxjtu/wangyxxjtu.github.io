@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="this file record some program errors and corresponding solution  error: python read the chinese file, open(filepath,encoding=’UTF-8’), however, there are still errors occuring: “UnicodeDecodeError: ‘g">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-23T11:09:19.840Z">
+<meta property="og:updated_time" content="2019-06-07T02:09:34.638Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="program_tips">
 <meta name="twitter:description" content="this file record some program errors and corresponding solution  error: python read the chinese file, open(filepath,encoding=’UTF-8’), however, there are still errors occuring: “UnicodeDecodeError: ‘g">
@@ -152,7 +152,10 @@
 <p>关于更多python多线程的使用参照：<a href="https://blog.csdn.net/u012969412/article/details/82768882" target="_blank" rel="noopener">https://blog.csdn.net/u012969412/article/details/82768882</a><br>示例：<a href="https://blog.csdn.net/SeeTheWorld518/article/details/49639651" target="_blank" rel="noopener">https://blog.csdn.net/SeeTheWorld518/article/details/49639651</a><br>基础用法：<a href="https://thief.one/2016/11/23/Python-multiprocessing/" target="_blank" rel="noopener">https://thief.one/2016/11/23/Python-multiprocessing/</a><br>mutliprocess multiprecess.dummy和Thread的区别参照：<a href="https://www.zhihu.com/question/44738028" target="_blank" rel="noopener">https://www.zhihu.com/question/44738028</a></p>
 </li>
 <li><p><strong>numpy从字符串中读取array</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">string = <span class="string">'1 2 3 6'</span></span><br><span class="line">arr = np.fromstring(string, dtype = int, sep = <span class="string">' '</span>)</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">string = <span class="string">'1 2 3 6'</span></span><br><span class="line">arr = np.fromstring(string, dtype = int, sep = <span class="string">' '</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>pytorch runtimeError: DataLoader worker (pid13)is killed by signal : buss Error </strong><br>解决方法：在DataLoader去除num_workers</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dataloader_train = data.DataLoader(train_dataset, batch_size=64, shuffle=True, num_workers=2)</span><br><span class="line">改为：</span><br><span class="line">dataloader_train = data.DataLoader(train_dataset, batch_size=64, shuffle=True)</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
