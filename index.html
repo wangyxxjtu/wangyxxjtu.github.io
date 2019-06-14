@@ -398,7 +398,7 @@
       
         <h3 id="this-file-record-some-miscellanea-information"><a href="#this-file-record-some-miscellanea-information" class="headerlink" title="this file record some miscellanea information"></a>this file record some miscellanea information</h3><p><strong>myblog localtion</strong>: <a href="https://wangyxxjtu.github.io/" target="_blank" rel="noopener">https://wangyxxjtu.github.io/</a></p>
 <p><strong>tencent log in the workstation</strong><br>first connect the server<br>then input ssh order: ssh <a href="mailto:webdev@10.165.28.73" target="_blank" rel="noopener">webdev@10.165.28.73</a><br>passward:5qn5$japO</p>
-<p><strong> anaconda deletes environment</strong>:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda remove -n tensorflow --all</span><br></pre></td></tr></table></figure></p>
+<p><strong> anaconda deletes environment</strong>:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda remove -n tensorflow --all</span><br><span class="line">Conda activate name<span class="comment">#激活环境</span></span><br><span class="line">conda deactivate <span class="comment">#退出环境</span></span><br></pre></td></tr></table></figure></p>
 <p><strong> about the traspose convoluation output size </strong><br>the output size for transpose convolution is: </p>
 <ul>
 <li>output_size=(input_size-1)xstride- 2 x input_padding + kernel_size  + output_padding</li>
@@ -549,7 +549,9 @@
 <li><p><strong>anaconda移除环境 </strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda remove -n tensorflow0 --all</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><strong>Image.fromarray(an_array)报错cann’t haddle this type data</strong><br>解决方法，fromarrray的shape必须是(224,224,3)</p>
+<li><p><strong>Image.fromarray(an_array)报错cann’t haddle this type data</strong><br>解决方法，fromarrray的shape必须是(224,224,3)并转换为uint8格式<br><code>` bash
+Array = np.random.rand(224,224,3)
+Image = Image.fromarray(array.astyep(np.uint8))</code></p>
 </li>
 </ul>
 
@@ -701,7 +703,10 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">string = <span class="string">'1 2 3 6'</span></span><br><span class="line">arr = np.fromstring(string, dtype = int, sep = <span class="string">' '</span>)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>pytorch runtimeError: DataLoader worker (pid13)is killed by signal : buss Error </strong><br>解决方法：在DataLoader去除num_workers</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dataloader_train = data.DataLoader(train_dataset, batch_size=64, shuffle=True, num_workers=2)</span><br><span class="line">改为：</span><br><span class="line">dataloader_train = data.DataLoader(train_dataset, batch_size=64, shuffle=True)</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dataloader_train = data.DataLoader(train_dataset, batch_size=64, shuffle=True, num_workers=2)</span><br><span class="line">改为：</span><br><span class="line">dataloader_train = data.DataLoader(train_dataset, batch_size=64, shuffle=True)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>pytorch错误：cannot assign module before Module.<strong>init</strong>() call </strong><br>定义的networ中的init没有使用super(network, self).<strong>init</strong>()</p>
+</li>
 </ul>
 
       

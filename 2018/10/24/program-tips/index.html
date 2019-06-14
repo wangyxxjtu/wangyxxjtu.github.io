@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="this file record some program errors and corresponding solution  error: python read the chinese file, open(filepath,encoding=’UTF-8’), however, there are still errors occuring: “UnicodeDecodeError: ‘g">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-11T09:45:54.725Z">
+<meta property="og:updated_time" content="2019-06-14T00:45:50.795Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="program_tips">
 <meta name="twitter:description" content="this file record some program errors and corresponding solution  error: python read the chinese file, open(filepath,encoding=’UTF-8’), however, there are still errors occuring: “UnicodeDecodeError: ‘g">
@@ -158,7 +158,10 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">string = <span class="string">'1 2 3 6'</span></span><br><span class="line">arr = np.fromstring(string, dtype = int, sep = <span class="string">' '</span>)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>pytorch runtimeError: DataLoader worker (pid13)is killed by signal : buss Error </strong><br>解决方法：在DataLoader去除num_workers</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dataloader_train = data.DataLoader(train_dataset, batch_size=64, shuffle=True, num_workers=2)</span><br><span class="line">改为：</span><br><span class="line">dataloader_train = data.DataLoader(train_dataset, batch_size=64, shuffle=True)</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dataloader_train = data.DataLoader(train_dataset, batch_size=64, shuffle=True, num_workers=2)</span><br><span class="line">改为：</span><br><span class="line">dataloader_train = data.DataLoader(train_dataset, batch_size=64, shuffle=True)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>pytorch错误：cannot assign module before Module.<strong>init</strong>() call </strong><br>定义的networ中的init没有使用super(network, self).<strong>init</strong>()</p>
+</li>
 </ul>
 
       
