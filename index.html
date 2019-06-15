@@ -551,10 +551,8 @@
 <li><p><strong>anaconda移除环境 </strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda remove -n tensorflow0 --all</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><strong>Image.fromarray(an_array)报错cann’t haddle this type data</strong><br>解决方法，fromarrray的shape必须是(224,224,3)并转换为uint8格式<br><code>` bash
-Array = np.random.rand(224,224,3)
-Image = Image.fromarray(array.astyep(np.uint8))</code></p>
-</li>
+<li><p><strong>Image.fromarray(an_array)报错cann’t haddle this type data</strong><br>解决方法，fromarrray的shape必须是(224,224,3)并转换为uint8格式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Array = np.random.rand(224,224,3)</span><br><span class="line">Image = Image.fromarray(array.astyep(np.uint8))</span><br><span class="line">``</span><br><span class="line"></span><br><span class="line">* **Image.open()错误：IOError：image file truncated **</span><br><span class="line">``` bash</span><br><span class="line">From PIL import ImageFile</span><br><span class="line">ImageFile.LOAD_TRUNCATED_IMAGES=True</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
