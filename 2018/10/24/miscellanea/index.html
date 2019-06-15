@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="this file record some miscellanea informationmyblog localtion: https://wangyxxjtu.github.io/ tencent log in the workstationfirst connect the serverthen input ssh order: ssh webdev@10.165.28.73passward">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-14T06:48:59.973Z">
+<meta property="og:updated_time" content="2019-06-15T01:56:22.333Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="miscellanea">
 <meta name="twitter:description" content="this file record some miscellanea informationmyblog localtion: https://wangyxxjtu.github.io/ tencent log in the workstationfirst connect the serverthen input ssh order: ssh webdev@10.165.28.73passward">
@@ -184,7 +184,7 @@
 </li>
 </ul>
 <p>读取的图片为array数据</p>
-<p>第二种方式：skimage<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from skimage import io</span><br><span class="line"></span><br><span class="line">image = io.imread(url)</span><br></pre></td></tr></table></figure></p>
+<p>第二种方式：skimage<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">from skimage import io</span><br><span class="line"></span><br><span class="line">image = io.imread(url)</span><br><span class="line"><span class="comment">#save the image</span></span><br><span class="line">io.imsave(<span class="string">'test.jpg'</span>, image)</span><br></pre></td></tr></table></figure></p>
 <p>读取的图片也为array数据</p>
 <p>第三种方式：urllib<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import urllib</span><br><span class="line"></span><br><span class="line"><span class="comment"># 网络上图片的地址</span></span><br><span class="line">img_src = <span class="string">'https://img-my.csdn.net/uploads/201212/25/1356422284_1112.jpg'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将远程数据下载到本地，第二个参数就是要保存到本地的文件名</span></span><br><span class="line">urllib.urlretrieve(img_src,<span class="string">'D:/1.jpg'</span>)</span><br></pre></td></tr></table></figure></p>
 <ul>
