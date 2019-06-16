@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="1 在当前文件夹及其子文件夹下查找文件 1find . -type f -name *vocab*   上述的命令在当前文件夹及其子文件夹下查找包含vocab的文件find 后面可以加目录，不写默认为当前目录type换成d为查找目录   2 关于SCP命令 使用方式为：1scp local_file_dir usename@ip_address:remote_dir   第一个参数为本地的文件">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-15T04:17:26.809Z">
+<meta property="og:updated_time" content="2019-06-16T10:52:09.760Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="bash_command.md">
 <meta name="twitter:description" content="1 在当前文件夹及其子文件夹下查找文件 1find . -type f -name *vocab*   上述的命令在当前文件夹及其子文件夹下查找包含vocab的文件find 后面可以加目录，不写默认为当前目录type换成d为查找目录   2 关于SCP命令 使用方式为：1scp local_file_dir usename@ip_address:remote_dir   第一个参数为本地的文件">
@@ -185,6 +185,11 @@
 </li>
 </ul>
 <p>tar文件解压到指定文件夹<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf ./tarfile.tar -C adir</span><br><span class="line">tar -zcvf ./tarfilename.tar ./adir <span class="comment"># 压缩</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#-----------------------------------</span></span><br><span class="line">tar 解压缩命令 </span><br><span class="line">tar </span><br><span class="line">-c: 建立压缩档案 </span><br><span class="line">-x：解压 </span><br><span class="line">-t：查看内容 </span><br><span class="line">-r：向压缩归档文件末尾追加文件 </span><br><span class="line">-u：更新原压缩包中的文件 </span><br><span class="line">这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用其中一个。下面的参数是根据需要在压缩或解压档案时可选的。 </span><br><span class="line">-z：有gzip属性的 </span><br><span class="line">-j：有bz2属性的 </span><br><span class="line">-Z：有compress属性的 </span><br><span class="line">-v：显示所有过程 </span><br><span class="line">-O：将文件解开到标准输</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><strong>python调试 </strong><br>倒入pdb之后去调试可能更加方便<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import pub</span><br><span class="line"></span><br><span class="line"><span class="comment">#在任何想调试的地方</span></span><br><span class="line">Pdb.set_trace()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>代码运行到trace处自动进入调试状态，pdb调试命令即可使用</p>
 
       
     </div>
