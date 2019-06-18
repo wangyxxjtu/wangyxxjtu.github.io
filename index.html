@@ -564,6 +564,13 @@
 </li>
 </ul>
 <p>一般在anaconda/lib的目录下会有和pytorch配套的libstdc++.so.6文件，上面两行将改路径加入到搜索路径中</p>
+<ul>
+<li><p><strong>python中import scipy错误 </strong><br>Python自带的scipy不全，强制重新安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --force-reinstall scipy --ignore-installed</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>pip install安装错误：ERROR: Could not install packages due to an EnvironmentError: [Errno 39] Directory not empty: </strong><br>解决方案：后面加上选项 –ignore-installed</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --force-reinstall scipy --ignore-installed</span><br></pre></td></tr></table></figure></li>
+</ul>
 
       
     </div>
