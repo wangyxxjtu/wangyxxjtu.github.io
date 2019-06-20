@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="this file record some miscellanea informationmyblog localtion: https://wangyxxjtu.github.io/ tencent log in the workstationfirst connect the serverthen input ssh order: ssh webdev@10.165.28.73passward">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-18T06:25:56.370Z">
+<meta property="og:updated_time" content="2019-06-20T07:45:40.530Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="miscellanea">
 <meta name="twitter:description" content="this file record some miscellanea informationmyblog localtion: https://wangyxxjtu.github.io/ tencent log in the workstationfirst connect the serverthen input ssh order: ssh webdev@10.165.28.73passward">
@@ -252,8 +252,13 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --force-reinstall scipy --ignore-installed</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>pip install安装错误：ERROR: Could not install packages due to an EnvironmentError: [Errno 39] Directory not empty: </strong><br>解决方案：后面加上选项 –ignore-installed</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --force-reinstall scipy --ignore-installed</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --force-reinstall scipy --ignore-installed</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>anaconda安装之后无法识别conda命令 </strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bash_profile</span><br><span class="line"><span class="comment">#在打开的文件中加入</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="string">"/users/wang/anaconda2/bin"</span>:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
+<p>保存退出之后，source ～/.bashrc即可</p>
 
       
     </div>

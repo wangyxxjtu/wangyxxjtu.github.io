@@ -569,8 +569,13 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --force-reinstall scipy --ignore-installed</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>pip install安装错误：ERROR: Could not install packages due to an EnvironmentError: [Errno 39] Directory not empty: </strong><br>解决方案：后面加上选项 –ignore-installed</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --force-reinstall scipy --ignore-installed</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --force-reinstall scipy --ignore-installed</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>anaconda安装之后无法识别conda命令 </strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bash_profile</span><br><span class="line"><span class="comment">#在打开的文件中加入</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="string">"/users/wang/anaconda2/bin"</span>:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
+<p>保存退出之后，source ～/.bashrc即可</p>
 
       
     </div>
@@ -725,6 +730,8 @@
 <li><p><strong>pytorch错误：cannot assign module before Module.<strong>init</strong>() call </strong><br>定义的networ中的init没有使用super(network, self).<strong>init</strong>()</p>
 </li>
 <li><p><strong>pytorch错误：CUDNN_STATUS_BAD_PARAM</strong><br>输入网络的图片的size不对<br>一些奇怪的错误可以参考这个网址：<a href="https://blog.csdn.net/VictoriaW/article/details/72636375" target="_blank" rel="noopener">https://blog.csdn.net/VictoriaW/article/details/72636375</a></p>
+</li>
+<li><p><strong>tensorboard的使用 </strong><br>如果是在pytorch中使用tensorboardX，使用tensorboard命令还需要安装tensorflow，如果是tensorlow中使用tensorboard则不需要（浏览器中输入：localhost:6006）</p>
 </li>
 </ul>
 
