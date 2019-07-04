@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="this file record some program errors and corresponding solution  error: python read the chinese file, open(filepath,encoding=’UTF-8’), however, there are still errors occuring: “UnicodeDecodeError: ‘g">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-04T01:37:43.941Z">
+<meta property="og:updated_time" content="2019-07-04T05:15:02.860Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="program_tips">
 <meta name="twitter:description" content="this file record some program errors and corresponding solution  error: python read the chinese file, open(filepath,encoding=’UTF-8’), however, there are still errors occuring: “UnicodeDecodeError: ‘g">
@@ -170,6 +170,8 @@
 </li>
 <li><p><strong>docker中pytorch错误：Unexpected bus error encountered in worker. This might be caused by insufficient shared memory (shm) </strong><br>docker中运行docker把batch size设置过大，shared memory不够<br>解决办法：将Dataloader的num——workers设置为0</p>
 </li>
+<li><p><strong>使用pytorch多GPU注意的问题 </strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1, 利用torch.nn.DataParallel包起来进行训练的模型在，载入的时候也要包起来，因为经过包裹之后的参数字典中的key多出了一个module前缀</span><br><span class="line">2， 如果模型被DataParallel包起来了，访问模型的某一个模块必须加上module，例如myNet.module.fc</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
