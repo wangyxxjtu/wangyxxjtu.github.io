@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="this file record some program errors and corresponding solution  error: python read the chinese file, open(filepath,encoding=’UTF-8’), however, there are still errors occuring: “UnicodeDecodeError: ‘g">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-29T00:57:21.049Z">
+<meta property="og:updated_time" content="2019-07-04T01:37:43.941Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="program_tips">
 <meta name="twitter:description" content="this file record some program errors and corresponding solution  error: python read the chinese file, open(filepath,encoding=’UTF-8’), however, there are still errors occuring: “UnicodeDecodeError: ‘g">
@@ -167,6 +167,8 @@
 <li><p><strong>tensorboard的使用 </strong><br>如果是在pytorch中使用tensorboardX，使用tensorboard命令还需要安装tensorflow，如果是tensorlow中使用tensorboard则不需要（浏览器中输入：localhost:<br>6006）</p>
 </li>
 <li><p><strong>python Error：bad file descriptor </strong><br>Nohup运行程序的时候代码中有 pdb.set_trace()没有注释掉</p>
+</li>
+<li><p><strong>docker中pytorch错误：Unexpected bus error encountered in worker. This might be caused by insufficient shared memory (shm) </strong><br>docker中运行docker把batch size设置过大，shared memory不够<br>解决办法：将Dataloader的num——workers设置为0</p>
 </li>
 </ul>
 

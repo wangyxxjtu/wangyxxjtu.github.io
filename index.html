@@ -754,6 +754,8 @@
 </li>
 <li><p><strong>python Error：bad file descriptor </strong><br>Nohup运行程序的时候代码中有 pdb.set_trace()没有注释掉</p>
 </li>
+<li><p><strong>docker中pytorch错误：Unexpected bus error encountered in worker. This might be caused by insufficient shared memory (shm) </strong><br>docker中运行docker把batch size设置过大，shared memory不够<br>解决办法：将Dataloader的num——workers设置为0</p>
+</li>
 </ul>
 
       
