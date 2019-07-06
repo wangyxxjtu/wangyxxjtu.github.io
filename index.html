@@ -773,6 +773,8 @@
 </li>
 <li><p><strong>使用多gpu训练网络 segmentation Error（段错误）</strong><br>主要是因为docker中的共享内存不够</p>
 </li>
+<li><p><strong>torch.load模型错误：UnicodeDecodeError: ‘ascii’ codec can’t decode byte 0xe9 in position 6</strong><br>原因：如果是在python 2中的保存的模型，python3环境中load就会出现上述的错误<br>解决方法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from functools import partial</span><br><span class="line">import pickle</span><br><span class="line">pickle.load = partial(pickle.load, encoding=<span class="string">"latin1"</span>)</span><br><span class="line">pickle.Unpickler = partial(pickle.Unpickler, encoding=<span class="string">"latin1"</span>)</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
