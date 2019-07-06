@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="this file record some miscellanea informationmyblog localtion: https://wangyxxjtu.github.io/ tencent log in the workstationfirst connect the serverthen input ssh order: ssh webdev@10.165.28.73passward">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-02T11:44:31.884Z">
+<meta property="og:updated_time" content="2019-07-06T04:19:51.112Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="miscellanea">
 <meta name="twitter:description" content="this file record some miscellanea informationmyblog localtion: https://wangyxxjtu.github.io/ tencent log in the workstationfirst connect the serverthen input ssh order: ssh webdev@10.165.28.73passward">
@@ -273,11 +273,7 @@
 <li><p><strong>一次清空所有gpu程序，释放显存 </strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#用clearndata来过滤指定的程序，ps ef 也可以换成ps ux</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> `ps -ef|grep cleardata |awk <span class="string">'&#123;print $2&#125;'</span> `; <span class="keyword">do</span> <span class="built_in">kill</span> -9 <span class="variable">$i</span> ; <span class="keyword">done</span>;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><strong>docker运行设置恭喜那个内存</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvidia-docker run/start -i -m=<span class="string">'16g'</span> -memory-swap=<span class="string">'20g'</span> wangyx</span><br></pre></td></tr></table></figure>
-</li>
 </ul>
-<p>如果共享内存不足，将会出现错误：dataloder worker exited unexpectedly，或者调小batchsize，或者重新进入docker使用上面的参数</p>
 
       
     </div>

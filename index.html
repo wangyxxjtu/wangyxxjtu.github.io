@@ -305,11 +305,15 @@
 </ul>
 <p>断点续传下载数据：<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aria2c -c url <span class="comment">#-c表示断点续传</span></span><br></pre></td></tr></table></figure></p>
 <ul>
-<li><strong>docker相关命令</strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">pytorch数据交互准备-挂载</span><br><span class="line">sudo nvidia-docker run --ipc=host -it -v /media/tensorflow/1412C30112C2E738:/home/wangyx --name wangyx_docker ufoym/deepo bash</span><br><span class="line">or</span><br><span class="line">sudo nvidia-docker run -it -v --shm-size /home/smiles/jhy:/home/jhy -name jhy_deepo ufoym/deepo bash</span><br><span class="line"></span><br><span class="line">挂载</span><br><span class="line">sudo nvidia-docker run -it -v /media/smiles/OS1/jhy/:/home/jhy --name jhy_deepo d35aa33f77cb bash</span><br><span class="line">启动</span><br><span class="line">sudo nvidia-docker start -i jhy_deepo</span><br><span class="line">删除</span><br><span class="line">sudo docker container rm jhy_deepo </span><br><span class="line">查看容器</span><br><span class="line">sudo docker ps -a</span><br><span class="line"></span><br><span class="line">重新开启一个容器，与原先不同步：</span><br><span class="line">nvidia-docker <span class="built_in">exec</span> -it wangyx /bin/bash/</span><br></pre></td></tr></table></figure>
+<li><strong>docker相关命令</strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">pytorch数据交互准备-挂载</span><br><span class="line">sudo nvidia-docker run --ipc=host -it -v /media/tensorflow/1412C30112C2E738:/home/wangyx --name wangyx_docker ufoym/deepo bash</span><br><span class="line">or</span><br><span class="line">sudo nvidia-docker run -it -v --shm-size /home/smiles/jhy:/home/jhy -name jhy_deepo ufoym/deepo bash</span><br><span class="line"></span><br><span class="line">挂载</span><br><span class="line">sudo nvidia-docker run -it -v /media/smiles/OS1/jhy/:/home/jhy --name jhy_deepo d35aa33f77cb bash</span><br><span class="line">启动</span><br><span class="line">sudo nvidia-docker start -i jhy_deepo</span><br><span class="line">删除</span><br><span class="line">sudo docker container rm jhy_deepo / docker rm 容器id（docker ps -a查看容器id，如果docker正在运行，加上-f选项参数，强制移除）</span><br><span class="line">查看容器</span><br><span class="line">sudo docker ps -a</span><br><span class="line"></span><br><span class="line">重新开启一个容器，与原先不同步：</span><br><span class="line">nvidia-docker <span class="built_in">exec</span> -it wangyx /bin/bash/</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>cp resnet50-19c8e357.pth /root/.torch/models<br>/media/tensorflow/1412C30112C2E738</p>
 <p>my environment name: wangyx_docker (sudo nvidia-docker start -i wangyx_docker) </p>
+<ul>
+<li><strong>docker运行设置设置共享内存</strong><br>如果共享内存不足，将会出现错误：dataloder worker exited unexpectedly，或者调小batchsize，或者重新进入docker使用上面的参数<br>解决办法只能是重新新建容器，因为默认容器的共享内存是64M<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvidia-docker run -itd --shm-size 64G --name wangyx -v /home/wangyx:/wangyx -p 3316:22 pytorch/pytorch(本地镜像：docker images查看本地存在哪些镜像)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <p>八卡服务器连接：<br>ssh <a href="mailto:wangyx@192.168.100.22" target="_blank" rel="noopener">wangyx@192.168.100.22</a><br>psw:gansu320</p>
 <p>容器名称：wangyx<br>启动：nvidia-docker start -i wangyx<br>退出：ctrl+P+Q 退出但不结束 ctrl+D / exit 退出并关闭</p>
 <ul>
@@ -322,6 +326,14 @@
 </li>
 </ul>
 <p>代码运行到trace处自动进入调试状态，pdb调试命令即可使用,所以不用从程序入口开始调试</p>
+<ul>
+<li><strong>tmux设置快捷键为ctrl+a </strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.tmux.conf</span><br><span class="line"><span class="comment">#输入</span></span><br><span class="line">unbind C-b</span><br><span class="line"><span class="built_in">set</span> -g prefix C<span class="_">-a</span></span><br><span class="line"> </span><br><span class="line"><span class="built_in">bind</span> C<span class="_">-a</span> send-prefix</span><br><span class="line"> </span><br><span class="line"><span class="built_in">bind</span> r <span class="built_in">source</span>-file ~/.tmux.conf</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>保存退出即可生效</p>
+<ul>
+<li><strong>vim常用设置 </strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Set no compatible <span class="comment"># 关掉vi一致性模式</span></span><br><span class="line">Set number $显示行号</span><br><span class="line">Syntax on <span class="comment"># 显示行号</span></span><br><span class="line"><span class="comment">#自动缩进</span></span><br><span class="line">Set autoindent</span><br><span class="line">Set smartindent</span><br><span class="line"><span class="comment">#设置tab键控个数</span></span><br><span class="line">Set tabstop=4</span><br><span class="line">Set shiftwide=4</span><br><span class="line"></span><br><span class="line"><span class="comment">#设置匹配模式，左右括号配对</span></span><br><span class="line">Set showmatch</span><br><span class="line"><span class="comment">#打开文件类型检测</span></span><br><span class="line">filetype on</span><br><span class="line"><span class="comment">#显示光标位置的状态行</span></span><br><span class="line">Set ruler</span><br><span class="line"></span><br><span class="line">Set incsearch</span><br></pre></td></tr></table></figure></li>
+</ul>
 
       
     </div>
@@ -590,11 +602,7 @@
 <li><p><strong>一次清空所有gpu程序，释放显存 </strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#用clearndata来过滤指定的程序，ps ef 也可以换成ps ux</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> `ps -ef|grep cleardata |awk <span class="string">'&#123;print $2&#125;'</span> `; <span class="keyword">do</span> <span class="built_in">kill</span> -9 <span class="variable">$i</span> ; <span class="keyword">done</span>;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><strong>docker运行设置恭喜那个内存</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvidia-docker run/start -i -m=<span class="string">'16g'</span> -memory-swap=<span class="string">'20g'</span> wangyx</span><br></pre></td></tr></table></figure>
-</li>
 </ul>
-<p>如果共享内存不足，将会出现错误：dataloder worker exited unexpectedly，或者调小batchsize，或者重新进入docker使用上面的参数</p>
 
       
     </div>
