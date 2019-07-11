@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="this file record some miscellanea informationmyblog localtion: https://wangyxxjtu.github.io/ tencent log in the workstationfirst connect the serverthen input ssh order: ssh webdev@10.165.28.73passward">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-06T04:19:51.112Z">
+<meta property="og:updated_time" content="2019-07-11T07:03:18.821Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="miscellanea">
 <meta name="twitter:description" content="this file record some miscellanea informationmyblog localtion: https://wangyxxjtu.github.io/ tencent log in the workstationfirst connect the serverthen input ssh order: ssh webdev@10.165.28.73passward">
@@ -176,7 +176,7 @@
 <li><strong> python中刷新输出语法 </strong>：<br>如果是python 3<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">'\r finished percent: %f'</span>%(counter/length * 100), end = <span class="string">''</span>, flush = True)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>如果是pyrhon2<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line">sys.stdout.write(<span class="string">'finished percent %f \r'</span>%(counter / length *100))</span><br><span class="line">Sys.flush()</span><br></pre></td></tr></table></figure></p>
+<p>如果是pyrhon2<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line">sys.stdout.write(<span class="string">'\rfinished percent %f '</span>%(counter / length *100))</span><br><span class="line">Sys.flush()</span><br></pre></td></tr></table></figure></p>
 <p>注意write后面的\r和下一句的flush</p>
 <ul>
 <li><strong>pickle.load报错：</strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unsupported pickle protocol: 3</span><br></pre></td></tr></table></figure>
@@ -272,6 +272,9 @@
 </li>
 <li><p><strong>一次清空所有gpu程序，释放显存 </strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#用clearndata来过滤指定的程序，ps ef 也可以换成ps ux</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> `ps -ef|grep cleardata |awk <span class="string">'&#123;print $2&#125;'</span> `; <span class="keyword">do</span> <span class="built_in">kill</span> -9 <span class="variable">$i</span> ; <span class="keyword">done</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>npy文件太大无法一次读入，以至于无法操作的问题 </strong><br>如果一个train.npy文件太大，以至于无法操作，解决方案，使用numpy.load 函数时设置mmap_model = ‘r’可以，其原理是将变量进行磁盘地址映射而不是载入内存中，语法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line">Path = <span class="string">'train.npy'</span></span><br><span class="line">data = np.load(path, mmap_mode = <span class="string">'r'</span>)<span class="comment">#</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
