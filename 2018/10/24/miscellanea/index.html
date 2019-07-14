@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="this file record some miscellanea informationmyblog localtion: https://wangyxxjtu.github.io/ tencent log in the workstationfirst connect the serverthen input ssh order: ssh webdev@10.165.28.73passward">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-12T04:27:04.323Z">
+<meta property="og:updated_time" content="2019-07-13T01:00:55.722Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="miscellanea">
 <meta name="twitter:description" content="this file record some miscellanea informationmyblog localtion: https://wangyxxjtu.github.io/ tencent log in the workstationfirst connect the serverthen input ssh order: ssh webdev@10.165.28.73passward">
@@ -101,7 +101,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp ./yalexwang_workstation/  webdev@100.115.156.103:haoyang/title_image_matching/yalexwang_workstation/ (如果拷贝是文件夹，scp之后加 -r即可)</span><br></pre></td></tr></table></figure>
 <p>过滤当前目录下的文件进行拷贝：<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Scp !(*.new) yaxiwang@cluster.eng.uts.edu.au:~/Data/</span><br></pre></td></tr></table></figure></p>
 <ul>
-<li><strong>远程拷贝，递归地遍历目录，过滤文件进行拷贝</strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rsync -av -e ssh --include=<span class="string">'*.new'</span> ./vgg16/ yaxiwang@cluster.eng.uts.edu.au:~/Data/TBIRDataSet/NUS-Wide/vgg16/</span><br></pre></td></tr></table></figure>
+<li><strong>远程拷贝，递归地遍历目录，过滤文件进行拷贝</strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> rsync -av -e ssh --include=<span class="string">'*.new'</span> ./vgg16/ yaxiwang@cluster.eng.uts.edu.au:~/Data/TBIRDataSet/NUS-Wide/vgg16/</span><br><span class="line"><span class="comment">#与sshpass结合使用可以避免输入密码,-p选项输入密码 -f指定文件读取密码</span></span><br><span class="line">sshpass -p wangyifan123456 rsync -avP ./* wangyifan@10.20.108.16:/home/wangyifan/</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>其中a：递归忙碌<br> v：详细输出<br> e ssh：指定ssh作为远程shell，文件会被加密<br> exclue/include： 排除文件/包含文件</p>
