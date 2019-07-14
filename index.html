@@ -269,6 +269,7 @@
 </li>
 </ul>
 <p>字符串替换<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">:%s/old/new/g <span class="comment">#直接将旧字符串替换为新字符串</span></span><br><span class="line">:%s/old/new/gc <span class="comment">#替换每次需要你确认</span></span><br></pre></td></tr></table></figure></p>
+<p>统一缩进多行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">:line_num1, line_num2 &gt;/&lt; <span class="comment">#按下enter即可向左/右缩进一个tab</span></span><br><span class="line"><span class="comment">#第二中方法</span></span><br><span class="line">进入visual模式，选中要缩进的行<span class="built_in">shift</span> + &gt;/&lt; 向左/右缩进一个tab</span><br></pre></td></tr></table></figure></p>
 <p> 或者cat命令也可<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Cat file | grep -I 字符串 | wc -l</span><br><span class="line">grep (-rinc) 字符串（可以是正则表达式） filename <span class="comment">#查找包含字符串的行</span></span><br></pre></td></tr></table></figure></p>
 <p>  参数n表示输出结果并显示行号，c表示统计结果的出现次数， r表示在目录下递归查找，使用此参数，filename需要换成目录， i表示忽略大小写</p>
 <ul>
