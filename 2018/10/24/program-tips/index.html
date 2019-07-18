@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="this file record some program errors and corresponding solution  error: python read the chinese file, open(filepath,encoding=’UTF-8’), however, there are still errors occuring: “UnicodeDecodeError: ‘g">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-15T09:30:29.324Z">
+<meta property="og:updated_time" content="2019-07-18T03:56:05.790Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="program_tips">
 <meta name="twitter:description" content="this file record some program errors and corresponding solution  error: python read the chinese file, open(filepath,encoding=’UTF-8’), however, there are still errors occuring: “UnicodeDecodeError: ‘g">
@@ -179,8 +179,13 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from functools import partial</span><br><span class="line">import pickle</span><br><span class="line">pickle.load = partial(pickle.load, encoding=<span class="string">"latin1"</span>)</span><br><span class="line">pickle.Unpickler = partial(pickle.Unpickler, encoding=<span class="string">"latin1"</span>)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>ImageNet上的均值方差</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],</span><br><span class="line">                                  std=[0.229, 0.224, 0.225])</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],</span><br><span class="line">                                  std=[0.229, 0.224, 0.225])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>pytorch输出损失或者梯度为nan </strong><br>检查：1， loss计算<br>2，检查梯度计算,例如sqrt(0), log(0)等均会导致nan<br>可以使用torch.autograd.detect_anormaly</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">with torch.autograd.detect_anomaly():                                              │</span><br><span class="line">	out = model(input)</span><br><span class="line">	optizer.zero_grad()</span><br><span class="line">	loss. =Loss(out,target)</span><br><span class="line">        Loss.backward()</span><br><span class="line">        optimizer.step()</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
+<p>该模块自动检测grad计算异常的地方</p>
 
       
     </div>
