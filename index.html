@@ -821,6 +821,13 @@
 </li>
 </ul>
 <p>也可以手动调整learning rate<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def adjust_learning_rate(opt, optimizer, epoch):</span><br><span class="line">     <span class="string">""</span><span class="string">"Sets the learning rate to the initial LR</span></span><br><span class="line"><span class="string">        decayed by 10 every 30 epochs"</span><span class="string">""</span></span><br><span class="line">     lr = opt.learning_rate * (0.1 ** (epoch // opt.lr_update))</span><br><span class="line">     <span class="keyword">for</span> param_group <span class="keyword">in</span> optimizer.param_groups:</span><br><span class="line">         param_group[<span class="string">'lr'</span>] = lr</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p><strong>tensorflow load checkpoint error: DataLoss Error </strong><br>解决方法：<br>如果你的checkpoint文件名称是model.ckpt.data-00000-data-00001,那么sess.restore中掺入的参数只需要是<br>model.ckpt而不是整个的文件model.ckpt.data-00000-of-00001，如果传入整个文件名称就会报以下错误：<br>Data loss: not an sstable (bad magic number): perhaps your file is in a different file format and you need to use a different restore operator?，</p>
+</li>
+<li><p><strong>pytorch设置随机种子 </strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">random.seed(seed)</span><br><span class="line">np.random.rand(seed)</span><br><span class="line">torch.manual_seed(seed)</span><br><span class="line">torch.cuda.manual_seed(seed)</span><br><span class="line">torch.backends.cudnn.deterministic=True</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
     </div>
