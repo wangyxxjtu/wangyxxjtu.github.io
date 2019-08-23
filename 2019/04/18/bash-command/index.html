@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="1 在当前文件夹及其子文件夹下查找文件 1find . -type f -name *vocab*   上述的命令在当前文件夹及其子文件夹下查找包含vocab的文件find 后面可以加目录，不写默认为当前目录type换成d为查找目录   2 关于SCP命令 使用方式为：1scp local_file_dir usename@ip_address:remote_dir   第一个参数为本地的文件">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-16T11:04:44.941Z">
+<meta property="og:updated_time" content="2019-08-23T05:24:30.478Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="bash_command.md">
 <meta name="twitter:description" content="1 在当前文件夹及其子文件夹下查找文件 1find . -type f -name *vocab*   上述的命令在当前文件夹及其子文件夹下查找包含vocab的文件find 后面可以加目录，不写默认为当前目录type换成d为查找目录   2 关于SCP命令 使用方式为：1scp local_file_dir usename@ip_address:remote_dir   第一个参数为本地的文件">
@@ -221,6 +221,11 @@
 <p>开出回话，将首先链接tmate服务器，之后会在屏幕下方显示tmate id （形如ssh adfadfdfasf），复制改id，在Mac的bash中输入ssh + id即可链接</p>
 <p>可能的错误<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Public key (permission denied)</span><br></pre></td></tr></table></figure></p>
 <p>将上述机器位置对调再做同样的过程（成功案例是将服务器和mac上都进行了操作）</p>
+<ul>
+<li><strong>在vim中空格与tab键的替换 </strong><br>某些时候vim中空格和tab并不匹配，比如文件中是四个空格表示缩进，而你想要是一个tab为四空格缩进，这种情况下需要相互的转化<br>四个空格转换为一个tab,在需要转换的文件中依次输入：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">:<span class="built_in">set</span> ts=4</span><br><span class="line">:<span class="built_in">set</span> noexpandtab</span><br><span class="line">:%retab!</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>一个tab转换为四个空格类似<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">:<span class="built_in">set</span> ts=4</span><br><span class="line">:<span class="built_in">set</span> expand tab</span><br><span class="line">:%retab!</span><br></pre></td></tr></table></figure></p>
 
       
     </div>

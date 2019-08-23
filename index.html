@@ -353,6 +353,11 @@
 <p>开出回话，将首先链接tmate服务器，之后会在屏幕下方显示tmate id （形如ssh adfadfdfasf），复制改id，在Mac的bash中输入ssh + id即可链接</p>
 <p>可能的错误<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Public key (permission denied)</span><br></pre></td></tr></table></figure></p>
 <p>将上述机器位置对调再做同样的过程（成功案例是将服务器和mac上都进行了操作）</p>
+<ul>
+<li><strong>在vim中空格与tab键的替换 </strong><br>某些时候vim中空格和tab并不匹配，比如文件中是四个空格表示缩进，而你想要是一个tab为四空格缩进，这种情况下需要相互的转化<br>四个空格转换为一个tab,在需要转换的文件中依次输入：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">:<span class="built_in">set</span> ts=4</span><br><span class="line">:<span class="built_in">set</span> noexpandtab</span><br><span class="line">:%retab!</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>一个tab转换为四个空格类似<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">:<span class="built_in">set</span> ts=4</span><br><span class="line">:<span class="built_in">set</span> expand tab</span><br><span class="line">:%retab!</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
