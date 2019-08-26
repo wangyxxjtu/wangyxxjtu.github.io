@@ -358,6 +358,9 @@
 </li>
 </ul>
 <p>一个tab转换为四个空格类似<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">:<span class="built_in">set</span> ts=4</span><br><span class="line">:<span class="built_in">set</span> expand tab</span><br><span class="line">:%retab!</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><strong>python设置输出提示信息 </strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Import os</span><br><span class="line"></span><br><span class="line">Os.environ[<span class="string">'TF_CPP_MIN_LOG_LEVEL'</span>] = 3</span><br><span class="line">0---输出所有信息</span><br><span class="line">1---屏蔽通知信息</span><br><span class="line">2---屏蔽通知信息和警告信息</span><br><span class="line">3---屏蔽通知信息，警告信息和报错信息</span><br></pre></td></tr></table></figure></li>
+</ul>
 
       
     </div>
@@ -833,6 +836,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">random.seed(seed)</span><br><span class="line">np.random.rand(seed)</span><br><span class="line">torch.manual_seed(seed)</span><br><span class="line">torch.cuda.manual_seed(seed)</span><br><span class="line">torch.backends.cudnn.deterministic=True</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+<p>tensorflow随机种子设置：tf.set_rand_seed(seed)</p>
 
       
     </div>
