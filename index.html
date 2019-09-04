@@ -350,7 +350,7 @@
 <p>Step 3:在Linux服务器上记录step2密匙<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#新建 /root/.ssh/authorized_keys</span></span><br><span class="line">将step2中的id-rsa文件中的所有内容粘贴到 authorized_keys中并保存</span><br></pre></td></tr></table></figure></p>
 <p>Step4:服务器授权<br>在Linux服务器上为文件夹./ssh和文件authorized_keys改变权限<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Chmod 600 /root/.ssh/authorized_keys</span><br><span class="line">Chmod 700 /root/.ssh</span><br></pre></td></tr></table></figure></p>
 <p>step 5:链接<br>在Linux服务器上运行tmate：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmate</span><br></pre></td></tr></table></figure></p>
-<p>开出回话，将首先链接tmate服务器，之后会在屏幕下方显示tmate id （形如ssh adfadfdfasf），复制改id，在Mac的bash中输入ssh + id即可链接</p>
+<p>开出回话，将首先链接tmate服务器，之后会在屏幕下方显示tmate id （形如ssh adfadfdfasf），复制改id，在Mac的bash中输入ssh + id即可链接(如果太快没有复制到，用tmate show-messages即可出现负值@tmate对应的命令)</p>
 <p>可能的错误<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Public key (permission denied)</span><br></pre></td></tr></table></figure></p>
 <p>将上述机器位置对调再做同样的过程（成功案例是将服务器和mac上都进行了操作）</p>
 <ul>
@@ -359,7 +359,11 @@
 </ul>
 <p>一个tab转换为四个空格类似<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">:<span class="built_in">set</span> ts=4</span><br><span class="line">:<span class="built_in">set</span> expand tab</span><br><span class="line">:%retab!</span><br></pre></td></tr></table></figure></p>
 <ul>
-<li><strong>python设置输出提示信息 </strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Import os</span><br><span class="line"></span><br><span class="line">Os.environ[<span class="string">'TF_CPP_MIN_LOG_LEVEL'</span>] = <span class="string">'3'</span></span><br><span class="line">0---输出所有信息</span><br><span class="line">1---屏蔽通知信息</span><br><span class="line">2---屏蔽通知信息和警告信息</span><br><span class="line">3---屏蔽通知信息，警告信息和报错信息</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>python设置输出提示信息 </strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Import os</span><br><span class="line"></span><br><span class="line">Os.environ[<span class="string">'TF_CPP_MIN_LOG_LEVEL'</span>] = <span class="string">'3'</span></span><br><span class="line">0---输出所有信息</span><br><span class="line">1---屏蔽通知信息</span><br><span class="line">2---屏蔽通知信息和警告信息</span><br><span class="line">3---屏蔽通知信息，警告信息和报错信息</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>调用numpy函数出现错误：segmentation error （core dump） </strong><br>检查numpy版本，例如升级numpy版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install numpy --upgrade</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
