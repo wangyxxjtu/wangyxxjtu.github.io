@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="this file record some program errors and corresponding solution  error: python read the chinese file, open(filepath,encoding=’UTF-8’), however, there are still errors occuring: “UnicodeDecodeError: ‘g">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-07T04:28:48.024Z">
+<meta property="og:updated_time" content="2019-09-10T11:00:59.558Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="program_tips">
 <meta name="twitter:description" content="this file record some program errors and corresponding solution  error: python read the chinese file, open(filepath,encoding=’UTF-8’), however, there are still errors occuring: “UnicodeDecodeError: ‘g">
@@ -209,6 +209,9 @@
 </li>
 </ul>
 <p>tensorflow随机种子设置：tf.set_random_seed(seed)</p>
+<ul>
+<li><strong>tensoflow一次奇怪的bug记录：libdevice.compute_30.10.bd not found</strong><br>当使用instanceNorm或者囤cated_normal_initializer()初始化的时候出现了报错。<br>解决方案：<br>找到该文件，并将它复制到你的程序运行目录下，但是只可以解决instancNorm的问题，无法解决truncated_normal_initializer的问题，<br>该文件啃可能的的位置：1 conda环境lib目录下例如： /home/yaxiong/anaconda3/envs/tensorflow/lib<br>2 cuda目录下：/usr/local/</li>
+</ul>
 
       
     </div>

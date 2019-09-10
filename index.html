@@ -659,7 +659,7 @@
 <li><p><strong>top </strong><br>top命令中使用 shift + m按照内存使用进行排序, shift + c对cpu占用进行排序</p>
 </li>
 <li><p><strong>anaconda改变路径的一些问题</strong><br>1, anaconda创建环境的时候入指定路径，而不是默认在～/annaconda/envs下</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Conda create -n /ssd/yuxiong/.conda/envs/tensorflow python=3.6</span><br><span class="line"><span class="comment">#激活</span></span><br><span class="line">Source activate /ssd/yuxiong/.conda/envs/tensorflow</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Conda create -p /ssd/yuxiong/.conda/envs/tensorflow python=3.6</span><br><span class="line"><span class="comment">#激活</span></span><br><span class="line">Source activate /ssd/yuxiong/.conda/envs/tensorflow</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>2 conda install 软件的时候指定下载目录而不是下载到home目录下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#设置环境变量</span></span><br><span class="line">``` bash</span><br><span class="line">Export CONDA_PKGS_DIRS=/ssd/yuxiong/conda/pags/</span><br></pre></td></tr></table></figure></p>
@@ -667,6 +667,11 @@
 <p>这样安装之后可能会有一些路径问题，如<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Import bumpy as np</span><br></pre></td></tr></table></figure></p>
 <p>报错： cannot import name ‘_mklinit’ from ‘numpy’<br>这是路径的问题，解决方法是配置环境所在的路径<br>打开～/.profile,键入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="string">"/ssd/yuxiong/.conda/envs/tensorflow/bin"</span>:<span class="variable">$PATH</span></span><br><span class="line">iexport PATH=<span class="string">"/ssd/yuxiong/.conda/envs/tensorflow/lib/python3.6/site-packages"</span>:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure></p>
 <p>退出， source ～/.profile重新激活环境，进入即可</p>
+<ul>
+<li><strong>多版本cuda与cudnn安装</strong><br>如果你的tensorflow需要的版本是1.12.0,需要的cuda版本是9.0，但是机器上已经安装了cuda 10，这时候，只需要在<br>你的conda环境中，安装cudatoolkit和cudnn就可以了：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Conda install cudatoolkit=9.0</span><br><span class="line">Conda install cudnn=7.1.2</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>之后就可以直接import tensorflow as tf</p>
 
       
     </div>
@@ -867,6 +872,9 @@
 </li>
 </ul>
 <p>tensorflow随机种子设置：tf.set_random_seed(seed)</p>
+<ul>
+<li><strong>tensoflow一次奇怪的bug记录：libdevice.compute_30.10.bd not found</strong><br>当使用instanceNorm或者囤cated_normal_initializer()初始化的时候出现了报错。<br>解决方案：<br>找到该文件，并将它复制到你的程序运行目录下，但是只可以解决instancNorm的问题，无法解决truncated_normal_initializer的问题，<br>该文件啃可能的的位置：1 conda环境lib目录下例如： /home/yaxiong/anaconda3/envs/tensorflow/lib<br>2 cuda目录下：/usr/local/</li>
+</ul>
 
       
     </div>
