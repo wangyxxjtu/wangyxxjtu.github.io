@@ -672,6 +672,12 @@
 </li>
 </ul>
 <p>之后就可以直接import tensorflow as tf</p>
+<ul>
+<li><strong>linux系统中常用的配置文件与路径</strong><br>1, <em>配置文件：.bashrc .profile .bash_profile 的区别</em><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.bashrc: 打开新的终端的时候回执行该文件中的命令和配置</span><br><span class="line">.bash_profile:登陆机器的时候执行，且只执行一次</span><br><span class="line">.profile: 该文件和.login,一起起到了bash_profile的作用</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>上述文件在用户目录和根目录下/etc都有，分别对当前用户和所有用户起作用，如果想理机起作用，只需source ～/.profile</p>
+<p>2, <em>三个路径：PATH， LD_LIBRARY_PATH和LIBRARY_PATH</em><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PATH:可执行文件存放目录</span><br><span class="line">LIBRARY_PATH：程序编译期间查找动态链接库时，查找共享库的路径</span><br><span class="line">LD_LIBRARY_PATH：程序的加载运行期间查找动态链接库时，除了系统默认路径之外的其他路径</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
