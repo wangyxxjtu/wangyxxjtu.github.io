@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="1 在当前文件夹及其子文件夹下查找文件 1find . -type f -name *vocab*   上述的命令在当前文件夹及其子文件夹下查找包含vocab的文件find 后面可以加目录，不写默认为当前目录type换成d为查找目录   2 关于SCP命令 使用方式为：1scp local_file_dir usename@ip_address:remote_dir   第一个参数为本地的文件">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-12T11:42:22.729Z">
+<meta property="og:updated_time" content="2019-09-13T06:02:26.370Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="bash_command.md">
 <meta name="twitter:description" content="1 在当前文件夹及其子文件夹下查找文件 1find . -type f -name *vocab*   上述的命令在当前文件夹及其子文件夹下查找包含vocab的文件find 后面可以加目录，不写默认为当前目录type换成d为查找目录   2 关于SCP命令 使用方式为：1scp local_file_dir usename@ip_address:remote_dir   第一个参数为本地的文件">
@@ -234,7 +234,10 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install numpy --upgrade</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>nvidia-smi not found, 但是程序可以使用gpu </strong><br>路径未配置好,安装的驱动在/usr/local/nvidia下，配置path变量</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Export PATH=/usr/<span class="built_in">local</span>/nvidia/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Export PATH=/usr/<span class="built_in">local</span>/nvidia/bin:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>利用zmail发送电子邮件</strong><br>环境需要package：email， smtplib和zmail均可通过pip install 安装，其中email和smtplib可能是python自带的（注意执行程序的目录下不要email.py 文件，否则导入email回出错）<br>准备需要：打开发送邮箱的pop3/smtp服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import zmail</span><br><span class="line"><span class="comment">#发送带附件的邮件</span></span><br><span class="line">def send_zmail(path):</span><br><span class="line">  <span class="comment">#path is the attachment path</span></span><br><span class="line">  mail_content = &#123;<span class="string">'subject'</span>:<span class="string">'a subject string'</span>,</span><br><span class="line">                 <span class="string">'content_text'</span>: <span class="string">'a content string'</span>,</span><br><span class="line">                  <span class="string">'attachments'</span>:path&#125;</span><br><span class="line">  server = zmail.server(<span class="string">'senderxxx@qq.com'</span>, <span class="string">'授权码'</span>)<span class="comment">#这里的授权吗不是邮箱密码，而是打开发送邮箱pop3/SMTP服务时给的授权码,小号授权码是：rtztpbqrnyqmcjjd</span></span><br><span class="line">  server.seed_mail([<span class="string">'targetxxx@qq.com'</span>], mail_content)</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
