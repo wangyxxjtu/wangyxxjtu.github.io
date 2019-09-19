@@ -889,7 +889,12 @@
 <li><p><strong>tensoflow一次奇怪的bug记录：libdevice.compute_30.10.bd not found</strong><br>当使用instanceNorm或者囤cated_normal_initializer()初始化的时候出现了报错。<br>解决方案：<br>找到该文件，并将它复制到你的程序运行目录下，但是只可以解决instancNorm的问题，无法解决truncated_normal_initializer的问题，<br>该文件啃可能的的位置：1 conda环境lib目录下例如： /home/yaxiong/anaconda3/envs/tensorflow/lib<br>2 cuda目录下：/usr/local/cuda8/</p>
 </li>
 <li><p><strong>tensorflow将tfrecords load进入内存中</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dataset = tf.data.TFRecordDataset(files=[your_data_path])</span><br><span class="line">dataset = dataset.cache()</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dataset = tf.data.TFRecordDataset(files=[your_data_path])</span><br><span class="line">dataset = dataset.cache()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>tensorflow error： Loaded runtime CuDNN library: 7.1.4 but source was compiled with: 7.2.1.</strong><br>如果你没有操作过cudnn相关的目录和路径，该错误很有可能是tensorflow版本的问题，例如1.12.0和1.14.0，尝试将版本降级看看</p>
+</li>
+<li><p><strong>pytorch下载预训练参数输入：URL error </strong><br>可能是因为python版本原因，python2.7有这个错误，解决办法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Import torchvision.models as models</span><br><span class="line">From torch vision.models.resnet import model_urls</span><br><span class="line"></span><br><span class="line">model_urls[<span class="string">'resnet152'</span>] = model_urls[<span class="string">'resnet152'</span>].replace(<span class="string">'https://'</span>, <span class="string">'http://'</span>)</span><br><span class="line">Resnet152 = models.renset152(pertrained=True)</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
