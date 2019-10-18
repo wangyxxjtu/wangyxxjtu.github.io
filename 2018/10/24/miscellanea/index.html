@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="this file record some miscellanea informationmyblog localtion: https://wangyxxjtu.github.io/ tencent log in the workstationfirst connect the serverthen input ssh order: ssh webdev@10.165.28.73passward">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-22T05:23:48.125Z">
+<meta property="og:updated_time" content="2019-09-27T11:28:14.073Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="miscellanea">
 <meta name="twitter:description" content="this file record some miscellanea informationmyblog localtion: https://wangyxxjtu.github.io/ tencent log in the workstationfirst connect the serverthen input ssh order: ssh webdev@10.165.28.73passward">
@@ -304,7 +304,7 @@
 </ul>
 <p>2 conda install 软件的时候指定下载目录而不是下载到home目录下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#设置环境变量</span></span><br><span class="line">``` bash</span><br><span class="line">Export CONDA_PKGS_DIRS=/ssd/yuxiong/conda/pags/</span><br></pre></td></tr></table></figure></p>
 <p>后边安装可能会出现设定为文件夹访问权限问题，解决办法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Sudo chown 1002:1002 /ssd/yuxiong/conda/pkgs</span><br></pre></td></tr></table></figure></p>
-<p>这样安装之后可能会有一些路径问题，如<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Import bumpy as np</span><br></pre></td></tr></table></figure></p>
+<p>这样安装之后可能会有一些路径问题，如<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Import numpy as np</span><br></pre></td></tr></table></figure></p>
 <p>报错： cannot import name ‘_mklinit’ from ‘numpy’<br>这是路径的问题，解决方法是配置环境所在的路径<br>打开～/.profile,键入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="string">"/ssd/yuxiong/.conda/envs/tensorflow/bin"</span>:<span class="variable">$PATH</span></span><br><span class="line">iexport PATH=<span class="string">"/ssd/yuxiong/.conda/envs/tensorflow/lib/python3.6/site-packages"</span>:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure></p>
 <p>退出， source ～/.profile重新激活环境，进入即可</p>
 <ul>
