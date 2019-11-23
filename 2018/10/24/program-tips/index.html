@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="this file record some program errors and corresponding solution  error: python read the chinese file, open(filepath,encoding=’UTF-8’), however, there are still errors occuring: “UnicodeDecodeError: ‘g">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-11-02T04:50:42.255Z">
+<meta property="og:updated_time" content="2019-11-23T05:59:01.570Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="program_tips">
 <meta name="twitter:description" content="this file record some program errors and corresponding solution  error: python read the chinese file, open(filepath,encoding=’UTF-8’), however, there are still errors occuring: “UnicodeDecodeError: ‘g">
@@ -242,6 +242,9 @@
 </li>
 <li><p><strong> 使用fire库进行命令行解析</strong><br>安装：pip install fire<br>使用实例</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import fire</span><br><span class="line"></span><br><span class="line">def print_fun(path):</span><br><span class="line">    <span class="built_in">print</span>(path)</span><br><span class="line"></span><br><span class="line">def add_fun(a,b):</span><br><span class="line">    <span class="built_in">return</span> a+b</span><br><span class="line"></span><br><span class="line"><span class="comment">#默认将所有的函数都进行了打包</span></span><br><span class="line">fire.Fire()</span><br><span class="line"></span><br><span class="line"><span class="comment">#---------------------------------</span></span><br><span class="line">在命令行中运行时需要指定使用哪个函数：</span><br><span class="line">python test.py print_fun --path  <span class="string">'a path string'</span><span class="comment">#也可以不要参数--path</span></span><br><span class="line">或者 python test.py add_fun --a 2 --b 3 <span class="comment">#同样的也可以不要参数--a and --b 值按照顺序分配</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#------------------------------</span></span><br><span class="line">也可以在py文件中指定打包哪个函数</span><br><span class="line">fire.Fire(print_fun)</span><br><span class="line"><span class="comment">#则在命令行中不需要传递函数参数</span></span><br><span class="line">python test.py --path <span class="string">'a path string'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>python setup.py install/make install错误：gcc: error: pycocotools/_mask.c: No such file </strong><br>缺少cython遇pycocotools包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install cython</span><br><span class="line">pip. Install pycocotools</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
