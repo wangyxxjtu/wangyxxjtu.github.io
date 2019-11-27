@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="this file record some program errors and corresponding solution  error: python read the chinese file, open(filepath,encoding=’UTF-8’), however, there are still errors occuring: “UnicodeDecodeError: ‘g">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-11-23T05:59:01.570Z">
+<meta property="og:updated_time" content="2019-11-27T10:31:59.690Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="program_tips">
 <meta name="twitter:description" content="this file record some program errors and corresponding solution  error: python read the chinese file, open(filepath,encoding=’UTF-8’), however, there are still errors occuring: “UnicodeDecodeError: ‘g">
@@ -246,7 +246,16 @@
 <li><p><strong>python setup.py install/make install错误：gcc: error: pycocotools/_mask.c: No such file </strong><br>缺少cython遇pycocotools包</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install cython</span><br><span class="line">pip. Install pycocotools</span><br></pre></td></tr></table></figure>
 </li>
+<li><p><strong>python序列化模快json与pickle </strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#两种都是对象在前，文件在后</span></span><br><span class="line">json.dump(object, open(<span class="string">'files.json'</span>, <span class="string">'w'</span>))</span><br><span class="line">pickle.dump(object, open(<span class="string">'files.pkl'</span>, <span class="string">'wb'</span>))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>git同步本地与github远端仓库</strong></p>
+</li>
+<li>本地与远程github链接配置请参见：<a href="https://www.cnblogs.com/sdcs/p/8270029.html" target="_blank" rel="noopener">https://www.cnblogs.com/sdcs/p/8270029.html</a></li>
+<li>同步的步骤<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1, mkdir git_test <span class="comment">#创建文件夹，进入该文件夹</span></span><br><span class="line">2，git init <span class="comment">#文件夹初始化为可供管理的仓库，之后就可以创建文件</span></span><br><span class="line">3，touch test.txt <span class="comment">#创建一个文件</span></span><br><span class="line">4, git add test.txt/. <span class="comment">#将test.txt文件/所有文件添加到本地仓库</span></span><br><span class="line">5, git commit -m <span class="string">'this is a test file'</span> <span class="comment">#提交改动，并增加注释</span></span><br><span class="line">6, git remote add origin git@github.com:wangyxxjtu/JHR.git <span class="comment">#与github的仓库建立连接</span></span><br><span class="line">7, git push （-u） origin (+)master <span class="comment">#推送 -u 当连接的仓库JHR.Git为空时才使用， 否则不会使用，+表示强制推送</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
+<p>特别注意，如果当前仓库不包含所有想要同步的远端仓库的文件，会报错：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">! [rejected]        master -&gt; master (fetch first)</span><br><span class="line">hint: Updates were rejected because the remote contains work that you <span class="keyword">do</span></span><br><span class="line">hint: not have locally. This is usually caused by another repository pushing</span><br><span class="line">hint: to the same ref. You may want to first integrate the remote changes</span><br><span class="line"></span><br><span class="line"><span class="comment">#解决方案是：想将两个仓库合并到本地</span></span><br><span class="line">Git pull --rebase origin master</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
