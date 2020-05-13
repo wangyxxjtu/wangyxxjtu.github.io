@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="1 在当前文件夹及其子文件夹下查找文件 1find . -type f -name *vocab*   上述的命令在当前文件夹及其子文件夹下查找包含vocab的文件find 后面可以加目录，不写默认为当前目录type换成d为查找目录   2 关于SCP命令 使用方式为：1scp local_file_dir usename@ip_address:remote_dir   第一个参数为本地的文件">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-01-21T09:10:08.142Z">
+<meta property="og:updated_time" content="2020-04-13T01:09:17.704Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="bash_command.md">
 <meta name="twitter:description" content="1 在当前文件夹及其子文件夹下查找文件 1find . -type f -name *vocab*   上述的命令在当前文件夹及其子文件夹下查找包含vocab的文件find 后面可以加目录，不写默认为当前目录type换成d为查找目录   2 关于SCP命令 使用方式为：1scp local_file_dir usename@ip_address:remote_dir   第一个参数为本地的文件">
@@ -255,6 +255,9 @@
 </li>
 </ul>
 <p>2, 使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">1)配置vim</span><br><span class="line">打开～/.vimrc键入</span><br><span class="line">Set tags=tags;</span><br><span class="line">Set autochdir</span><br><span class="line"></span><br><span class="line">2)使用在需要使用使用ctags的文件夹下，首先使用ctags -R .生成tags文件，之后进入vim</span><br><span class="line">即可使用，常用快捷键</span><br><span class="line">Ctrl + ] 找到光标出变量/函数定义的地方</span><br><span class="line">Ctrl + T 回到跳转之前的地方</span><br><span class="line">Ctrl + O 退回原来的地方</span><br><span class="line">[I 全局查找光标出的变量，全局指在当前文件夹中的所有文件爱你中国呢查找</span><br><span class="line">[i 局部查找变量，当前文件中查找</span><br><span class="line">]i 类似上条命令，从光标出向下开始查找</span><br><span class="line">[&#123; / [( 转到匹配的上一个中括号/圆括号</span><br><span class="line">[&#125; / [) 转到匹配的下一个中括号/圆括号</span><br><span class="line">&#123;/&#125; 转到上/下一个空行</span><br><span class="line">u 更新taglist，用于更改了代码之后更新</span><br><span class="line">[[ 跳到前一个文件</span><br><span class="line">]] 跳到后一个文件</span><br><span class="line">*/<span class="comment"># 转到光标出单词下一次/上一次出现的地方</span></span><br><span class="line">gd 查找光标出的局部变量</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><strong>命令行中查看图片尺寸信息的命令</strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#第一种是用file命令</span></span><br><span class="line">file im.png</span><br><span class="line"><span class="comment">#第二种是安装imagemagic</span></span><br><span class="line">Sudo apt-get install imagemagic</span><br><span class="line">identify im.jpg <span class="comment">#使用identify查看信息</span></span><br></pre></td></tr></table></figure></li>
+</ul>
 
       
     </div>
