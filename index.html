@@ -91,7 +91,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/23/program_notes/" data-id="ck0alj4z20002kqr8hevhugeh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/23/program_notes/" data-id="ckbjamo8p000319r8hyg6xgrg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -186,7 +186,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/20/shell-prog/" data-id="ck0alj4z40003kqr8iemcq9o4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/20/shell-prog/" data-id="ckbjamo8n000219r8rv1fcd25" class="article-share-link">Share</a>
       
       
     </footer>
@@ -394,7 +394,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/18/bash-command/" data-id="ck0alj4zl0005kqr8xriv5abh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/18/bash-command/" data-id="ckbjamo92000419r8v4q46t01" class="article-share-link">Share</a>
       
       
     </footer>
@@ -439,7 +439,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/19/hello-world/" data-id="ck0alj4z00001kqr88q7b045x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/19/hello-world/" data-id="ckbjamo81000019r8mt2y7yxs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -729,13 +729,17 @@
 </ul>
 <p>解决方案2:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#step1: add following command in ~/.bashrc</span></span><br><span class="line"><span class="built_in">export</span> TMUX_TMPDIR=~/.tmux/tmp</span><br><span class="line"></span><br><span class="line"><span class="comment">#step2:create folder &amp; change to write mode</span></span><br><span class="line">mkdir -p ~/.tmux/tmp</span><br><span class="line">Chmod 777 -R ~/.tmux/tmp</span><br><span class="line"></span><br><span class="line"><span class="comment">#step3: source/reload the bashrc file</span></span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br><span class="line"></span><br><span class="line"><span class="comment">#step4: re-run the tmux, and it would be work normally</span></span><br><span class="line">tmux</span><br></pre></td></tr></table></figure></p>
 <ul>
-<li><strong>ubuntu更新显卡驱动</strong><br>Ubuntu 16.04, CUDA 10.2, NVIDA<br>Reference: <a href="https://askubuntu.com/questions/1077061/how-do-i-install-nvidia-and-cuda-drivers-into-ubuntu" target="_blank" rel="noopener">https://askubuntu.com/questions/1077061/how-do-i-install-nvidia-and-cuda-drivers-into-ubuntu</a> (the second answer)<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">step 1: sudo rm /etc/apt/sources.list.d/cuda*</span><br><span class="line">sudo apt remove nvidia-cuda-toolkit</span><br><span class="line"></span><br><span class="line">step 2: sudo apt remove nvidia-*</span><br><span class="line"></span><br><span class="line">step 3: sudo apt update</span><br><span class="line"></span><br><span class="line">step 4: sudo apt-key adv --fetch-keys  http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub</span><br><span class="line"></span><br><span class="line">step 5: sudo bash -c <span class="string">'echo "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64 /" &gt; /etc/apt/sources.list.d/cuda.list'</span></span><br><span class="line"></span><br><span class="line">step 6: sudo apt update</span><br><span class="line"></span><br><span class="line">step7: sudo apt install cuda-10-2 <span class="comment">#此步骤更新cuda和对应的driver</span></span><br></pre></td></tr></table></figure></li>
+<li><p><strong>ubuntu更新显卡驱动</strong><br>Ubuntu 16.04, CUDA 10.2, NVIDA<br>Reference: <a href="https://askubuntu.com/questions/1077061/how-do-i-install-nvidia-and-cuda-drivers-into-ubuntu" target="_blank" rel="noopener">https://askubuntu.com/questions/1077061/how-do-i-install-nvidia-and-cuda-drivers-into-ubuntu</a> (the second answer)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">step 1: sudo rm /etc/apt/sources.list.d/cuda*</span><br><span class="line">sudo apt remove nvidia-cuda-toolkit</span><br><span class="line"></span><br><span class="line">step 2: sudo apt remove nvidia-*</span><br><span class="line"></span><br><span class="line">step 3: sudo apt update</span><br><span class="line"></span><br><span class="line">step 4: sudo apt-key adv --fetch-keys  http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub</span><br><span class="line"></span><br><span class="line">step 5: sudo bash -c <span class="string">'echo "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64 /" &gt; /etc/apt/sources.list.d/cuda.list'</span></span><br><span class="line"></span><br><span class="line">step 6: sudo apt update</span><br><span class="line"></span><br><span class="line">step7: sudo apt install cuda-10-2 <span class="comment">#此步骤更新cuda和对应的driver</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Submitted to arXiv </strong><br>1, Journal(reference: begin{item} in main.tex)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">step 1: <span class="keyword">in</span> overleaf, choose the submit --&gt; arxiv-&gt;download the zip file (would auto deal with some dir problems)</span><br><span class="line">step 2: <span class="keyword">in</span> main.tex, <span class="keyword">if</span> you use the hyperref like <span class="string">'\usepackage&#123;options ... &#125;[hyperref]'</span> change to</span><br><span class="line">\usepackage&#123;hyperref&#125;</span><br><span class="line">\hypersetup&#123;colorlinks, allcolors=black&#125; </span><br><span class="line">step 3: build a new file named ref.bbl and cut the content from \begin&#123;thebibliography&#125;[1] to \end&#123;thebibliograph&#125; , ie, all references</span><br><span class="line">step 4: delete the content mentioned <span class="keyword">in</span> step3 and add the following contents before its original place:</span><br><span class="line">\nocite&#123;*&#125;</span><br><span class="line">\input&#123;ref.bbl&#125;</span><br><span class="line">step 5: notice the dir problems, <span class="keyword">if</span> your project under name <span class="string">'tcyb'</span>, the image path, <span class="string">'tcyb/first_show.png'</span> should change to <span class="string">'first_show.png'</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/24/miscellanea/" data-id="ck0alj4zo0006kqr87h14vp0f" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/24/miscellanea/" data-id="ckbjamo99000519r8bopkbspu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -776,7 +780,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/24/hexo-command/" data-id="ck0alj4yu0000kqr8gzl8207j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/24/hexo-command/" data-id="ckbjamo85000119r8p2mwpyds" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1026,7 +1030,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/24/program-tips/" data-id="ck0alj4ze0004kqr8e631r8b5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/24/program-tips/" data-id="ckbjamo9b000619r83pl9ppt2" class="article-share-link">Share</a>
       
       
     </footer>
