@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="this file record some program errors and corresponding solution  error: python read the chinese file, open(filepath,encoding=’UTF-8’), however, there are still errors occuring: “UnicodeDecodeError: ‘g">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-06-26T08:28:42.189Z">
+<meta property="og:updated_time" content="2020-06-27T11:40:18.725Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="program_tips">
 <meta name="twitter:description" content="this file record some program errors and corresponding solution  error: python read the chinese file, open(filepath,encoding=’UTF-8’), however, there are still errors occuring: “UnicodeDecodeError: ‘g">
@@ -307,7 +307,11 @@
 <p>2, 启动tensorboard（tensorboard –logdir=./logs）报错： Tensorboard: ValueError: Duplicate plugins for name projector<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">A, 下载该文件</span><br><span class="line">wget https://raw.githubusercontent.com/tensorflow/tensorboard/master/tensorboard/tools/diagnose_tensorboard.py </span><br><span class="line"></span><br><span class="line">B, 运行</span><br><span class="line">python diagnose_tensorboard.py</span><br><span class="line"></span><br><span class="line">C, 遵照指示进行fix，一般得卸载一些东西并安装tensorflow</span><br></pre></td></tr></table></figure></p>
 <p>3 将服务器上写的log文件在本地显示<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">A, 在服务器上启动tensorboard</span><br><span class="line">tensorboard --logdir=./logs --port 6006</span><br><span class="line"></span><br><span class="line">B, 在本地进行端口映射(可以加f选项后台运行)</span><br><span class="line">ssh -NL localhost:6006:localhost:6006 user@remote</span><br><span class="line"></span><br><span class="line">N: no remote commands</span><br><span class="line">L machine1:portA : machine2:portB: forward machine2:portB to machine1:portA</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看哪些进程在使用指定端口:</span></span><br><span class="line">lsof  -ti:6006</span><br><span class="line"></span><br><span class="line"><span class="comment">#释放制定端口</span></span><br><span class="line">lsof -ti:6006 | xargs <span class="built_in">kill</span> 9</span><br></pre></td></tr></table></figure></p>
 <ul>
-<li><strong>linux查看资源占用</strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#磁盘占用</span></span><br><span class="line">sudo iotop</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>linux查看资源占用</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#磁盘占用</span></span><br><span class="line">sudo iotop</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>tensorflow/keras对一个tensor安装行进行shuffle</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 不能直接tf.random.shuffle(tensor) shape: bs x height x width x channel</span></span><br><span class="line">Out = tf.gather(tensor, tf.random.shuffle(tf.range(bs)))</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
