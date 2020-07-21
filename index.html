@@ -738,7 +738,11 @@
 <li><p><strong>查找当前目录下是否包含某个字符串的所有文件</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -rn <span class="string">"nibabel"</span> * <span class="comment">#递归查找所有目录下包含“nibabel“的文件</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p><strong> matplotlib读入的图片与opencv读入的图片</strong><br>Opencv读取的图片的通道0-2对应的BGR颜色<br>而matplotlib读入的图片是RGB颜色</p>
+<li><p><strong> matplotlib， opencv， Pillow, script.misc.imread读入的图片</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Opencv读取的图片的通道0-2对应的BGR颜色, 取值范围0-255， 数据类型numpy.ndarry</span><br><span class="line">matplotlib.image.imread读入的图片是RGB颜色,取之范围0-255， 数据类型numpy.ndarray</span><br><span class="line">scripy.misc.imread/scipy.ndimage.imread 读取的图像为RGB，范围0-255， 数据类型numpy.ndarray</span><br><span class="line">Pillow(PIL)读取图像对象，供后续处理</span><br><span class="line">skimage.io.imread通道顺序RGB，取值范围0-255， 数据类型numpy.ndarray</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>opencv保存与读取四通道图片</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import cv2</span><br><span class="line"><span class="comment">#save the image, img是一个四通道ndarray</span></span><br><span class="line">Cv2.imwrite(<span class="string">'test.png'</span>, img, [int(cv2.IMWRITE_PNG_COMPRESSION), 9])</span><br><span class="line"><span class="comment">#读取图片</span></span><br><span class="line">Im = cv2.imread(path, cv2.IMREAD_UNCHANGED)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>tensorboard启动时error：Not a TBLoader or TBPlugin subclass: …</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#解决方案</span></span><br><span class="line">Pip uninstall tensorboard-plugin-wit==1.6.0.post3</span><br></pre></td></tr></table></figure></li>
