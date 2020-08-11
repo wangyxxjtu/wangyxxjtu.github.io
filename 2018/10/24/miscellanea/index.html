@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="this file record some miscellanea informationmyblog localtion: https://wangyxxjtu.github.io/ tencent log in the workstationfirst connect the serverthen input ssh order: ssh webdev@10.165.28.73passward">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-07-21T05:04:13.888Z">
+<meta property="og:updated_time" content="2020-08-11T12:09:35.722Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="miscellanea">
 <meta name="twitter:description" content="this file record some miscellanea informationmyblog localtion: https://wangyxxjtu.github.io/ tencent log in the workstationfirst connect the serverthen input ssh order: ssh webdev@10.165.28.73passward">
@@ -360,7 +360,10 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import cv2</span><br><span class="line"><span class="comment">#save the image, img是一个四通道ndarray</span></span><br><span class="line">Cv2.imwrite(<span class="string">'test.png'</span>, img, [int(cv2.IMWRITE_PNG_COMPRESSION), 9])</span><br><span class="line"><span class="comment">#读取图片</span></span><br><span class="line">Im = cv2.imread(path, cv2.IMREAD_UNCHANGED)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>tensorboard启动时error：Not a TBLoader or TBPlugin subclass: …</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#解决方案</span></span><br><span class="line">Pip uninstall tensorboard-plugin-wit==1.6.0.post3</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#解决方案</span></span><br><span class="line">Pip uninstall tensorboard-plugin-wit==1.6.0.post3</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>segmentation可视化的包</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">From skimage.segmentation import mark_boundaries, find_boundaries</span><br><span class="line"><span class="comment">#mark_boundaries:根据区域的label画出边界</span></span><br><span class="line"><span class="comment">#image_array:image data 0-255</span></span><br><span class="line"><span class="comment">#sp_arry: label data int</span></span><br><span class="line">Out = mark_boundaries(image_array, sp_array)</span><br><span class="line">Cv2.imwrite(<span class="string">'vis.png'</span>, out*255)</span><br><span class="line"></span><br><span class="line"><span class="comment">#find_boundaries:根据label显示出边界（1表示边界）</span></span><br><span class="line"><span class="comment">#output the boundary pixel</span></span><br><span class="line">Out = find_boundaries(sp_arr)</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
