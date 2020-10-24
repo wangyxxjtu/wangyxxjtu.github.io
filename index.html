@@ -1099,7 +1099,10 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Import torch.nn.Functional as F</span><br><span class="line">Input = [0.2,0.3,0.4,0.2]</span><br><span class="line">Target = [0.3,0.4,0.1,0.2]</span><br><span class="line"></span><br><span class="line">Kl = F.kl_div(input.log(), target， reduction=<span class="string">'mean'</span>) <span class="comment">#input需要log，而不是直接传进去</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># reduction='mean'，所有元素求平均，等价于：</span></span><br><span class="line">kl = torch.mean(input * torch.log(input / (target+1e-10) + 1e-10))</span><br><span class="line"><span class="comment">#reduction='batchmean',bachsize求平均，为KL散度的严格定义，等价于</span></span><br><span class="line">Kl = torch.sum(input * torch.log(input / (target+1e-10) + 1e-10)) / batch_size</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>指数函数exp导致训练过程出现NaN</strong><br>指数函数torch.exp作用的数字过大/小，都会造成数值的溢出，从而导致训练的过程中出现NaN，<br>解决方法是进行数值裁剪</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">torch.exp(value).clamp(min=1e-8,max=1e15),</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">torch.exp(value).clamp(min=1e-8,max=1e15),</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>保存uint16的图片</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from PIL import Image</span><br><span class="line">Im = Image.fromarray(data.astype(np.uint16)).save(<span class="string">'16bit.png'</span>)</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
