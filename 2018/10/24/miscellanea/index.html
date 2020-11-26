@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="this file record some miscellanea informationmyblog localtion: https://wangyxxjtu.github.io/ tencent log in the workstationfirst connect the serverthen input ssh order: ssh webdev@10.165.28.73passward">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-10-23T09:51:53.712Z">
+<meta property="og:updated_time" content="2020-11-26T23:51:02.508Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="miscellanea">
 <meta name="twitter:description" content="this file record some miscellanea informationmyblog localtion: https://wangyxxjtu.github.io/ tencent log in the workstationfirst connect the serverthen input ssh order: ssh webdev@10.165.28.73passward">
@@ -383,7 +383,12 @@
 <p>3 如果python3安装不成功试试python2.7</p>
 <p>4, 安装一些自定义的层<br>安装一些项目自定义的层时，找这样的目录，该目录下有CMakeList.txt和src/caffe文件夹（或者类似名称），在该目录下创建build，并进行cmake .. ==&gt; make -j 命令进行安装</p>
 <ul>
-<li><strong> pip/apt搜索包</strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在库中搜索安装包</span></span><br><span class="line">Pip/apt search opencv-python</span><br><span class="line"></span><br><span class="line"><span class="comment">#列出已经安装的包</span></span><br><span class="line">Pip list | grep opencv-python</span><br><span class="line"></span><br><span class="line"><span class="comment">#显示已经安装包的信息, 包括版本号,安装位置</span></span><br><span class="line">pip/apt show  opencv-python</span><br></pre></td></tr></table></figure></li>
+<li><p><strong> pip/apt搜索包</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在库中搜索安装包</span></span><br><span class="line">Pip/apt search opencv-python</span><br><span class="line"></span><br><span class="line"><span class="comment">#列出已经安装的包</span></span><br><span class="line">Pip list | grep opencv-python</span><br><span class="line"></span><br><span class="line"><span class="comment">#显示已经安装包的信息, 包括版本号,安装位置</span></span><br><span class="line">pip/apt show  opencv-python</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>python递归遍历文件夹得到所有文件的绝对路径</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Import os</span><br><span class="line"></span><br><span class="line">all_pathes = []</span><br><span class="line"><span class="keyword">for</span> root, <span class="built_in">dirs</span>, files <span class="keyword">in</span> os.walk(os.path.abspath(split)):</span><br><span class="line">   <span class="keyword">for</span> file <span class="keyword">in</span> files:</span><br><span class="line">   all_pathes.append(os.path.join(root, file))</span><br><span class="line"></span><br><span class="line">all_pathes =[item <span class="keyword">for</span> item <span class="keyword">in</span> all_pathes <span class="keyword">if</span> <span class="string">'.jpg'</span> <span class="keyword">in</span> item]</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 
       
