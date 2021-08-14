@@ -65,7 +65,7 @@
     <article id="post-program_notes" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/04/23/program_notes/" class="article-date">
-  <time datetime="2019-04-23T01:22:37.000Z" itemprop="datePublished">2019-04-23</time>
+  <time datetime="2019-04-23T03:22:37.000Z" itemprop="datePublished">2019-04-23</time>
 </a>
     
   </div>
@@ -91,7 +91,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/23/program_notes/" data-id="ckbjamo8p000319r8hyg6xgrg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/23/program_notes/" data-id="cksbl3slv0002a9oyh2sfmonw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -104,7 +104,7 @@
     <article id="post-shell-prog" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/04/20/shell-prog/" class="article-date">
-  <time datetime="2019-04-19T21:39:20.000Z" itemprop="datePublished">2019-04-20</time>
+  <time datetime="2019-04-19T23:39:20.000Z" itemprop="datePublished">2019-04-20</time>
 </a>
     
   </div>
@@ -186,7 +186,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/20/shell-prog/" data-id="ckbjamo8n000219r8rv1fcd25" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/20/shell-prog/" data-id="cksbl3slx0003a9oymaj5dwim" class="article-share-link">Share</a>
       
       
     </footer>
@@ -401,7 +401,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/18/bash-command/" data-id="ckbjamo92000419r8v4q46t01" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/18/bash-command/" data-id="cksbl3smc0004a9oy3bh09oor" class="article-share-link">Share</a>
       
       
     </footer>
@@ -446,7 +446,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/19/hello-world/" data-id="ckbjamo81000019r8mt2y7yxs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/19/hello-world/" data-id="cksbl3slo0000a9oy9q372ykn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -787,7 +787,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">1，安装Vundle</span><br><span class="line">mkdir -p ~/.vim/bundle</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim</span><br><span class="line"></span><br><span class="line">2，打开.vimrc添加如下内容</span><br><span class="line"><span class="built_in">set</span> nocompatible       <span class="string">" be iMproved, required</span></span><br><span class="line"><span class="string">filetype off         "</span> required</span><br><span class="line"> </span><br><span class="line"><span class="string">" set the runtime path to include Vundle and initialize</span></span><br><span class="line"><span class="string">set rtp+=~/.vim/bundle/Vundle.vim</span></span><br><span class="line"><span class="string">call vundle#begin()</span></span><br><span class="line"><span class="string">"</span> <span class="built_in">let</span> Vundle manage Vundle, required</span><br><span class="line">Plugin <span class="string">'VundleVim/Vundle.vim'</span></span><br><span class="line"> </span><br><span class="line"><span class="string">" Keep Plugin commands between vundle#begin/end.</span></span><br><span class="line"><span class="string">"</span> 安装其它插件</span><br><span class="line"> </span><br><span class="line"><span class="string">" All of your Plugins must be added before the following line</span></span><br><span class="line"><span class="string">call vundle#end()      "</span> required</span><br><span class="line">filetype plugin indent on  <span class="string">" required</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">3，安装NERDTree</span></span><br><span class="line"><span class="string">git clone https://github.com/preservim/nerdtree.git ~/.vim/bundle/nerdtree</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">4，打开vimrc在call vundle#end()语句之前添加内容：</span></span><br><span class="line"><span class="string">Plugin 'preservim/nerdtree'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Vim打开文件，命令行下输入：NERDTree即可使用</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong> Vim配置自动代码补全YouCompleteMe（docker环境中）</strong><br>假设已经安装好了Vundle</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">1，首先安装依赖库</span><br><span class="line">sudo apt-get install build-essential cmake python-dev python3-dev</span><br><span class="line"></span><br><span class="line">2，安装YouCompeleteMe，首先下载源码到指定的目录</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/Valloric/YouCompleteMe.git ~/.vim/bundle/YCM</span><br><span class="line"></span><br><span class="line">3，获取相关依赖</span><br><span class="line">git submodule update --init --recursive</span><br><span class="line"></span><br><span class="line">4，安装YCM的语言依赖</span><br><span class="line">apt install mono-complete golang nodejs default-jdk npm</span><br><span class="line"></span><br><span class="line">5，编译,在YCM目录下，运行,all表示为所有的语言安装依赖</span><br><span class="line">./install.py --all</span><br><span class="line"></span><br><span class="line">6，配置vimrc文件，打开vimrc文件</span><br><span class="line">在call vundle<span class="comment">#begin() 和call vundle#end()之间插入：</span></span><br><span class="line">Plugin <span class="string">'Valloric/YCM'</span></span><br><span class="line"></span><br><span class="line">7，在filetype plugin indent on  <span class="string">" required之后输入</span></span><br><span class="line"><span class="string">let g:ycm_global_ycm_extra_conf = '/root/.vim/bundle/YCM/.ycm_extra_conf.py'</span></span><br><span class="line"><span class="string">"</span>开启基于tag的补全，可以在这之后添加需要的标签路径</span><br><span class="line"><span class="string">"let g:ycm_collect_identifiers_from_tags_files = 1</span></span><br><span class="line"><span class="string">"</span><span class="string">"开启语义补全</span></span><br><span class="line"><span class="string">let g:ycm_seed_identifiers_with_syntax = 1</span></span><br><span class="line"><span class="string">"</span>在接受补全后不分裂出一个窗口显示接受的项</span><br><span class="line"><span class="string">"set completeopt-=preview</span></span><br><span class="line"><span class="string">"</span><span class="string">"不显示开启vim时检查ycm_extra_conf文件的信息</span></span><br><span class="line"><span class="string">let g:ycm_confirm_extra_conf=0</span></span><br><span class="line"><span class="string">"</span>每次重新生成匹配项，禁止缓存匹配项</span><br><span class="line"><span class="string">"let g:ycm_cache_omnifunc=0</span></span><br><span class="line"><span class="string">"</span><span class="string">"在注释中也可以补全</span></span><br><span class="line"><span class="string">let g:ycm_complete_in_comments=1</span></span><br><span class="line"><span class="string">"</span>输入第一个字符就开始补全</span><br><span class="line"><span class="string">"let g:ycm_min_num_of_chars_for_completion=1</span></span><br><span class="line"><span class="string">"</span><span class="string">"不查询ultisnips提供的代码模板补全，如果需要，设置成1即可</span></span><br><span class="line"><span class="string">let g:ycm_use_ultisnips_completer=0</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">"</span><span class="string">"下面代码加上感觉最开的打开文件的时候，补全会变慢，不知道具体的功能</span></span><br><span class="line"><span class="string">let g:ycm_show_diagnostics_ui = 0</span></span><br><span class="line"><span class="string">let g:ycm_server_log_level = 'info'</span></span><br><span class="line"><span class="string">let g:ycm_min_num_identifier_candidate_chars = 2</span></span><br><span class="line"><span class="string">let g:ycm_collect_identifiers_from_comments_and_strings = 1</span></span><br><span class="line"><span class="string">let g:ycm_complete_in_strings=1</span></span><br><span class="line"><span class="string">let g:ycm_key_invoke_completion = '&lt;c-z&gt;'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">noremap &lt;c-z&gt; &lt;NOP&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">"</span><span class="string">"导致变慢的原因是这个命令</span></span><br><span class="line"><span class="string">let g:ycm_semantic_triggers =  &#123;</span></span><br><span class="line"><span class="string">                \ 'c,cpp,python,java,go,erlang,perl': ['re!\w&#123;2&#125;'],</span></span><br><span class="line"><span class="string">            \ 'cs,lua,javascript': ['re!\w&#123;2&#125;'],</span></span><br><span class="line"><span class="string">            \ &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">##====== 可能遇到的错误==================</span></span><br><span class="line"><span class="string">1，执行以上步骤之后，打开vim，报错</span></span><br><span class="line"><span class="string">The ycmd server SHUT DOWN (restart with :YcmRestartServer). Unexpected exit code 1. Type ':YcmToggleLogs ycmd_57346_stderr_2hrqlh43.log' to check the logs.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">解决方案：</span></span><br><span class="line"><span class="string">a 在YCM目录下，输入</span></span><br><span class="line"><span class="string">cat PYTHON_USED_DURING_BUILDING</span></span><br><span class="line"><span class="string">b,上述命令输出一个python路径，为YouCompleteMe所执行的python环境，假设输出为/usr/bin/python3</span></span><br><span class="line"><span class="string">/usr/bin/python3 install.py</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">2，提示vim版本过低，不支持YouCompleteMe</span></span><br><span class="line"><span class="string">YouCompleteMe unavailable: requires Vim 8.1.2269+.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">解决方案：安装最新版的vim，依次执行</span></span><br><span class="line"><span class="string">add-apt-repository ppa:jonathonf/vim </span></span><br><span class="line"><span class="string">apt update </span></span><br><span class="line"><span class="string">apt install vim </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">3，提示gcc版本过低： Your C++ compiler does NOT fully support C++17</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">解决方案：升级gcc，依次执行</span></span><br><span class="line"><span class="string">apt-get install g++-8</span></span><br><span class="line"><span class="string">update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 700 --slave /usr/bin/g++ g++ /usr/bin/g++-7</span></span><br><span class="line"><span class="string">update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">1，首先安装依赖库</span><br><span class="line">sudo apt-get install build-essential cmake python-dev python3-dev</span><br><span class="line"></span><br><span class="line">2，安装YouCompeleteMe，首先下载源码到指定的目录</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/Valloric/YouCompleteMe.git ~/.vim/bundle/YCM</span><br><span class="line"></span><br><span class="line">3，获取相关依赖</span><br><span class="line">git submodule update --init --recursive</span><br><span class="line"></span><br><span class="line">4，安装YCM的语言依赖</span><br><span class="line">apt install mono-complete golang nodejs default-jdk npm</span><br><span class="line"></span><br><span class="line">5，编译,在YCM目录下，运行,all表示为所有的语言安装依赖</span><br><span class="line">./install.py --all</span><br><span class="line">如果安装总是不成功，尝试：</span><br><span class="line">/usr/bin/python3 install.py</span><br><span class="line"></span><br><span class="line">6，配置vimrc文件，打开vimrc文件</span><br><span class="line">在call vundle<span class="comment">#begin() 和call vundle#end()之间插入：</span></span><br><span class="line">Plugin <span class="string">'Valloric/YCM'</span></span><br><span class="line"></span><br><span class="line">7，在filetype plugin indent on  <span class="string">""</span> required之后输入</span><br><span class="line"><span class="built_in">let</span> g:ycm_global_ycm_extra_conf = <span class="string">'/root/.vim/bundle/YCM/.ycm_extra_conf.py'</span></span><br><span class="line"><span class="string">""</span>开启基于tag的补全，可以在这之后添加需要的标签路径</span><br><span class="line"><span class="string">""</span><span class="built_in">let</span> g:ycm_collect_identifiers_from_tags_files = 1</span><br><span class="line"><span class="string">""</span>开启语义补全</span><br><span class="line"><span class="built_in">let</span> g:ycm_seed_identifiers_with_syntax = 1</span><br><span class="line"><span class="string">""</span>在接受补全后不分裂出一个窗口显示接受的项</span><br><span class="line"><span class="string">""</span><span class="built_in">set</span> completeopt-=preview</span><br><span class="line"><span class="string">""</span>不显示开启vim时检查ycm_extra_conf文件的信息</span><br><span class="line"><span class="built_in">let</span> g:ycm_confirm_extra_conf=0</span><br><span class="line"><span class="string">""</span>每次重新生成匹配项，禁止缓存匹配项</span><br><span class="line"><span class="string">""</span><span class="built_in">let</span> g:ycm_cache_omnifunc=0</span><br><span class="line"><span class="string">""</span>在注释中也可以补全</span><br><span class="line"><span class="built_in">let</span> g:ycm_complete_in_comments=1</span><br><span class="line"><span class="string">""</span>输入第一个字符就开始补全</span><br><span class="line"><span class="string">""</span><span class="built_in">let</span> g:ycm_min_num_of_chars_for_completion=1</span><br><span class="line"><span class="string">""</span>不查询ultisnips提供的代码模板补全，如果需要，设置成1即可</span><br><span class="line"><span class="built_in">let</span> g:ycm_use_ultisnips_completer=0</span><br><span class="line"></span><br><span class="line"><span class="string">""</span>下面代码加上感觉最开的打开文件的时候，补全会变慢，不知道具体的功能</span><br><span class="line"><span class="built_in">let</span> g:ycm_show_diagnostics_ui = 0</span><br><span class="line"><span class="built_in">let</span> g:ycm_server_log_level = <span class="string">'info'</span></span><br><span class="line"><span class="built_in">let</span> g:ycm_min_num_identifier_candidate_chars = 2</span><br><span class="line"><span class="built_in">let</span> g:ycm_collect_identifiers_from_comments_and_strings = 1</span><br><span class="line"><span class="built_in">let</span> g:ycm_complete_in_strings=1</span><br><span class="line"><span class="built_in">let</span> g:ycm_key_invoke_completion = <span class="string">'&lt;c-z&gt;'</span></span><br><span class="line"></span><br><span class="line">noremap &lt;c-z&gt; &lt;NOP&gt;</span><br><span class="line"></span><br><span class="line"><span class="string">""</span>导致变慢的原因是这个命令</span><br><span class="line"><span class="built_in">let</span> g:ycm_semantic_triggers =  &#123;</span><br><span class="line">                \ <span class="string">'c,cpp,python,java,go,erlang,perl'</span>: [<span class="string">'re!\w&#123;2&#125;'</span>],</span><br><span class="line">            \ <span class="string">'cs,lua,javascript'</span>: [<span class="string">'re!\w&#123;2&#125;'</span>],</span><br><span class="line">            \ &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">##====== 可能遇到的错误==================</span></span><br><span class="line">1，执行以上步骤之后，打开vim，报错</span><br><span class="line">The ycmd server SHUT DOWN (restart with :YcmRestartServer). Unexpected <span class="built_in">exit</span> code 1. Type <span class="string">':YcmToggleLogs ycmd_57346_stderr_2hrqlh43.log'</span> to check the logs.</span><br><span class="line"></span><br><span class="line">解决方案：</span><br><span class="line">a 在YCM目录下，输入</span><br><span class="line">cat PYTHON_USED_DURING_BUILDING</span><br><span class="line">b,上述命令输出一个python路径，为YouCompleteMe所执行的python环境，假设输出为/usr/bin/python3</span><br><span class="line">/usr/bin/python3 install.py</span><br><span class="line"></span><br><span class="line">2，提示vim版本过低，不支持YouCompleteMe</span><br><span class="line">YouCompleteMe unavailable: requires Vim 8.1.2269+.</span><br><span class="line"></span><br><span class="line">解决方案：安装最新版的vim，依次执行</span><br><span class="line">add-apt-repository ppa:jonathonf/vim </span><br><span class="line">apt update </span><br><span class="line">apt install vim </span><br><span class="line"></span><br><span class="line">3，提示gcc版本过低： Your C++ compiler does NOT fully support C++17</span><br><span class="line"></span><br><span class="line">解决方案：升级gcc，依次执行</span><br><span class="line">apt-get install g++-8</span><br><span class="line">update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 700 --slave /usr/bin/g++ g++ /usr/bin/g++-7</span><br><span class="line">update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>vim配置AsyncRun命令 </strong><br>Async可以在不退出vim的状态下，执行各种bash命令<br>1 安装： 假设已经安装好了Vundle了</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.vim/bundle</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/skywind3000/asyncrun.vim asyncrun</span><br></pre></td></tr></table></figure>
@@ -813,7 +813,48 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/24/miscellanea/" data-id="ckbjamo99000519r8bopkbspu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/24/miscellanea/" data-id="cksbl3smj0006a9oyomsvk27v" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hexo-command" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/24/hexo-command/" class="article-date">
+  <time datetime="2018-10-24T01:16:01.000Z" itemprop="datePublished">2018-10-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/24/hexo-command/">hexo-command</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="this-file-record-some-usually-used-hexo-command"><a href="#this-file-record-some-usually-used-hexo-command" class="headerlink" title="this file record some usually used hexo command"></a>this file record some usually used hexo command</h1><p><strong>all of the comands run in git bash under blog directory: D:/blog</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new name</span><br></pre></td></tr></table></figure></p>
+<p>create a new blog file <em>name.md</em> in your blog dir, for example (D:/blog/source/_post/)</p>
+<pre><code class="bash">hexo g -d
+</code></pre>
+<p>update the blog, the web page will update by a few minutes, therefore, you should wait for a while to see the changes</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/24/hexo-command/" data-id="cksbl3slt0001a9oygfa605oc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1122,48 +1163,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/24/program-tips/" data-id="ckbjamo9b000619r83pl9ppt2" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hexo-command" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/24/hexo-command/" class="article-date">
-  <time datetime="2018-10-23T22:16:01.000Z" itemprop="datePublished">2018-10-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/24/hexo-command/">hexo-command</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="this-file-record-some-usually-used-hexo-command"><a href="#this-file-record-some-usually-used-hexo-command" class="headerlink" title="this file record some usually used hexo command"></a>this file record some usually used hexo command</h1><p><strong>all of the comands run in git bash under blog directory: D:/blog</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new name</span><br></pre></td></tr></table></figure></p>
-<p>create a new blog file <em>name.md</em> in your blog dir, for example (D:/blog/source/_post/)</p>
-<pre><code class="bash">hexo g -d
-</code></pre>
-<p>update the blog, the web page will update by a few minutes, therefore, you should wait for a while to see the changes</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/24/hexo-command/" data-id="ckbjamo85000119r8p2mwpyds" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/24/program-tips/" data-id="cksbl3smh0005a9oy7ua1ov9s" class="article-share-link">Share</a>
       
       
     </footer>
