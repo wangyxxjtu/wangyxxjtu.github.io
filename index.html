@@ -402,6 +402,9 @@
 </li>
 </ul>
 <p>普通用户针对目录不能建立硬连接，可以建立软连接，原因是目录硬连接可能陷入死循环</p>
+<ul>
+<li><strong> 强制删除坏包 </strong><br>问题描述: apt remove xxx 出现 dependency problems prevent removal of xxx<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dpkg --force-all -P package_name</span><br><span class="line">#例如</span><br><span class="line">dpkg --force-all -P Nvidia-driver-470</span><br></pre></td></tr></table></figure></li>
+</ul>
 
       
     </div>
