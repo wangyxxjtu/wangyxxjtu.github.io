@@ -28,7 +28,7 @@
 <meta property="og:description" content="** 1 在当前文件夹及其子文件夹下查找文件 ** 1find . -type f -name *vocab*  上述的命令在当前文件夹及其子文件夹下查找包含vocab的文件find 后面可以加目录，不写默认为当前目录type换成d为查找目录  ** 2 关于SCP命令 **使用方式为： 1scp local_file_dir usename@ip_address:remote_dir 第一个参">
 <meta property="og:locale">
 <meta property="article:published_time" content="2019-04-18T02:37:33.000Z">
-<meta property="article:modified_time" content="2021-10-14T11:55:02.026Z">
+<meta property="article:modified_time" content="2021-11-01T11:08:08.556Z">
 <meta property="article:author" content="Yaxiong Wang">
 <meta property="article:tag" content="计算机, 软件工程">
 <meta name="twitter:card" content="summary">
@@ -215,7 +215,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-10-14 19:55:02" itemprop="dateModified" datetime="2021-10-14T19:55:02+08:00">2021-10-14</time>
+                <time title="Modified: 2021-11-01 19:08:08" itemprop="dateModified" datetime="2021-11-01T19:08:08+08:00">2021-11-01</time>
               </span>
 
           
@@ -254,7 +254,7 @@
 <p>其中n表示按照数值大小进行排序，r表示反序即由大到小排序</p>
 </li>
 <li><p>** 5 xargs 命令相关 **<br>Xargs是给命令传递参数的过滤器，也是组合多个命令的一个工具<br>1）当你尝试删除太多文件，会得到一个错读：Argument list too long，可以使用xargs命令解决：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Find ./ -naem <span class="string">&#x27;*.log&#x27;</span> -print0 | xargs -0 rm -f</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Find ./ -name<span class="string">&#x27;*.log&#x27;</span> -print0 | xargs -0 rm -f</span><br></pre></td></tr></table></figure>
 <p>这里print0是有必要的，xargs以空白字符来分割记录（空格，tag，换行等），如果文件名为‘file 1.log’，那么。xargs会解析为两个文件file 和1.log，但是这两个文件不存在，就会报错。print0在find命令打印文件名之后输出一个NULL，然后-0 告诉xargs用NULL来分割就不会报错了.<br>2)查找所有的jpg文件并且压缩</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Find / -name *.jpg -<span class="built_in">type</span> f -<span class="built_in">print</span> | xargs tar -cvzf images.tar.gz</span><br></pre></td></tr></table></figure>
 
@@ -264,7 +264,12 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls . *.jpg | xargs -n1 -I &#123;&#125; cp &#123;&#125; /external-hard_driver/dir</span><br></pre></td></tr></table></figure>
 
 <p>4)查找文件中是否按右某个单词test-word</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Find . -<span class="built_in">type</span> f -<span class="built_in">print</span> | xargs grep <span class="string">&#x27;test-word&#x27;</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Find . -<span class="built_in">type</span> f -<span class="built_in">print</span> | xargs grep <span class="string">&#x27;test-word&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>xargs命令格式<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Some command | xargs -item command</span><br><span class="line">常用参数</span><br><span class="line">-n 后面紧跟数字，表示执行command的时候，所用的前面穿过来的argument个数</span><br><span class="line">-p 每次 执行询问用户</span><br><span class="line">-I/I 将xargs的名称一行行赋值给&#123;&#125;，</span><br><span class="line">-d 后面紧跟一个字符，表示自定的分割符来区分不同的参数（前面传过来的），xargs默认分割符为回车，</span><br><span class="line">-t 表示执行前先打印</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
 <li><p>**tmux 常用命令 **<br>1）新建与杀死会话</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tmux new -s session</span><br><span class="line">Thus kill-session -t 会话名称</span><br></pre></td></tr></table></figure>
 <p>2）会话相关操作</p>
@@ -325,7 +330,7 @@ cp resnet50-19c8e357.pth /root/.torch/models<br>/media/tensorflow/1412C30112C2E7
 <ul>
 <li><strong>docker运行设置设置共享内存</strong><br>如果共享内存不足，将会出现错误：dataloder worker exited unexpectedly，或者调小batchsize，或者重新进入docker使用上面的参数<br>解决办法只能是重新新建容器，因为默认容器的共享内存是64M<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvidia-docker run -itd --shm-size 64G --name wangyx -v /data1/wangyx:/home/wangyx -p 3316:22 pytorch/pytorch(本地镜像：docker images查看本地存在哪些镜像)</span><br></pre></td></tr></table></figure></li>
 </ul>
-<p>八卡服务器连接：<br>ssh <a href="mailto:&#x77;&#97;&#x6e;&#x67;&#x79;&#x78;&#64;&#49;&#57;&#50;&#x2e;&#x31;&#54;&#56;&#46;&#x31;&#48;&#48;&#46;&#50;&#50;">&#x77;&#97;&#x6e;&#x67;&#x79;&#x78;&#64;&#49;&#57;&#50;&#x2e;&#x31;&#54;&#56;&#46;&#x31;&#48;&#48;&#46;&#50;&#50;</a><br>psw:gansu320</p>
+<p>八卡服务器连接：<br>ssh <a href="mailto:&#x77;&#x61;&#110;&#103;&#x79;&#x78;&#x40;&#49;&#57;&#x32;&#46;&#x31;&#54;&#x38;&#x2e;&#49;&#48;&#x30;&#x2e;&#x32;&#50;">&#x77;&#x61;&#110;&#103;&#x79;&#x78;&#x40;&#49;&#57;&#x32;&#46;&#x31;&#54;&#x38;&#x2e;&#49;&#48;&#x30;&#x2e;&#x32;&#50;</a><br>psw:gansu320</p>
 <p>容器名称：wangyx<br>启动：nvidia-docker start -i wangyx<br>退出：ctrl+P+Q 退出但不结束 ctrl+D / exit 退出并关闭</p>
 <ul>
 <li><p>**zip命令解压文件到指定文件 **</p>
@@ -400,6 +405,8 @@ cp resnet50-19c8e357.pth /root/.torch/models<br>/media/tensorflow/1412C30112C2E7
 </li>
 <li><p>** 强制删除坏包 **<br>问题描述: apt remove xxx 出现 dependency problems prevent removal of xxx</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dpkg --force-all -P package_name</span><br><span class="line">#例如</span><br><span class="line">dpkg --force-all -P Nvidia-driver-470</span><br></pre></td></tr></table></figure></li>
+<li><p>**at 命令定时执行任务（只执行一次） **</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#使用的格式为:</span></span><br><span class="line">at 参数 时间</span><br><span class="line"><span class="comment">#常用参数</span> -v 显示任务将被执行的时间</span><br><span class="line">-c 打印任务内容</span><br><span class="line"></span><br><span class="line"><span class="comment">#一个简单例子</span></span><br><span class="line">at 5pm+3days <span class="comment">#三天之后的下午五点（没有pm/am，默认为24小时制）</span></span><br><span class="line">/bin/ls  <span class="comment">#执行ls命令</span></span><br><span class="line">&lt;EOT&gt; <span class="comment">#ctrl +d自动出现&lt;EOT&gt;, 完成任务定制</span></span><br><span class="line"></span><br><span class="line">at now+40 minutes <span class="comment">#40分钟之后，关键字有minutes, hours, days, weeks</span></span><br><span class="line">at 4:00 <span class="comment">#今天四点执行，如果过了明天执行</span></span><br><span class="line">At 16:00 tomorrow <span class="comment">#明天下午四点执行, today也是个关键字</span></span><br><span class="line">at 15:00 2019-03-11 <span class="comment">#具体日期具体时间，绝对日期</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#查询已经定时的任务</span></span><br><span class="line">atq <span class="comment">#查询，会给出id号</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#删除已经提交的定时任务</span></span><br><span class="line">atrm id</span><br><span class="line"></span><br><span class="line"><span class="comment">#查询任务内容</span></span><br><span class="line">at -c id</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
 </ul>
 
     </div>
