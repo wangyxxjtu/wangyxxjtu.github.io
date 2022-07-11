@@ -724,7 +724,7 @@ cp resnet50-19c8e357.pth /root/.torch/models<br>/media/tensorflow/1412C30112C2E7
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-03-31 09:59:23" itemprop="dateModified" datetime="2022-03-31T09:59:23+08:00">2022-03-31</time>
+                <time title="Modified: 2022-07-07 14:33:24" itemprop="dateModified" datetime="2022-07-07T14:33:24+08:00">2022-07-07</time>
               </span>
 
           
@@ -739,7 +739,7 @@ cp resnet50-19c8e357.pth /root/.torch/models<br>/media/tensorflow/1412C30112C2E7
 
       
           <h3 id="this-file-record-some-miscellanea-information"><a href="#this-file-record-some-miscellanea-information" class="headerlink" title="this file record some miscellanea information"></a>this file record some miscellanea information</h3><p><strong>myblog localtion</strong>: <a target="_blank" rel="noopener" href="https://wangyxxjtu.github.io/">https://wangyxxjtu.github.io/</a></p>
-<p><strong>tencent log in the workstation</strong><br>first connect the server<br>then input ssh order: ssh <a href="mailto:&#119;&#101;&#98;&#100;&#x65;&#118;&#64;&#49;&#48;&#x2e;&#x31;&#54;&#x35;&#46;&#x32;&#x38;&#x2e;&#55;&#51;">&#119;&#101;&#98;&#100;&#x65;&#118;&#64;&#49;&#48;&#x2e;&#x31;&#54;&#x35;&#46;&#x32;&#x38;&#x2e;&#55;&#51;</a><br>passward:5qn5$japO</p>
+<p><strong>tencent log in the workstation</strong><br>first connect the server<br>then input ssh order: ssh <a href="mailto:&#x77;&#x65;&#x62;&#100;&#x65;&#x76;&#x40;&#49;&#48;&#x2e;&#49;&#54;&#x35;&#x2e;&#x32;&#56;&#x2e;&#x37;&#x33;">&#x77;&#x65;&#x62;&#100;&#x65;&#x76;&#x40;&#49;&#48;&#x2e;&#49;&#54;&#x35;&#x2e;&#x32;&#56;&#x2e;&#x37;&#x33;</a><br>passward:5qn5$japO</p>
 <p>** anaconda deletes environment**:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">conda remove -n tensorflow --all</span><br><span class="line">Conda activate name<span class="comment">#激活环境</span></span><br><span class="line">conda deactivate <span class="comment">#退出环境</span></span><br><span class="line">conda info --env <span class="comment">#列出所有的环境</span></span><br></pre></td></tr></table></figure>
 
@@ -1044,8 +1044,17 @@ cp resnet50-19c8e357.pth /root/.torch/models<br>/media/tensorflow/1412C30112C2E7
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Sudo apt-get install nvidia-container-runtime</span><br></pre></td></tr></table></figure></li>
 <li><p>**启动jupyter nootbook on mac **</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 -m IPython notebook filename.ipynb</span><br></pre></td></tr></table></figure></li>
+<li><p>** pip 更改源<br>1 查看当前源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip config list</span><br></pre></td></tr></table></figure></li>
 </ul>
+<p>2 临时指定源,使用-i url</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple gevent <span class="comment">#指定清华源下载安装</span></span><br></pre></td></tr></table></figure>
 
+<p>3 永久使用某个源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/.pip</span><br><span class="line">vim ~/.pip/pip.conf</span><br><span class="line"><span class="comment">#在pip.conf中写入</span></span><br><span class="line">[global]</span><br><span class="line">index-url = http://pypi.douban.com/simple</span><br><span class="line">[install]</span><br><span class="line">trusted-host=pypi.douban.com <span class="comment">#http-com中间内容，将永久使用豆瓣源</span></span><br></pre></td></tr></table></figure>
+
+<p>4 常用国内的源包括</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">清华大学 ：https://pypi.tuna.tsinghua.edu.cn/simple/</span><br><span class="line">阿里云：http://mirrors.aliyun.com/pypi/simple/</span><br><span class="line">中国科学技术大学 ：http://pypi.mirrors.ustc.edu.cn/simple/</span><br><span class="line">华中科技大学：http://pypi.hustunique.com/</span><br><span class="line">豆瓣源：http://pypi.douban.com/simple/</span><br><span class="line">腾讯源：http://mirrors.cloud.tencent.com/pypi/simple</span><br><span class="line">华为镜像源：https://repo.huaweicloud.com/repository/pypi/simple/</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -1158,7 +1167,7 @@ cp resnet50-19c8e357.pth /root/.torch/models<br>/media/tensorflow/1412C30112C2E7
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-07-06 20:16:58" itemprop="dateModified" datetime="2022-07-06T20:16:58+08:00">2022-07-06</time>
+                <time title="Modified: 2022-07-10 14:57:38" itemprop="dateModified" datetime="2022-07-10T14:57:38+08:00">2022-07-10</time>
               </span>
 
           
@@ -1443,6 +1452,14 @@ by this way, we can change the class number, while retained the pretrained param
 
 <p>3, error: 0:1(10): error: GLSL 3.30 is not supported</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> MESA_GL_VERSION_OVERRIDE=3.3 <span class="comment">#</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>** Pytorch使用albumentations实现数据增强<br>参照： <a target="_blank" rel="noopener" href="https://blog.csdn.net/zhangyuexiang123/article/details/107705311">https://blog.csdn.net/zhangyuexiang123/article/details/107705311</a></p>
+</li>
+<li><p>** SPConv 1.0版本安装<br>参照： <a target="_blank" rel="noopener" href="https://github.com/traveller59/spconv/issues/58">https://github.com/traveller59/spconv/issues/58</a></p>
+</li>
+</ul>
+
       
     </div>
 
