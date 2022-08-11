@@ -724,7 +724,7 @@ cp resnet50-19c8e357.pth /root/.torch/models<br>/media/tensorflow/1412C30112C2E7
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-08-11 15:07:37" itemprop="dateModified" datetime="2022-08-11T15:07:37+08:00">2022-08-11</time>
+                <time title="Modified: 2022-08-11 23:08:40" itemprop="dateModified" datetime="2022-08-11T23:08:40+08:00">2022-08-11</time>
               </span>
 
           
@@ -739,7 +739,7 @@ cp resnet50-19c8e357.pth /root/.torch/models<br>/media/tensorflow/1412C30112C2E7
 
       
           <h3 id="this-file-record-some-miscellanea-information"><a href="#this-file-record-some-miscellanea-information" class="headerlink" title="this file record some miscellanea information"></a>this file record some miscellanea information</h3><p><strong>myblog localtion</strong>: <a target="_blank" rel="noopener" href="https://wangyxxjtu.github.io/">https://wangyxxjtu.github.io/</a></p>
-<p><strong>tencent log in the workstation</strong><br>first connect the server<br>then input ssh order: ssh <a href="mailto:&#x77;&#101;&#98;&#x64;&#x65;&#118;&#64;&#x31;&#48;&#46;&#49;&#x36;&#53;&#46;&#50;&#x38;&#x2e;&#x37;&#x33;">&#x77;&#101;&#98;&#x64;&#x65;&#118;&#64;&#x31;&#48;&#46;&#49;&#x36;&#53;&#46;&#50;&#x38;&#x2e;&#x37;&#x33;</a><br>passward:5qn5$japO</p>
+<p><strong>tencent log in the workstation</strong><br>first connect the server<br>then input ssh order: ssh <a href="mailto:&#x77;&#101;&#98;&#100;&#101;&#x76;&#x40;&#x31;&#x30;&#x2e;&#x31;&#x36;&#53;&#x2e;&#50;&#56;&#x2e;&#55;&#x33;">&#x77;&#101;&#98;&#100;&#101;&#x76;&#x40;&#x31;&#x30;&#x2e;&#x31;&#x36;&#53;&#x2e;&#50;&#56;&#x2e;&#55;&#x33;</a><br>passward:5qn5$japO</p>
 <p>** anaconda deletes environment**:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">conda remove -n tensorflow --all</span><br><span class="line">Conda activate name<span class="comment">#激活环境</span></span><br><span class="line">conda deactivate <span class="comment">#退出环境</span></span><br><span class="line">conda info --env <span class="comment">#列出所有的环境</span></span><br></pre></td></tr></table></figure>
 
@@ -1063,6 +1063,19 @@ cp resnet50-19c8e357.pth /root/.torch/models<br>/media/tensorflow/1412C30112C2E7
 </li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1, 在服务器上安装showdata</span></span><br><span class="line">pip install showdata</span><br><span class="line"></span><br><span class="line"><span class="comment">#2, 在想查看的文件夹下，运行</span></span><br><span class="line">showdata server -p 8000 -h 0.0.0.0</span><br><span class="line"> </span><br><span class="line">该命令会打印对应的查看地址，一般是服务器的IP和设置的端口号</span><br><span class="line"></span><br><span class="line"><span class="comment">#3，在本地浏览器输入上面的 地址即可查看</span></span><br><span class="line">更多流程可以查看 https://github.com/silverbulletmdc/showdata</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>** 训练可视化工具wandb **<br>1 安装<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install wandb</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>2 去官网注册账号： <a target="_blank" rel="noopener" href="https://wandb.ai/home">https://wandb.ai/home</a></p>
+<p>3 服务器终端：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wandb login </span><br></pre></td></tr></table></figure>
+<p>让输入author id，随便输入，根据提示网站，拿到id，粘贴到命令行</p>
+<p>4，在程序中使用<br>简单使用实例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import wandb</span><br><span class="line"></span><br><span class="line"># 1. Start a new run</span><br><span class="line">wandb.init(project=&quot;gpt-3&quot;)</span><br><span class="line"></span><br><span class="line"># 2. Save model inputs and hyperparameters</span><br><span class="line">config = wandb.config</span><br><span class="line">config.dropout = 0.01</span><br><span class="line"></span><br><span class="line"># 3. Log gradients and model parameters</span><br><span class="line">wandb.watch(model)</span><br><span class="line">for batch_idx, (data, target) in enumerate(train_loader):</span><br><span class="line">    ...</span><br><span class="line">    if batch_idx % args.log_interval == 0:</span><br><span class="line">        # 4. Log metrics to visualize performance</span><br><span class="line">        wandb.log(&#123;&quot;loss&quot;: loss&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>4 更详细版本简介</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">https://zhuanlan.zhihu.com/p/266337608</span><br><span class="line">https://zhuanlan.zhihu.com/p/342300434</span><br><span class="line">https://github.com/wandb/wandb</span><br></pre></td></tr></table></figure>
       
     </div>
 
