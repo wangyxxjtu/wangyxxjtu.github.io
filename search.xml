@@ -289,7 +289,7 @@ cp resnet50-19c8e357.pth /root/.torch/models<br>/media/tensorflow/1412C30112C2E7
     <title>miscellanea</title>
     <url>/2018/10/24/miscellanea/</url>
     <content><![CDATA[<h3 id="this-file-record-some-miscellanea-information"><a href="#this-file-record-some-miscellanea-information" class="headerlink" title="this file record some miscellanea information"></a>this file record some miscellanea information</h3><p><strong>myblog localtion</strong>: <a href="https://wangyxxjtu.github.io/">https://wangyxxjtu.github.io/</a></p>
-<p><strong>tencent log in the workstation</strong><br>first connect the server<br>then input ssh order: ssh <a href="mailto:&#x77;&#101;&#98;&#100;&#101;&#x76;&#64;&#49;&#48;&#46;&#49;&#x36;&#53;&#x2e;&#x32;&#x38;&#x2e;&#55;&#x33;">&#x77;&#101;&#98;&#100;&#101;&#x76;&#64;&#49;&#48;&#46;&#49;&#x36;&#53;&#x2e;&#x32;&#x38;&#x2e;&#55;&#x33;</a><br>passward:5qn5$japO</p>
+<p><strong>tencent log in the workstation</strong><br>first connect the server<br>then input ssh order: ssh <a href="mailto:&#x77;&#101;&#98;&#x64;&#x65;&#118;&#64;&#x31;&#48;&#46;&#49;&#x36;&#53;&#46;&#50;&#x38;&#x2e;&#x37;&#x33;">&#x77;&#101;&#98;&#x64;&#x65;&#118;&#64;&#x31;&#48;&#46;&#49;&#x36;&#53;&#46;&#50;&#x38;&#x2e;&#x37;&#x33;</a><br>passward:5qn5$japO</p>
 <p>** anaconda deletes environment**:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda remove -n tensorflow --all</span><br><span class="line">Conda activate name<span class="comment">#激活环境</span></span><br><span class="line">conda deactivate <span class="comment">#退出环境</span></span><br><span class="line">conda info --env <span class="comment">#列出所有的环境</span></span><br></pre></td></tr></table></figure>
 
@@ -612,7 +612,7 @@ cp resnet50-19c8e357.pth /root/.torch/models<br>/media/tensorflow/1412C30112C2E7
 <li><p>** 远程web端查看服务器上的数据 **<br>showdata工具</p>
 </li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#1, 在服务器上安装showdata</span></span><br><span class="line">pip install showdata</span><br><span class="line"></span><br><span class="line"><span class="comment">#2, 在想查看的文件夹下，运行</span></span><br><span class="line">showdata server -p 8000 -h 0.0.0.0</span><br><span class="line"> </span><br><span class="line">该命令会打印对应的查看地址，一般是服务器的IP和设置的端口号</span><br><span class="line"></span><br><span class="line"><span class="comment">#3，在本地浏览器输入上面的 地址即可查看</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#1, 在服务器上安装showdata</span></span><br><span class="line">pip install showdata</span><br><span class="line"></span><br><span class="line"><span class="comment">#2, 在想查看的文件夹下，运行</span></span><br><span class="line">showdata server -p 8000 -h 0.0.0.0</span><br><span class="line"> </span><br><span class="line">该命令会打印对应的查看地址，一般是服务器的IP和设置的端口号</span><br><span class="line"></span><br><span class="line"><span class="comment">#3，在本地浏览器输入上面的 地址即可查看</span></span><br><span class="line">更多流程可以查看 https://github.com/silverbulletmdc/showdata</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>program_tips</title>
