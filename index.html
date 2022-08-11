@@ -404,7 +404,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-11-01 19:08:08" itemprop="dateModified" datetime="2021-11-01T19:08:08+08:00">2021-11-01</time>
+                <time title="Modified: 2022-08-02 09:44:45" itemprop="dateModified" datetime="2022-08-02T09:44:45+08:00">2022-08-02</time>
               </span>
 
           
@@ -425,7 +425,7 @@
 </li>
 <li><p>** 2 关于SCP命令 **<br>使用方式为：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp local_file_dir usename@ip_address:remote_dir</span><br></pre></td></tr></table></figure>
-<p>第一个参数为本地的文件名，第二个参数为 先输入用户名，@止呕输入IP地址或者url，远端的文件名<br>例如从本地mac往UTS机器上船文件</p>
+<p>第一个参数为本地的文件名，第二个参数为 先输入用户名，@之后输入IP地址或者url，远端的文件名<br>例如从本地mac往UTS机器上船文件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Scp vocabulary.json yaxiwang@cluster.eng.uts.edu.au:~/Data/</span><br></pre></td></tr></table></figure>
 <p>如果传输的是文件夹，scp 后面加上-r选项</p>
 </li>
@@ -506,7 +506,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">--max-speed=2 / -s x <span class="comment">#指定最大的下载速度，单位为bite</span></span><br><span class="line">--num-connections=x / -n x <span class="comment">#指定最大的链接线程数为axel</span></span><br><span class="line">--output=x / -o x <span class="comment">#下载下来的文件重新命名为x</span></span><br><span class="line">--search=x / -s=x <span class="comment">#使用文件搜索引擎来找找文件镜像 （不太懂）</span></span><br><span class="line">--no-proxy / -N <span class="comment">#不使用代理服务器下载文件</span></span><br><span class="line">--verbose  <span class="comment">#输出更多的状态信息</span></span><br><span class="line">--quiet -q <span class="comment">#不想标准输出输输出信息</span></span><br><span class="line">--header=x / -H x <span class="comment">#添加HTTP的头域</span></span><br><span class="line">--alternate -a <span class="comment">#显示进度条</span></span><br><span class="line">--user-agent=x / -U x <span class="comment">#指定user agent</span></span><br><span class="line">--<span class="built_in">help</span> -h <span class="comment">#显示一些帮助信息</span></span><br><span class="line">--version / -V <span class="comment">#显示版本信息</span></span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>**wget 下载文件断点续传 **<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -c -t 0 -O new_name.tar.gz http://www.cnscn.org/old_name.tar.gz </span><br></pre></td></tr></table></figure></li>
+<li>** wget 下载文件断点续传 **<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -c -t 0 -O new_name.tar.gz http://www.cnscn.org/old_name.tar.gz </span><br></pre></td></tr></table></figure></li>
 </ul>
 <p> -c 断点续传<br> -t 链接断开重试次数， 0为不限次数<br> -O 重命名文件<br>Wget 命令的其他参数</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">wget [参数列表] [目标软件、网页的网址]</span><br><span class="line"></span><br><span class="line">-V,–version 显示软件版本号然后退出；</span><br><span class="line">-h,–<span class="built_in">help</span>显示软件帮助信息；</span><br><span class="line">-e,–execute=COMMAND 执行一个 “.wgetrc”命令</span><br><span class="line"></span><br><span class="line">-o,–output-file=FILE 将软件输出信息保存到文件；</span><br><span class="line">-a,–append-output=FILE将软件输出信息追加到文件；</span><br><span class="line">-d,–debug显示输出信息；</span><br><span class="line">-q,–quiet 不显示输出信息；</span><br><span class="line">-i,–input-file=FILE 从文件中取得URL；</span><br><span class="line"></span><br><span class="line">-t,–tries=NUMBER 是否下载次数（0表示无穷次）</span><br><span class="line">-O –output-document=FILE下载文件保存为别的文件名</span><br><span class="line">-nc, –no-clobber 不要覆盖已经存在的文件</span><br><span class="line">-N,–timestamping只下载比本地新的文件</span><br><span class="line">-T,–timeout=SECONDS 设置超时时间</span><br><span class="line">-Y,–proxy=on/off 关闭代理</span><br><span class="line"></span><br><span class="line">-nd,–no-directories 不建立目录</span><br><span class="line">-x,–force-directories 强制建立目录</span><br><span class="line"></span><br><span class="line">–http-user=USER设置HTTP用户</span><br><span class="line">–http-passwd=PASS设置HTTP密码</span><br><span class="line">–proxy-user=USER设置代理用户</span><br><span class="line">–proxy-passwd=PASS设置代理密码</span><br><span class="line"></span><br><span class="line">-r,–recursive 下载整个网站、目录（小心使用）</span><br><span class="line">-l,–level=NUMBER 下载层次</span><br><span class="line"></span><br><span class="line">-A,–accept=LIST 可以接受的文件类型</span><br><span class="line">-R,–reject=LIST拒绝接受的文件类型</span><br><span class="line">-D,–domains=LIST可以接受的域名</span><br><span class="line">–exclude-domains=LIST拒绝的域名</span><br><span class="line">-L,–relative 下载关联链接</span><br><span class="line">–follow-ftp 只下载FTP链接</span><br><span class="line">-H,–span-hosts 可以下载外面的主机</span><br><span class="line">-I,–include-directories=LIST允许的目录</span><br><span class="line">-X,–exclude-directories=LIST 拒绝的目录</span><br><span class="line"></span><br><span class="line">原文：https://blog.csdn.net/richardysteven/article/details/4565931 </span><br></pre></td></tr></table></figure>
@@ -519,7 +519,7 @@ cp resnet50-19c8e357.pth /root/.torch/models<br>/media/tensorflow/1412C30112C2E7
 <ul>
 <li><strong>docker运行设置设置共享内存</strong><br>如果共享内存不足，将会出现错误：dataloder worker exited unexpectedly，或者调小batchsize，或者重新进入docker使用上面的参数<br>解决办法只能是重新新建容器，因为默认容器的共享内存是64M<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvidia-docker run -itd --shm-size 64G --name wangyx -v /data1/wangyx:/home/wangyx -p 3316:22 pytorch/pytorch(本地镜像：docker images查看本地存在哪些镜像)</span><br></pre></td></tr></table></figure></li>
 </ul>
-<p>八卡服务器连接：<br>ssh <a href="mailto:&#x77;&#x61;&#110;&#103;&#x79;&#x78;&#x40;&#49;&#57;&#x32;&#46;&#x31;&#54;&#x38;&#x2e;&#49;&#48;&#x30;&#x2e;&#x32;&#50;">&#x77;&#x61;&#110;&#103;&#x79;&#x78;&#x40;&#49;&#57;&#x32;&#46;&#x31;&#54;&#x38;&#x2e;&#49;&#48;&#x30;&#x2e;&#x32;&#50;</a><br>psw:gansu320</p>
+<p>八卡服务器连接：<br>ssh <a href="mailto:&#x77;&#97;&#x6e;&#103;&#121;&#x78;&#x40;&#49;&#57;&#50;&#x2e;&#x31;&#54;&#56;&#46;&#49;&#x30;&#x30;&#x2e;&#50;&#x32;">&#x77;&#97;&#x6e;&#103;&#121;&#x78;&#x40;&#49;&#57;&#50;&#x2e;&#x31;&#54;&#56;&#46;&#49;&#x30;&#x30;&#x2e;&#50;&#x32;</a><br>psw:gansu320</p>
 <p>容器名称：wangyx<br>启动：nvidia-docker start -i wangyx<br>退出：ctrl+P+Q 退出但不结束 ctrl+D / exit 退出并关闭</p>
 <ul>
 <li><p>**zip命令解压文件到指定文件 **</p>
@@ -724,7 +724,7 @@ cp resnet50-19c8e357.pth /root/.torch/models<br>/media/tensorflow/1412C30112C2E7
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-07-07 14:33:24" itemprop="dateModified" datetime="2022-07-07T14:33:24+08:00">2022-07-07</time>
+                <time title="Modified: 2022-08-11 14:22:16" itemprop="dateModified" datetime="2022-08-11T14:22:16+08:00">2022-08-11</time>
               </span>
 
           
@@ -739,7 +739,7 @@ cp resnet50-19c8e357.pth /root/.torch/models<br>/media/tensorflow/1412C30112C2E7
 
       
           <h3 id="this-file-record-some-miscellanea-information"><a href="#this-file-record-some-miscellanea-information" class="headerlink" title="this file record some miscellanea information"></a>this file record some miscellanea information</h3><p><strong>myblog localtion</strong>: <a target="_blank" rel="noopener" href="https://wangyxxjtu.github.io/">https://wangyxxjtu.github.io/</a></p>
-<p><strong>tencent log in the workstation</strong><br>first connect the server<br>then input ssh order: ssh <a href="mailto:&#x77;&#x65;&#x62;&#100;&#x65;&#x76;&#x40;&#49;&#48;&#x2e;&#49;&#54;&#x35;&#x2e;&#x32;&#56;&#x2e;&#x37;&#x33;">&#x77;&#x65;&#x62;&#100;&#x65;&#x76;&#x40;&#49;&#48;&#x2e;&#49;&#54;&#x35;&#x2e;&#x32;&#56;&#x2e;&#x37;&#x33;</a><br>passward:5qn5$japO</p>
+<p><strong>tencent log in the workstation</strong><br>first connect the server<br>then input ssh order: ssh <a href="mailto:&#x77;&#101;&#98;&#100;&#101;&#x76;&#64;&#49;&#48;&#46;&#49;&#x36;&#53;&#x2e;&#x32;&#x38;&#x2e;&#55;&#x33;">&#x77;&#101;&#98;&#100;&#101;&#x76;&#64;&#49;&#48;&#46;&#49;&#x36;&#53;&#x2e;&#x32;&#x38;&#x2e;&#55;&#x33;</a><br>passward:5qn5$japO</p>
 <p>** anaconda deletes environment**:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">conda remove -n tensorflow --all</span><br><span class="line">Conda activate name<span class="comment">#激活环境</span></span><br><span class="line">conda deactivate <span class="comment">#退出环境</span></span><br><span class="line">conda info --env <span class="comment">#列出所有的环境</span></span><br></pre></td></tr></table></figure>
 
@@ -1055,6 +1055,14 @@ cp resnet50-19c8e357.pth /root/.torch/models<br>/media/tensorflow/1412C30112C2E7
 
 <p>4 常用国内的源包括</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">清华大学 ：https://pypi.tuna.tsinghua.edu.cn/simple/</span><br><span class="line">阿里云：http://mirrors.aliyun.com/pypi/simple/</span><br><span class="line">中国科学技术大学 ：http://pypi.mirrors.ustc.edu.cn/simple/</span><br><span class="line">华中科技大学：http://pypi.hustunique.com/</span><br><span class="line">豆瓣源：http://pypi.douban.com/simple/</span><br><span class="line">腾讯源：http://mirrors.cloud.tencent.com/pypi/simple</span><br><span class="line">华为镜像源：https://repo.huaweicloud.com/repository/pypi/simple/</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>** freeglut3 无法安装的问题（apt-get install 不行）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget http://ftp.debian.org/debian/pool/main/f/freeglut/freeglut3_2.8.1-3_amd64.deb</span><br><span class="line">dpkg -i thewebpackage</span><br></pre></td></tr></table></figure></li>
+<li><p>** 远程web端查看服务器上的数据 **<br>showdata工具</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1, 在服务器上安装showdata</span></span><br><span class="line">pip install showdata</span><br><span class="line"></span><br><span class="line"><span class="comment">#2, 在想查看的文件夹下，运行</span></span><br><span class="line">showdata server -p 8000 -h 0.0.0.0</span><br><span class="line"> </span><br><span class="line">该命令会打印对应的查看地址，一般是服务器的IP和设置的端口号</span><br><span class="line"></span><br><span class="line"><span class="comment">#3，在本地浏览器输入上面的 地址即可查看</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -1167,7 +1175,7 @@ cp resnet50-19c8e357.pth /root/.torch/models<br>/media/tensorflow/1412C30112C2E7
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-07-10 14:57:38" itemprop="dateModified" datetime="2022-07-10T14:57:38+08:00">2022-07-10</time>
+                <time title="Modified: 2022-07-12 15:06:34" itemprop="dateModified" datetime="2022-07-12T15:06:34+08:00">2022-07-12</time>
               </span>
 
           
@@ -1458,6 +1466,9 @@ by this way, we can change the class number, while retained the pretrained param
 </li>
 <li><p>** SPConv 1.0版本安装<br>参照： <a target="_blank" rel="noopener" href="https://github.com/traveller59/spconv/issues/58">https://github.com/traveller59/spconv/issues/58</a></p>
 </li>
+</ul>
+<ul>
+<li>** python 展示 obj文件<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import trimesh</span><br><span class="line">mesh = trimmest.load(<span class="string">&#x27;my_obj.pbj&#x27;</span>)</span><br><span class="line">mesh.show()</span><br><span class="line"></span><br><span class="line"><span class="comment">#=====================</span></span><br><span class="line">“鼠标单击拖动”旋转视图</span><br><span class="line">*`ctl鼠标单击拖动`平移视图</span><br><span class="line">*鼠标滚轮放大</span><br><span class="line">*`z`返回基本视图</span><br><span class="line">*`w<span class="string">&#x27;切换线框模式</span></span><br><span class="line"><span class="string">*`c`切换背面剔除</span></span><br><span class="line"><span class="string">*`g`切换XY网格，将Z设置为最低点</span></span><br><span class="line"><span class="string">*`a`可以在三种状态之间切换XYZ-RGB轴标记：关，在世界帧或每帧</span></span><br><span class="line"><span class="string">*`f`在全屏和窗口模式之间切换</span></span><br><span class="line"><span class="string">*`m`最大化窗口</span></span><br><span class="line"><span class="string">*`q`关闭窗口wf</span></span><br><span class="line"><span class="string"></span></span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
