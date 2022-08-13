@@ -404,7 +404,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-08-02 09:44:45" itemprop="dateModified" datetime="2022-08-02T09:44:45+08:00">2022-08-02</time>
+                <time title="Modified: 2022-08-13 15:57:10" itemprop="dateModified" datetime="2022-08-13T15:57:10+08:00">2022-08-13</time>
               </span>
 
           
@@ -519,7 +519,7 @@ cp resnet50-19c8e357.pth /root/.torch/models<br>/media/tensorflow/1412C30112C2E7
 <ul>
 <li><strong>docker运行设置设置共享内存</strong><br>如果共享内存不足，将会出现错误：dataloder worker exited unexpectedly，或者调小batchsize，或者重新进入docker使用上面的参数<br>解决办法只能是重新新建容器，因为默认容器的共享内存是64M<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvidia-docker run -itd --shm-size 64G --name wangyx -v /data1/wangyx:/home/wangyx -p 3316:22 pytorch/pytorch(本地镜像：docker images查看本地存在哪些镜像)</span><br></pre></td></tr></table></figure></li>
 </ul>
-<p>八卡服务器连接：<br>ssh <a href="mailto:&#x77;&#97;&#x6e;&#103;&#121;&#x78;&#x40;&#49;&#57;&#50;&#x2e;&#x31;&#54;&#56;&#46;&#49;&#x30;&#x30;&#x2e;&#50;&#x32;">&#x77;&#97;&#x6e;&#103;&#121;&#x78;&#x40;&#49;&#57;&#50;&#x2e;&#x31;&#54;&#56;&#46;&#49;&#x30;&#x30;&#x2e;&#50;&#x32;</a><br>psw:gansu320</p>
+<p>八卡服务器连接：<br>ssh <a href="mailto:&#x77;&#x61;&#x6e;&#x67;&#x79;&#x78;&#x40;&#x31;&#57;&#x32;&#46;&#49;&#x36;&#x38;&#x2e;&#49;&#48;&#48;&#46;&#x32;&#x32;">&#x77;&#x61;&#x6e;&#x67;&#x79;&#x78;&#x40;&#x31;&#57;&#x32;&#46;&#49;&#x36;&#x38;&#x2e;&#49;&#48;&#48;&#46;&#x32;&#x32;</a><br>psw:gansu320</p>
 <p>容器名称：wangyx<br>启动：nvidia-docker start -i wangyx<br>退出：ctrl+P+Q 退出但不结束 ctrl+D / exit 退出并关闭</p>
 <ul>
 <li><p>**zip命令解压文件到指定文件 **</p>
@@ -589,7 +589,7 @@ cp resnet50-19c8e357.pth /root/.torch/models<br>/media/tensorflow/1412C30112C2E7
 <li><p>**superpixel-benchmark安装指南（docker） **</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">1, 按照项目指引安装glog</span><br><span class="line">可能出现的错误： src/demangle.cc:170:16: error: ISO C++ forbids comparison between pointer and integer [-fpermissive]</span><br><span class="line">解决办法是去对应的行在指针前面加*</span><br><span class="line"></span><br><span class="line">2，安装Gflags（https://blog.csdn.net/weixin_43767344/article/details/103799983）：</span><br><span class="line">git clone https://github.com/gflags/gflags.git</span><br><span class="line"></span><br><span class="line">cd gflags</span><br><span class="line"></span><br><span class="line">mkdir build &amp;&amp; cd build</span><br><span class="line"></span><br><span class="line">cmake … -DBUILD_SHARED_LIBS=ON</span><br><span class="line"></span><br><span class="line">make -j4</span><br><span class="line"></span><br><span class="line">make install</span><br><span class="line"></span><br><span class="line">3，安装opencv，参考https://docs.opencv.org/4.5.2/d7/d9f/tutorial_linux_install.html，（build with opencv_contrib）</span><br><span class="line"></span><br><span class="line">4, 然后make的时候，可能出现的错误： undefined reference to ‘google::FlagRegisterer::FlagRegisterer</span><br><span class="line">解决方案，在对应的sub_dir下，以eval_summary_cli为例，在superpixel-benchamrk/eval_summary_slic/CMakelist.txt中加入：</span><br><span class="line">find_package(gflags REQUIRED)</span><br><span class="line">find_package(Threads)</span><br><span class="line"></span><br><span class="line">target_link_libraries(eval_summary_cli libgflags.a libglog.a $&#123;CMAKE_THREAD_LIBS_INIT&#125;)</span><br><span class="line"></span><br><span class="line">该解决方案只能解决，eval相关的编译，对于core algorithm以及example的编译不起作用，目前对于对于算法模块的编译尚未找到解决方案</span><br><span class="line"></span><br><span class="line">5，退而求其次，只能先编译用于eval的程序，将cmakelist.txt中的涉及算法的行，全都注释掉</span><br><span class="line"></span><br><span class="line">6, 对于其他的错误如CV_BGR2Lab等未发现，为opencv版本问题，搜索即可找到解决方案</span><br><span class="line">可能用到的参考网址：https://github.com/google/glog/issues/52</span><br></pre></td></tr></table></figure></li>
 <li><p>**ln命令与软，硬连接 **<br>一个文件的硬连接相当于多个名称，删除一个不会影响另一个<br>一个文件的软连接相当于快捷方式<br>ln默认是硬连接，命令的使用方式为：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ln 源文件路径 硬连接文件路径 <span class="comment">#建立硬连接</span></span><br><span class="line">ln -s 源文件路径 硬文件路径 <span class="comment">#建立软连接</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#例子，假设安装了g++-7与g++-8, 配置默认的g++通过建立软连接</span></span><br><span class="line">ln -s /usr/bin/g++7 /usr/bin/g++ <span class="comment">#配置默认为g++-7,g++-8同理</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ln 源文件路径 硬连接文件路径 <span class="comment">#建立硬连接</span></span><br><span class="line">ln -s 源文件路径 硬文件路径 <span class="comment">#建立软连接</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#例子，假设安装了g++-7与g++-8, 配置默认的g++通过建立软连接</span></span><br><span class="line">ln -s /usr/bin/g++7 /usr/bin/g++ <span class="comment">#配置默认为g++-7,g++-8同理</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#查看软连接的指向</span></span><br><span class="line">ls -al softlink</span><br></pre></td></tr></table></figure>
 <p>普通用户针对目录不能建立硬连接，可以建立软连接，原因是目录硬连接可能陷入死循环</p>
 </li>
 <li><p>** 强制删除坏包 **<br>问题描述: apt remove xxx 出现 dependency problems prevent removal of xxx</p>
@@ -724,7 +724,7 @@ cp resnet50-19c8e357.pth /root/.torch/models<br>/media/tensorflow/1412C30112C2E7
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-08-11 23:11:01" itemprop="dateModified" datetime="2022-08-11T23:11:01+08:00">2022-08-11</time>
+                <time title="Modified: 2022-08-13 16:02:43" itemprop="dateModified" datetime="2022-08-13T16:02:43+08:00">2022-08-13</time>
               </span>
 
           
@@ -739,9 +739,9 @@ cp resnet50-19c8e357.pth /root/.torch/models<br>/media/tensorflow/1412C30112C2E7
 
       
           <h3 id="this-file-record-some-miscellanea-information"><a href="#this-file-record-some-miscellanea-information" class="headerlink" title="this file record some miscellanea information"></a>this file record some miscellanea information</h3><p><strong>myblog localtion</strong>: <a target="_blank" rel="noopener" href="https://wangyxxjtu.github.io/">https://wangyxxjtu.github.io/</a></p>
-<p><strong>tencent log in the workstation</strong><br>first connect the server<br>then input ssh order: ssh <a href="mailto:&#119;&#101;&#98;&#100;&#101;&#118;&#x40;&#49;&#48;&#46;&#x31;&#54;&#x35;&#46;&#50;&#x38;&#46;&#x37;&#51;">&#119;&#101;&#98;&#100;&#101;&#118;&#x40;&#49;&#48;&#46;&#x31;&#54;&#x35;&#46;&#50;&#x38;&#46;&#x37;&#51;</a><br>passward:5qn5$japO</p>
+<p><strong>tencent log in the workstation</strong><br>first connect the server<br>then input ssh order: ssh <a href="mailto:&#119;&#x65;&#x62;&#x64;&#x65;&#118;&#64;&#49;&#48;&#46;&#49;&#54;&#x35;&#x2e;&#50;&#56;&#46;&#x37;&#x33;">&#119;&#x65;&#x62;&#x64;&#x65;&#118;&#64;&#49;&#48;&#46;&#49;&#54;&#x35;&#x2e;&#50;&#56;&#46;&#x37;&#x33;</a><br>passward:5qn5$japO</p>
 <p>** anaconda deletes environment**:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">conda remove -n tensorflow --all</span><br><span class="line">Conda activate name<span class="comment">#激活环境</span></span><br><span class="line">conda deactivate <span class="comment">#退出环境</span></span><br><span class="line">conda info --env <span class="comment">#列出所有的环境</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">conda remove -n tensorflow --all</span><br><span class="line">Conda activate name<span class="comment">#激活环境</span></span><br><span class="line">conda deactivate <span class="comment">#退出环境</span></span><br><span class="line">conda info --env <span class="comment">#列出所有的环境</span></span><br><span class="line">conda info  <span class="comment">#查看基本信息配置，例如安装源</span></span><br></pre></td></tr></table></figure>
 
 <p>** about the transpose convoluation output size **<br>the output size for transpose convolution is: </p>
 <ul>
@@ -1076,6 +1076,13 @@ cp resnet50-19c8e357.pth /root/.torch/models<br>/media/tensorflow/1412C30112C2E7
 
 <p>4 更详细版本简介</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">https://zhuanlan.zhihu.com/p/266337608</span><br><span class="line">https://zhuanlan.zhihu.com/p/342300434</span><br><span class="line">https://github.com/wandb/wandb</span><br><span class="line">https://docs.wandb.ai/ (文档+实力)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>3D obj文件可视化</strong><br><a target="_blank" rel="noopener" href="https://github.com/wangyxxjtu/show3D">https://github.com/wangyxxjtu/show3D</a></li>
+</ul>
+<p>pip install安装文件不在指定的环境下，可以利用target进行指定</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install --target=/Users/wang/miniconda3/lib/python3.8/site-packages imageio_ffmpeg</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
