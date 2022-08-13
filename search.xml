@@ -289,7 +289,7 @@ cp resnet50-19c8e357.pth /root/.torch/models<br>/media/tensorflow/1412C30112C2E7
     <title>miscellanea</title>
     <url>/2018/10/24/miscellanea/</url>
     <content><![CDATA[<h3 id="this-file-record-some-miscellanea-information"><a href="#this-file-record-some-miscellanea-information" class="headerlink" title="this file record some miscellanea information"></a>this file record some miscellanea information</h3><p><strong>myblog localtion</strong>: <a href="https://wangyxxjtu.github.io/">https://wangyxxjtu.github.io/</a></p>
-<p><strong>tencent log in the workstation</strong><br>first connect the server<br>then input ssh order: ssh <a href="mailto:&#x77;&#x65;&#x62;&#100;&#101;&#x76;&#x40;&#x31;&#x30;&#46;&#49;&#x36;&#x35;&#46;&#50;&#56;&#46;&#55;&#51;">&#x77;&#x65;&#x62;&#100;&#101;&#x76;&#x40;&#x31;&#x30;&#46;&#49;&#x36;&#x35;&#46;&#50;&#56;&#46;&#55;&#51;</a><br>passward:5qn5$japO</p>
+<p><strong>tencent log in the workstation</strong><br>first connect the server<br>then input ssh order: ssh <a href="mailto:&#119;&#101;&#98;&#100;&#x65;&#118;&#64;&#x31;&#x30;&#46;&#49;&#x36;&#x35;&#x2e;&#x32;&#56;&#46;&#55;&#x33;">&#119;&#101;&#98;&#100;&#x65;&#118;&#64;&#x31;&#x30;&#46;&#49;&#x36;&#x35;&#x2e;&#x32;&#56;&#46;&#55;&#x33;</a><br>passward:5qn5$japO</p>
 <p>** anaconda deletes environment**:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda remove -n tensorflow --all</span><br><span class="line">Conda activate name<span class="comment">#激活环境</span></span><br><span class="line">conda deactivate <span class="comment">#退出环境</span></span><br><span class="line">conda info --env <span class="comment">#列出所有的环境</span></span><br><span class="line">conda info  <span class="comment">#查看基本信息配置，例如安装源</span></span><br></pre></td></tr></table></figure>
 
@@ -627,9 +627,7 @@ cp resnet50-19c8e357.pth /root/.torch/models<br>/media/tensorflow/1412C30112C2E7
 <p>4 更详细版本简介</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://zhuanlan.zhihu.com/p/266337608</span><br><span class="line">https://zhuanlan.zhihu.com/p/342300434</span><br><span class="line">https://github.com/wandb/wandb</span><br><span class="line">https://docs.wandb.ai/ (文档+实力)</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li><strong>3D obj文件可视化</strong><br><a href="https://github.com/wangyxxjtu/show3D">https://github.com/wangyxxjtu/show3D</a></li>
-</ul>
+<h3 id="3D-obj文件可视化"><a href="#3D-obj文件可视化" class="headerlink" title="3D obj文件可视化"></a>3D obj文件可视化</h3><p><a href="https://github.com/wangyxxjtu/show3D">https://github.com/wangyxxjtu/show3D</a></p>
 <p>pip install安装文件不在指定的环境下，可以利用target进行指定</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip3 install --target=/Users/wang/miniconda3/lib/python3.8/site-packages imageio_ffmpeg</span><br><span class="line"></span><br><span class="line">#查看当前python的包搜索路径</span><br><span class="line">python -site</span><br></pre></td></tr></table></figure>
 ]]></content>
