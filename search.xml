@@ -149,7 +149,7 @@
 <h3 id="docker运行设置设置共享内存"><a href="#docker运行设置设置共享内存" class="headerlink" title="docker运行设置设置共享内存"></a>docker运行设置设置共享内存</h3><p>如果共享内存不足，将会出现错误：dataloder worker exited unexpectedly，或者调小batchsize，或者重新进入docker使用上面的参数<br>解决办法只能是重新新建容器，因为默认容器的共享内存是64M</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nvidia-docker run -itd --shm-size 64G --name wangyx -v /data1/wangyx:/home/wangyx -p 3316:22 pytorch/pytorch(本地镜像：docker images查看本地存在哪些镜像)</span><br></pre></td></tr></table></figure>
 
-<p>八卡服务器连接：<br>ssh <a href="mailto:&#x77;&#97;&#110;&#103;&#x79;&#120;&#64;&#x31;&#x39;&#x32;&#46;&#x31;&#54;&#56;&#46;&#49;&#48;&#x30;&#x2e;&#x32;&#50;">&#x77;&#97;&#110;&#103;&#x79;&#120;&#64;&#x31;&#x39;&#x32;&#46;&#x31;&#54;&#56;&#46;&#49;&#48;&#x30;&#x2e;&#x32;&#50;</a><br>psw:gansu320</p>
+<p>八卡服务器连接：<br>ssh <a href="mailto:&#119;&#97;&#x6e;&#103;&#x79;&#120;&#64;&#49;&#x39;&#x32;&#46;&#49;&#54;&#56;&#x2e;&#49;&#x30;&#x30;&#46;&#x32;&#x32;">&#119;&#97;&#x6e;&#103;&#x79;&#120;&#64;&#49;&#x39;&#x32;&#46;&#49;&#54;&#56;&#x2e;&#49;&#x30;&#x30;&#46;&#x32;&#x32;</a><br>psw:gansu320</p>
 <p>容器名称：wangyx<br>启动：nvidia-docker start -i wangyx<br>退出：ctrl+P+Q 退出但不结束 ctrl+D / exit 退出并关闭</p>
 <h3 id="zip命令解压文件到指定文件"><a href="#zip命令解压文件到指定文件" class="headerlink" title="zip命令解压文件到指定文件"></a>zip命令解压文件到指定文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">unzip -d dir file.zip</span><br></pre></td></tr></table></figure>
 <p>tar文件解压到指定文件夹</p>
@@ -224,6 +224,9 @@
 
 <p>#ubuntu ls命令去掉文件夹背景色</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">dircolors -p | sed <span class="string">&#x27;s/;42/;01/&#x27;</span> &gt; ~/.dircolors</span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<p>#下载google dirve中的文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Pip install gdown</span><br><span class="line">gdown https:google/drive...</span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
   <entry>
