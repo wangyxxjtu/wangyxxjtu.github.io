@@ -1327,6 +1327,9 @@
 <p>###pytorch根据名称访问网络子模块</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> layer_name, layer <span class="keyword">in</span> net._modules.item():</span><br><span class="line">     setattr(net, layer_name, layer.eval())</span><br><span class="line">     Out = getattr(net, layer_name)</span><br></pre></td></tr></table></figure>
 
+<p>###wandb command not found</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m wandb login</span><br></pre></td></tr></table></figure>
+
       
 
       
