@@ -16,7 +16,7 @@
 <meta property="og:description" content="this file record some program errors and corresponding solution   * error:  python read the chinese file, open(filepath,encoding&#x3D;’UTF-8’), however, there are still errors occuring: “UnicodeDecodeError">
 <meta property="og:locale">
 <meta property="article:published_time" content="2018-10-24T01:00:02.000Z">
-<meta property="article:modified_time" content="2023-07-24T18:11:40.365Z">
+<meta property="article:modified_time" content="2024-09-06T16:12:43.136Z">
 <meta property="article:author" content="Yaxiong Wang">
 <meta property="article:tag" content="计算机, 软件工程">
 <meta name="twitter:card" content="summary">
@@ -430,6 +430,9 @@
 
 <p>###wandb command not found</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m wandb login</span><br></pre></td></tr></table></figure>
+
+<p>###torchrun 报错：<br>decord导入要在torch之后</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import torch</span><br><span class="line">import decord</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
       
 

@@ -804,6 +804,9 @@
 
 <p>###wandb command not found</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python -m wandb login</span><br></pre></td></tr></table></figure>
+
+<p>###torchrun 报错：<br>decord导入要在torch之后</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">import torch</span><br><span class="line">import decord</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
 </search>
