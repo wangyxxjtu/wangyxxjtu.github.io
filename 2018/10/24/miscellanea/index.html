@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>miscellanea | 王亚雄的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="this file record some miscellanea informationmyblog localtion: https:&#x2F;&#x2F;wangyxxjtu.github.io&#x2F; tencent log in the workstationfirst connect the serverthen input ssh order: ssh &amp;#x77;&amp;#x65;&amp;#x62;&amp;#100;&amp;#x">
+  <meta name="description" content="this file record some miscellanea informationmyblog localtion: https:&#x2F;&#x2F;wangyxxjtu.github.io&#x2F; tencent log in the workstationfirst connect the serverthen input ssh order: ssh &amp;#x77;&amp;#x65;&amp;#x62;&amp;#100;&amp;#1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="miscellanea">
 <meta property="og:url" content="http://yoursite.com/2018/10/24/miscellanea/index.html">
 <meta property="og:site_name" content="王亚雄的博客">
-<meta property="og:description" content="this file record some miscellanea informationmyblog localtion: https:&#x2F;&#x2F;wangyxxjtu.github.io&#x2F; tencent log in the workstationfirst connect the serverthen input ssh order: ssh &amp;#x77;&amp;#x65;&amp;#x62;&amp;#100;&amp;#x">
+<meta property="og:description" content="this file record some miscellanea informationmyblog localtion: https:&#x2F;&#x2F;wangyxxjtu.github.io&#x2F; tencent log in the workstationfirst connect the serverthen input ssh order: ssh &amp;#x77;&amp;#x65;&amp;#x62;&amp;#100;&amp;#1">
 <meta property="og:locale">
 <meta property="article:published_time" content="2018-10-24T02:58:11.000Z">
-<meta property="article:modified_time" content="2024-11-18T13:53:25.656Z">
+<meta property="article:modified_time" content="2024-12-30T02:49:01.818Z">
 <meta property="article:author" content="Yaxiong Wang">
 <meta property="article:tag" content="计算机, 软件工程">
 <meta name="twitter:card" content="summary">
@@ -206,7 +206,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="this-file-record-some-miscellanea-information"><a href="#this-file-record-some-miscellanea-information" class="headerlink" title="this file record some miscellanea information"></a>this file record some miscellanea information</h3><p>myblog localtion: <a target="_blank" rel="noopener" href="https://wangyxxjtu.github.io/">https://wangyxxjtu.github.io/</a></p>
-<p>tencent log in the workstation<br>first connect the server<br>then input ssh order: ssh <a href="mailto:&#x77;&#x65;&#x62;&#100;&#x65;&#118;&#64;&#49;&#x30;&#46;&#49;&#x36;&#53;&#46;&#x32;&#x38;&#46;&#55;&#51;">&#x77;&#x65;&#x62;&#100;&#x65;&#118;&#64;&#49;&#x30;&#46;&#49;&#x36;&#53;&#46;&#x32;&#x38;&#46;&#55;&#51;</a><br>passward:5qn5$japO</p>
+<p>tencent log in the workstation<br>first connect the server<br>then input ssh order: ssh <a href="mailto:&#x77;&#x65;&#x62;&#100;&#101;&#118;&#64;&#49;&#48;&#x2e;&#49;&#x36;&#x35;&#46;&#50;&#56;&#46;&#55;&#51;">&#x77;&#x65;&#x62;&#100;&#101;&#118;&#64;&#49;&#48;&#x2e;&#49;&#x36;&#x35;&#46;&#50;&#56;&#46;&#55;&#51;</a><br>passward:5qn5$japO</p>
 <p> anaconda deletes environment:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">conda remove -n tensorflow --all</span><br><span class="line">Conda activate name<span class="comment">#激活环境</span></span><br><span class="line">conda deactivate <span class="comment">#退出环境</span></span><br><span class="line">conda info --env <span class="comment">#列出所有的环境</span></span><br><span class="line">conda info  <span class="comment">#查看基本信息配置，例如安装源</span></span><br></pre></td></tr></table></figure>
 
@@ -528,6 +528,17 @@
 
 <p>###定义快捷键传入参数</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> hs=<span class="string">&#x27;func() &#123; history | grep $1;&#125;; func&#x27;</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">#terminal中，筛选python程序</span></span><br><span class="line">hs python </span><br></pre></td></tr></table></figure>
+
+<p>###pytorch 分布式训练： torch.distributed.elastic.multiprocessing.api FAILED exit code -9</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">原因是内存不够</span><br></pre></td></tr></table></figure>
+
+
+<p>###Nvidia驱动坏了快速重新安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1， 安装dkms</span><br><span class="line">sudo apt-get install dkms</span><br><span class="line"></span><br><span class="line">2, 查看之前坏了的驱动版本</span><br><span class="line">ls /usr.src | grep nvidia</span><br><span class="line"></span><br><span class="line">3, 重新生成驱动模块</span><br><span class="line">sudo dkms install -m nvidia -v 550.90.07</span><br><span class="line"></span><br><span class="line">4, 禁止内核自动更新</span><br><span class="line">sudo nvidia-smi -pm 1</span><br></pre></td></tr></table></figure>
+
+<p>###nvidia-smi 有卡顿，刷新慢的问题解决：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nvidia-persistenced --persistence-mode</span><br></pre></td></tr></table></figure>
+
       
 
       
