@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am Yaxiong Wang, currently an Associate Professor at Hefei University of Technology ([Lion Lab](https://lion-hfut.github.io/cn-cn/)). I received my PhD from Xi'an Jiaotong University in 2021, supervised by Prof. Prof. [Xueming Qian](https://scholar.google.com/citations?user=skQCiQQAAAAJ&hl=en) and Prof. Li Zhu. During my doctoral studies (2019-2021), I conducted research at the University of Technology Sydney under the guidance of Prof. [Yunchao Wei](https://scholar.google.com.sg/citations?user=qL9Csv0AAAAJ&hl=en) and Prof. Prof. [Yi Yang](https://scholar.google.com/citations?user=RMSuNFwAAAAJ&hl=en). My research focuses on computer vision, multimodal DeepFake detection, cross-modal retrieval, and vision-language models. I completed my Bachelor's degree at Lanzhou University in 2015 prior to commencing my PhD.
+I am Wang Yaxiong, currently an Associate Professor at Hefei University of Technology ([Lion Lab](https://lion-hfut.github.io/cn-cn/)). I received my PhD from Xi'an Jiaotong University in 2021, supervised by Prof. Prof. [Xueming Qian](https://scholar.google.com/citations?user=skQCiQQAAAAJ&hl=en) and Prof. Li Zhu. During my doctoral studies (2019-2021), I conducted research at the University of Technology Sydney under the guidance of Prof. [Yunchao Wei](https://scholar.google.com.sg/citations?user=qL9Csv0AAAAJ&hl=en) and Prof. Prof. [Yi Yang](https://scholar.google.com/citations?user=RMSuNFwAAAAJ&hl=en). My research focuses on computer vision, multimodal DeepFake detection, cross-modal retrieval, and vision-language models. I completed my Bachelor's degree at Lanzhou University in 2015 prior to commencing my PhD.
 
 
 
