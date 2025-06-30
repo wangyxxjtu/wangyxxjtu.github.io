@@ -7,7 +7,8 @@ redirect_from:
   - /about.html
 ---
 
-My name is Yaxiong Wang, I'm now is a associate professor in Hefei University of Technology ([Lion Lab](https://lion-hfut.github.io/cn-cn/)). In 2021, I received my PhD degree from Xi'an Jiaotong University under the supervision of Prof. [Xueming Qian](https://scholar.google.com/citations?user=skQCiQQAAAAJ&hl=en), and Li Zhu. During my PhD, I had the honor of working with Prof. [Yunchao Wei](https://scholar.google.com.sg/citations?user=qL9Csv0AAAAJ&hl=en) and Prof. [Yi Yang](https://scholar.google.com/citations?user=RMSuNFwAAAAJ&hl=en) for two years in University of Technology Sydney (2019-2021). My research interests include computer vision, multimodal DeepFake detection, cross-modal retrieval, and vision-language models. Before pursuing PhD,  I completed my Bachelor’s degree from Lanzhou University in 2015.
+I am Yaxiong Wang, currently an Associate Professor at Hefei University of Technology ([Lion Lab](https://lion-hfut.github.io/cn-cn/)). I received my PhD from Xi'an Jiaotong University in 2021, supervised by Prof. Prof. [Xueming Qian](https://scholar.google.com/citations?user=skQCiQQAAAAJ&hl=en) and Prof. Li Zhu. During my doctoral studies (2019-2021), I conducted research at the University of Technology Sydney under the guidance of Prof. [Yunchao Wei](https://scholar.google.com.sg/citations?user=qL9Csv0AAAAJ&hl=en) and Prof. Prof. [Yi Yang](https://scholar.google.com/citations?user=RMSuNFwAAAAJ&hl=en). My research focuses on computer vision, multimodal DeepFake detection, cross-modal retrieval, and vision-language models. I completed my Bachelor's degree at Lanzhou University in 2015 prior to commencing my PhD.
+
 
 
 
@@ -23,7 +24,7 @@ My name is Yaxiong Wang, I'm now is a associate professor in Hefei University of
 
 
 ## :sunny: Recent Research Interests
-My recent research interests mainly lie in the multimodal manipulation detecdtion and anomaly action detection/retrieval. Welcome to discuss if you are interested in these topics, email: wangyx@hfut.edu.cn.
+My current research focuses primarily on multimodal manipulation detection and anomaly action detection/retrieval. If you share an interest in these areas, I'd be delighted to engage in a discussion. Feel free to reach out via email at wangyx@hfut.edu.cn.
 
 ## :sunglasses: Experiences
 :construction_worker: 2023.09-present, Associate Professor, Hefei University of Technology.
