@@ -13,13 +13,13 @@ My name is Yaxiong Wang, I'm now is a associate professor in Hefei University of
 
 ## 💡News
 ------
-:tada: 2025.06.28, 1 paper is accepted by ICCV [link](https://arxiv.org/pdf/2411.17776)
+:tada: 2025.06.28, 1 paper is accepted by ICCV 2025 [link](https://arxiv.org/pdf/2411.17776)
 
-:tada: 2025.04.05, 1 paper is accepted by SIGIR [link](https://arxiv.org/pdf/2410.17810)
+:tada: 2025.04.05, 1 paper is accepted by SIGIR 2025 [link](https://arxiv.org/pdf/2410.17810)
 
-:tada: 2025.05.03  1 paper is accepted by IEEE TMM [link](https://arxiv.org/abs/2504.05316)
+:tada: 2025.05.03  1 paper is accepted by IEEE TMM 2025 [link](https://arxiv.org/abs/2504.05316)
 
-:tada: 2025.02. 27 1 paper is accepted by CVPR [link](https://openaccess.thecvf.com/content/CVPR2025/html/Zhang_ASAP_Advancing_Semantic_Alignment_Promotes_Multi-Modal_Manipulation_Detecting_and_Grounding_CVPR_2025_paper.html)
+:tada: 2025.02. 27 1 paper is accepted by CVPR 2025 [link](https://openaccess.thecvf.com/content/CVPR2025/html/Zhang_ASAP_Advancing_Semantic_Alignment_Promotes_Multi-Modal_Manipulation_Detecting_and_Grounding_CVPR_2025_paper.html)
 
 
 ## :sunny: Recent Research Interests
