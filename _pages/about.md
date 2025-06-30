@@ -19,7 +19,7 @@ My name is Yaxiong Wang, I'm now is a associate professor in Hefei University of
 
 :tada: 2025.05.03  1 paper is accepted by IEEE TMM [link](https://arxiv.org/abs/2504.05316)
 
-:tada: 2025.02. 27 paper is accepted by CVPR [link](https://openaccess.thecvf.com/content/CVPR2025/html/Zhang_ASAP_Advancing_Semantic_Alignment_Promotes_Multi-Modal_Manipulation_Detecting_and_Grounding_CVPR_2025_paper.html)
+:tada: 2025.02. 27 1 paper is accepted by CVPR [link](https://openaccess.thecvf.com/content/CVPR2025/html/Zhang_ASAP_Advancing_Semantic_Alignment_Promotes_Multi-Modal_Manipulation_Detecting_and_Grounding_CVPR_2025_paper.html)
 
 
 ## :sunny: Recent Research Interests
