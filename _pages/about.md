@@ -24,3 +24,19 @@ My name is Yaxiong Wang, I'm now is a associate professor in Hefei University of
 
 ## :sunny: Recent Research Interests
 My recent research interests mainly lie in the multimodal manipulation detecdtion and anomaly action detection/retrieval. Welcome to discuss if you are interested in these topics, email: wangyx@hfut.edu.cn.
+
+## :sunglasses: Experiences
+:construction_worker: 2023.09-present, Associate Professor, Hefei University of Technology.
+
+:construction_worker: 2022.06-2023.08, Research Expert, Zhejiang Lab.
+
+:construction_worker: 2022.06-2023.08, Researcher, Zhejiang University (dual-employed).
+
+:construction_worker: 2021.09-2022.05, Researcher, Xi'an Jiaotong University.
+
+:two_hearts: 2015.09-2021.09, PhD, Xi'an Jiaotong University.
+
+:two_hearts: 2019.04-2021.04, Visiting student, University of Technology Sydney.
+
+:two_hearts: 2011.09-2015.06, Bachelor, Lanzhou University.
+
