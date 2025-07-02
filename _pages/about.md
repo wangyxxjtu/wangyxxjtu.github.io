@@ -25,7 +25,7 @@ I am Wang Yaxiong, currently an Associate Professor at Hefei University of Techn
 ## :sunny: Recent Research Interests
 My current research focuses primarily on multimodal manipulation detection and anomaly action detection/retrieval. If you share an interest in these areas, I'd be delighted to engage in a discussion. Feel free to reach out via email at wangyx@hfut.edu.cn.
 
-## :sunglasses: Experiences \& Education
+## :sunglasses: Experiences & Education
 :construction_worker: 2023.09-present, Associate Professor, Hefei University of Technology.
 
 :construction_worker: 2022.06-2023.08, Research Expert, Zhejiang Lab.
