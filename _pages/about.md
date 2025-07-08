@@ -13,6 +13,8 @@ I am Wang Yaxiong, currently an Associate Professor at Hefei University of Techn
 
 
 ## 💡News
+:tada: 2025.06.28, 2 paper is accepted by ACM MM 2025.
+
 :tada: 2025.06.28, 1 paper is accepted by ICCV 2025 [link](https://arxiv.org/pdf/2411.17776)
 
 :tada: 2025.04.05, 1 paper is accepted by SIGIR 2025 [link](https://arxiv.org/pdf/2410.17810)
