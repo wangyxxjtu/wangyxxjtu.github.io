@@ -25,6 +25,8 @@ I am Wang Yaxiong, currently an Associate Professor at Hefei University of Techn
 
 :tada: 2025.02.27, 1 paper is accepted by CVPR 2025 [link](https://openaccess.thecvf.com/content/CVPR2025/html/Zhang_ASAP_Advancing_Semantic_Alignment_Promotes_Multi-Modal_Manipulation_Detecting_and_Grounding_CVPR_2025_paper.html)
 
+:tada: 2025.02.05, 1 paper is accepted by IEEE TMM 2025 [link](https://ieeexplore.ieee.org/document/11125949)
+
 
 ## :sunny: Recent Research Interests
 My current research focuses primarily on multimodal manipulation detection and anomaly action detection/retrieval. If you share an interest in these areas, I'd be delighted to engage in a discussion. Feel free to reach out via email at wangyx@hfut.edu.cn.
