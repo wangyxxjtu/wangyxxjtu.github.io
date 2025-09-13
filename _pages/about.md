@@ -19,7 +19,7 @@ I am Wang Yaxiong, currently an Associate Professor at Hefei University of Techn
 
 :tada: 2025.06.28, 1 paper is accepted by ICCV 2025 [link](https://arxiv.org/pdf/2411.17776) (Corresponding Author)
 
-:tada: 2025.04.05, 1 paper is accepted by SIGIR 2025 [link](https://arxiv.org/pdf/2410.17810) (Corresponding Author)
+:tada: 2025.04.05, 1 paper is accepted by SIGIR 2025 [link](https://arxiv.org/pdf/2410.17810) (First Author)
 
 :tada: 2025.05.03,  1 paper is accepted by IEEE TMM 2025 [link](https://arxiv.org/abs/2504.05316) (Corresponding Author)
 
