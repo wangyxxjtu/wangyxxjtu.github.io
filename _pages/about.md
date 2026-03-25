@@ -13,7 +13,9 @@ I am Wang Yaxiong, currently an Associate Professor at Hefei University of Techn
 
 
 ## 💡News
-:tada: 2026.02.21, 1 paper is accepted by IEEE TVCG 2026 (Corresponding Author).
+:tada: 2026.03.25, 1 paper is accepted by Pattern Recognition 2026 [link](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=lDChiR4AAAAJ&sortby=pubdate&citation_for_view=lDChiR4AAAAJ:a0OBvERweLwC) (Corresponding Author).
+
+:tada: 2026.02.21, 1 paper is accepted by IEEE TVCG 2026 [link](https://differential-query-painter.github.io/DQ-painter/) (Corresponding Author).
 
 :tada: 2026.02.21, 2 paper is accepted by CVPR 2026 [link](https://arxiv.org/abs/2505.17476) (1/2 Corresponding Author).
 
