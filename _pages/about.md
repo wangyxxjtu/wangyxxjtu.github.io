@@ -13,6 +13,8 @@ I am Wang Yaxiong, currently an Associate Professor at Hefei University of Techn
 
 
 ## 💡News
+:tada: 2026.04.20, 1 paper is accepted by ACM TOMM [link1](https://arxiv.org/pdf/2311.00949)
+
 :tada: 2026.04.20, 1 paper is accepted by IEEE TCSVT (Corresponding author) 
 
 :tada: 2026.04.07, 4 paper is accepted by ACL 2026 Main Conference [link1](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=dfC-M2oAAAAJ&citation_for_view=dfC-M2oAAAAJ:8k81kl-MbHgC),[link2](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=lDChiR4AAAAJ&cstart=20&pagesize=80&sortby=pubdate&citation_for_view=lDChiR4AAAAJ:4JMBOYKVnBMC) (2/4 Corresponding Author).
