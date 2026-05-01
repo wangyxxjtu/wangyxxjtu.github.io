@@ -13,7 +13,7 @@ I am Wang Yaxiong, currently an Associate Professor at Hefei University of Techn
 
 
 ## 💡News
-:tada: 2026.04.20, 2 paper is accepted by ICML 2026 (Corresponding author).
+:tada: 2026.05.01, 2 paper is accepted by ICML 2026 (Corresponding author).
 
 :tada: 2026.04.20, 1 paper is accepted by ACM TOMM [link](https://arxiv.org/pdf/2311.00949) (Corresponding author).
 
