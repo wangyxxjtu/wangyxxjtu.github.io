@@ -13,6 +13,8 @@ I am Wang Yaxiong, currently an Associate Professor at Hefei University of Techn
 
 
 ## 💡News
+:tada: 2026.10.12, One paper was accepted by IEEE TCSVT (First author).
+
 :tada: 2026.09.17, Invited as ICLR 2027 Area Chair.
 
 :tada: 2026.07.26, Invited as AAAI 2027 Senior Program Chair.
