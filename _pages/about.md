@@ -13,6 +13,8 @@ I am Wang Yaxiong, currently an Associate Professor at Hefei University of Techn
 
 
 ## 💡News
+:tada: 2026.10.21, Invited as ICML 2027 Area Chair.
+
 :tada: 2026.10.17, Selected as the Outstanding Reviewer of CVPR 2026.
 
 :tada: 2026.10.12, One paper was accepted by IEEE TCSVT (First author).
